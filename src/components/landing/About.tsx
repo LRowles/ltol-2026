@@ -1,66 +1,63 @@
-import { CheckCircle2, Users, Target, Headphones, Cpu } from "lucide-react";
+import { CheckCircle2, Shield, Compass, Wrench, HeartHandshake } from "lucide-react";
 
 const features = [
   {
-    icon: Users,
-    title: "Affordable Pricing",
-    description: "Enterprise-level strategies at small business-friendly rates",
+    icon: Shield,
+    title: "Trustworthy & Reliable",
+    description: "We protect and strengthen what you've built — your systems, your data, your business.",
   },
   {
-    icon: Headphones,
-    title: "Dedicated Support",
-    description: "Your success is our priority with 24/7 personalized assistance",
+    icon: Compass,
+    title: "Expert Guidance",
+    description: "Sage-level knowledge delivered in plain language you can act on.",
   },
   {
-    icon: Target,
-    title: "Results-Driven",
-    description: "Every campaign is optimized for measurable ROI and growth",
+    icon: Wrench,
+    title: "Boutique Quality",
+    description: "Craftsman attention to detail. Every solution is tailored, never one-size-fits-all.",
   },
   {
-    icon: Cpu,
-    title: "Cutting-Edge Tech",
-    description: "AI-powered tools that give you a competitive advantage",
+    icon: HeartHandshake,
+    title: "Local & Human",
+    description: "Based in Lake Tahoe, serving Reno, Northern Nevada, and the Western US with real, in-person support.",
   },
 ];
 
 const About = () => {
   return (
-    <section id="about" className="py-20 sm:py-32 bg-muted/30 relative">
+    <section id="about" className="section-padding relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Content */}
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Why Choose <span className="gradient-text">LRJ Digital Media</span>?
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              Why Businesses Trust <span className="gradient-text">LTOL</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              We're not just another marketing agency. We're your dedicated partners in growth, 
-              combining years of expertise with cutting-edge AI technology to deliver results 
-              that matter for your business.
+              Lake Tahoe Online is a boutique technology consultancy built on the Guardian principle: 
+              we protect and strengthen what others have built. Your business deserves reliable 
+              systems and real support — not a faceless help desk.
             </p>
-            
+
             <div className="space-y-4 mb-8">
               {[
-                "Tailored strategies for your unique business goals",
-                "Transparent reporting and communication",
-                "Proven track record with 150+ satisfied clients",
-                "Latest AI tools and marketing technologies",
+                "Complete top-to-bottom digital infrastructure",
+                "In-person support across the Western United States",
+                "No outsourced technicians — ever",
+                "Practical AI integration without the hype",
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0" />
                   <span className="text-muted-foreground">{item}</span>
                 </div>
               ))}
             </div>
 
             <p className="text-muted-foreground">
-              Founded with a mission to level the playing field, we help small businesses 
-              compete with industry giants through smart, efficient, and AI-enhanced marketing 
-              solutions.
+              Your business deserves reliable systems and real support. 
+              That's the LTOL promise — a true digital guardian for small businesses.
             </p>
           </div>
 
-          {/* Right Content - Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <div

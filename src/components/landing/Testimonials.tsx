@@ -3,50 +3,48 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "Owner, Bloom Boutique",
+    name: "Karen Mitchell",
+    role: "Owner, Summit Dental — Reno, NV",
     content:
-      "LRJ Digital Media transformed our online presence. Our website traffic increased by 250% and our sales have never been better. The AI chatbot they implemented handles customer inquiries 24/7!",
+      "LTOL set up our entire office network, migrated us to Google Workspace, and built a new website — all without a single day of downtime. They actually answer the phone when we call. That alone is worth it.",
     rating: 5,
   },
   {
-    name: "Marcus Johnson",
-    role: "CEO, TechStart Solutions",
+    name: "James Ortega",
+    role: "Founder, Sierra Property Group — Lake Tahoe",
     content:
-      "The SEO work they did was phenomenal. We went from page 5 to the top 3 results for our main keywords in just 4 months. Their AI-powered analytics gave us insights we never had before.",
+      "We went through three IT companies before finding LTOL. The difference is night and day. They visit our offices, they know our systems, and they don't send us to some overseas help desk.",
     rating: 5,
   },
   {
-    name: "Emily Rodriguez",
-    role: "Founder, Green Living Co.",
+    name: "Lisa Tran",
+    role: "Director, Bloom Bakery — Carson City, NV",
     content:
-      "As a small business owner, I was skeptical about AI marketing tools. LRJ made everything simple and showed me exactly how it was helping my business grow. Best investment I've made!",
+      "The AI chatbot LTOL set up handles 80% of our online orders and customer questions. It was simple to implement and my staff actually understands how it works. Practical, not gimmicky.",
     rating: 5,
   },
   {
-    name: "David Chen",
-    role: "Director, Urban Fitness Studio",
+    name: "David Reyes",
+    role: "CEO, Western Trail Outfitters — Northern Nevada",
     content:
-      "Their digital marketing strategy brought us 50 new members in the first month. The team is responsive, creative, and truly understands small business needs. Highly recommend!",
+      "Having one partner for IT, web, and marketing just makes sense. LTOL handles everything so I can focus on running my business. They're the digital partner every small business needs.",
     rating: 5,
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-20 sm:py-32 relative">
+    <section id="testimonials" className="section-padding bg-muted/50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
             What Our <span className="gradient-text">Clients Say</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what business owners like you have to say about working with us.
+            Small business owners across the Western US trust LTOL to protect and grow their digital infrastructure.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card
@@ -54,27 +52,23 @@ const Testimonials = () => {
               className="bg-card border-border card-hover relative overflow-hidden"
             >
               <CardContent className="p-8">
-                {/* Quote Icon */}
-                <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
-                
-                {/* Rating */}
+                <Quote className="w-10 h-10 text-primary/10 absolute top-6 right-6" />
+
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 fill-primary text-primary"
+                      className="w-5 h-5 fill-secondary text-secondary"
                     />
                   ))}
                 </div>
 
-                {/* Content */}
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   "{testimonial.content}"
                 </p>
 
-                {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-primary-foreground font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
