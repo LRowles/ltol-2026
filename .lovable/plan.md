@@ -1,120 +1,170 @@
 
 
-# LTOL Website Rebrand and Restructure
+# LRJ Digital Media - Landing Page Plan
 
-This is a comprehensive rebrand from "LRJ Digital Media" to "Lake Tahoe Online (LTOL)" — a premium boutique technology consultancy. The scope covers content, branding, structure, and SEO throughout.
+## Overview
+Create a modern, dark-themed landing page for LRJ Digital Media that showcases digital marketing, SEO, and AI integration services for small businesses. The page will feature smooth animations, professional design, and a strong call-to-action for free consultations.
 
-## Color and Design Direction
+---
 
-Shift from the current dark/neon aesthetic to a premium, trustworthy, minimal feel:
-- Light background with clean white space
-- Primary: deep navy/slate blue (guardian trust)
-- Accent: warm teal or forest green (Tahoe nature)
-- Typography: clean, confident, modern sans-serif
-- Remove glow effects and pulsing animations in favor of subtle, professional transitions
+## Design System Updates
 
-## Files to Modify
+### Color Palette
+- **Primary**: Electric blue/cyan accent (`hsl(200, 100%, 50%)`)
+- **Background**: Deep dark blue-gray (`hsl(222, 47%, 8%)`)
+- **Cards**: Slightly lighter dark (`hsl(222, 47%, 12%)`)
+- **Accent gradients**: Blue to purple gradients for visual interest
+- **Text**: White primary, muted gray for secondary
 
-### 1. `index.html` — SEO metadata
-- Update title, meta description, Open Graph tags, JSON-LD structured data
-- Add geographic and service keywords
+### Typography
+- Bold, modern headings
+- Clean, readable body text
+- Gradient text effects for emphasis
 
-### 2. `src/index.css` — Complete theme overhaul
-- New light-mode color palette (premium, trustworthy)
-- Remove neon gradient utilities; replace with subtle, professional gradients
-- Keep utility classes but update values
+---
 
-### 3. `src/components/landing/Navbar.tsx`
-- Rebrand to "LTOL" / "Lake Tahoe Online"
-- Update nav links: Services, AI Integration, About, Contact
-- Update CTA to "Schedule a Consultation"
+## Page Sections
 
-### 4. `src/components/landing/Hero.tsx`
-- Headline: "Your Business Deserves a Digital Guardian"
-- Subheadline: "Local IT, digital marketing, and AI integration designed to protect and grow small businesses."
-- CTA: "Schedule a Consultation"
-- Stats: update to LTOL-relevant metrics
-- Badge: "Your Digital Infrastructure Partner"
+### 1. Navigation Header
+- LRJ Digital Media logo/text
+- Navigation links: Services, About, Testimonials, Pricing, Contact
+- "Free Consultation" CTA button (highlighted)
+- Mobile-responsive hamburger menu
 
-### 5. `src/components/landing/Services.tsx` — Full rewrite
-Seven service cards matching LTOL's offerings:
-- Web Design
-- Branding & Design
-- Social Media & Content Strategy
-- WiFi & Network Installation
-- Managed IT Services
-- Email Hosting & Cloud Systems
-- AI Integration Services
+### 2. Hero Section
+- Large headline: "Transform Your Business with AI-Powered Digital Marketing"
+- Subheadline emphasizing small business focus
+- Two CTAs: "Get Free Consultation" (primary) and "View Our Work" (secondary)
+- Animated gradient background or subtle particle effect
+- Statistics bar: clients served, ROI achieved, years experience
 
-Each with icon, description, and feature bullets using LTOL content.
+### 3. Services Section
+Three service cards with icons and descriptions:
 
-### 6. New component: `src/components/landing/Difference.tsx`
-"The LTOL Difference" section highlighting key differentiators:
-- We answer the phone
-- We visit your business
-- We never outsource support
-- Complete top-to-bottom digital solutions
+**Digital Marketing**
+- Social media management
+- Content marketing
+- PPC advertising
+- Brand strategy
 
-### 7. New component: `src/components/landing/AIIntegration.tsx`
-Dedicated section for AI integration services:
-- AI workflow automation, customer service assistants, marketing automation, productivity tools, staff training
-- Messaging: "AI made practical for small businesses."
+**SEO Services**
+- Technical SEO audits
+- Local SEO optimization
+- Keyword research
+- Link building
 
-### 8. `src/components/landing/About.tsx`
-- Rebrand to LTOL, Guardian archetype messaging
-- Update features to reflect: trustworthy, local, boutique quality, expert guidance
-- Geographic: Lake Tahoe, Reno, Northern Nevada, Western US
+**AI Integrations**
+- AI chatbots for customer service
+- Automated marketing workflows
+- AI-powered analytics
+- Content generation tools
 
-### 9. `src/components/landing/Testimonials.tsx`
-- Update placeholder testimonials with small business owners from Western US regions
-- Reference LTOL services (IT, web design, AI)
+### 4. Why Choose Us / About Section
+- Brief company story
+- Key differentiators for small businesses
+- Feature highlights with icons:
+  - Affordable pricing
+  - Dedicated support
+  - Results-driven approach
+  - Cutting-edge technology
 
-### 10. `src/components/landing/Pricing.tsx`
-- Remove this section entirely (consultancy model, not tiered pricing)
-- Replace with a simpler "How We Work" or remove
+### 5. Testimonials Section
+- Carousel or grid of client testimonials
+- Client name, business type, and photo placeholder
+- Star ratings
+- 3-4 sample testimonials (placeholder content)
 
-### 11. `src/components/landing/Contact.tsx`
-- Update company name, placeholder contact info
-- Update messaging to match Guardian tone
-- Add phone/email/consultation form per spec
+### 6. Pricing Section
+Three pricing tiers:
 
-### 12. `src/components/landing/Footer.tsx`
-- Rebrand to LTOL
-- Update service links, company links
-- Add geographic info (Lake Tahoe, serving Western US)
+**Starter**
+- Best for new businesses
+- Basic SEO + Social media management
+- Monthly reporting
 
-### 13. `src/pages/Index.tsx`
-- Import new components (Difference, AIIntegration)
-- Remove Pricing, add Difference and AIIntegration sections
-- Section order: Hero → Difference → Services → AIIntegration → About → Testimonials → Contact → Footer
+**Growth**
+- Most popular (highlighted)
+- Full SEO + Digital marketing
+- AI chatbot integration
+- Bi-weekly calls
 
-### 14. `src/App.tsx`
-- Add routes for future pages: `/services`, `/ai-integration`, `/managed-it`, `/web-design`, `/about`, `/blog`, `/contact`
-- For now, placeholder pages that link back to homepage sections
+**Enterprise**
+- Custom solutions
+- Full AI integration suite
+- Dedicated account manager
+- Priority support
 
-## Content and SEO
+All with "Book Consultation" CTAs (actual prices left as "Contact Us" or placeholders)
 
-All content will:
-- Use proper heading hierarchy (H1, H2, H3)
-- Include local keywords (Lake Tahoe, Reno, Northern Nevada, Western United States)
-- Match Guardian brand voice: clear, confident, helpful, human
-- Avoid corporate jargon and hype marketing
-- Use short paragraphs and bullet lists
+### 7. Contact Section
+- Heading: "Ready to Grow Your Business?"
+- Contact form with fields: Name, Email, Business Name, Message
+- Alternative contact methods (email, phone placeholders)
+- "Book Free Consultation" submit button
 
-## Implementation Order
+### 8. Footer
+- LRJ Digital Media branding
+- Quick links
+- Social media icons (placeholder links)
+- Copyright notice
 
-1. Theme/CSS overhaul
-2. Navbar rebrand
-3. Hero section
-4. Difference section (new)
-5. Services rewrite
-6. AI Integration section (new)
-7. About section
-8. Testimonials
-9. Contact
-10. Footer
-11. Index page assembly
-12. Route setup and SEO metadata
+---
 
-This is a large change touching ~14 files. I will implement it all in one pass.
+## Technical Implementation
+
+### New Files to Create
+```text
+src/
+  components/
+    landing/
+      Navbar.tsx
+      Hero.tsx
+      Services.tsx
+      About.tsx
+      Testimonials.tsx
+      Pricing.tsx
+      Contact.tsx
+      Footer.tsx
+  pages/
+    Index.tsx (updated)
+  index.css (updated with new colors)
+```
+
+### Animations & Interactions
+- Fade-in animations on scroll for sections
+- Hover effects on cards and buttons
+- Smooth scroll navigation
+- Gradient animations in hero section
+
+### Responsive Design
+- Mobile-first approach
+- Collapsible navigation on mobile
+- Stacked cards on smaller screens
+- Touch-friendly buttons and spacing
+
+---
+
+## Sample Content
+
+### Hero Tagline Options
+- "Transform Your Business with AI-Powered Digital Marketing"
+- "Smart Marketing Solutions for Growing Businesses"
+- "Where AI Meets Digital Marketing Excellence"
+
+### Service Descriptions
+Content will emphasize:
+- Small business affordability
+- Modern AI-powered tools
+- Measurable results and ROI
+- Personalized attention
+
+---
+
+## Deliverables Summary
+1. Updated color theme (dark mode by default)
+2. 8 component files for each section
+3. Fully responsive landing page
+4. Smooth animations and hover effects
+5. Contact form (frontend only)
+6. Professional, conversion-focused design
 
