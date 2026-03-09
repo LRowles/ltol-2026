@@ -40,7 +40,7 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection("#contact")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6"
+              className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold text-lg px-8 py-6"
             >
               Schedule a Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">
+                <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
