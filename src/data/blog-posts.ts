@@ -1067,3 +1067,5 @@ const coreBlogPosts: BlogPostData[] = [
     relatedResource: "digital-marketing-assessment",
   },
 ];
+
+export const blogPosts: BlogPostData[] = [...coreBlogPosts, ...extendedBlogPosts];
