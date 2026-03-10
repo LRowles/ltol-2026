@@ -8,6 +8,7 @@ import FAQSection from "./FAQSection";
 import CTABlock from "./CTABlock";
 import { LocationData } from "@/data/locations";
 import { services } from "@/data/services";
+import { useJsonLd, localBusinessSchema, faqSchema } from "@/lib/structured-data";
 
 interface LocationPageTemplateProps {
   location: LocationData;
