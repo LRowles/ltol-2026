@@ -1,11 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { services } from "@/data/services";
 import ServicePageTemplate from "@/components/templates/ServicePageTemplate";
 import NotFound from "./NotFound";
 
 const ServicePage = () => {
   const { slug } = useParams();
-  const service = services.find((s) => s.slug === slug);
+  const { pathname } = useLocation();
+  const resolvedSlug = slug || pathname.replace("/", "");
+  const service = services.find((s) => s.slug === resolvedSlug);
   if (!service) return <NotFound />;
   return <ServicePageTemplate service={service} />;
 };
