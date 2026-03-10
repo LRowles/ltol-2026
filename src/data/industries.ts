@@ -211,7 +211,7 @@ export const industries: IndustryData[] = [
     slug: "law-firm-it-services",
     industry: "Law Firms",
     metaTitle: "IT Services & Technology Solutions for Law Firms | LTOL",
-    metaDescription: "Managed IT, cybersecurity, and digital marketing for law firms. Protect client data and grow your practice with Lake Tahoe Online.",
+    metaDescription: "Managed IT, cybersecurity, and digital marketing for law firms. Protect client data and grow your practice with LTOL.",
     headline: "Technology Solutions for Law Firms",
     intro: "Law firms handle sensitive client data every day and face strict ethical obligations around data protection. LTOL provides the managed IT, cybersecurity, and marketing systems that modern law firms need.",
     challenges: ["Ethical obligations to protect client confidentiality", "Outdated case management", "No systematic client intake", "Compliance requirements", "Competitive local search"],
