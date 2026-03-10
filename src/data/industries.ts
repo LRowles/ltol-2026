@@ -184,7 +184,7 @@ export const industries: IndustryData[] = [
     slug: "construction-technology-solutions",
     industry: "Construction Companies",
     metaTitle: "Technology Solutions for Construction Companies | LTOL",
-    metaDescription: "IT, AI, cybersecurity, and digital marketing for construction companies. Modernize operations with Lake Tahoe Online.",
+    metaDescription: "IT, AI, cybersecurity, and digital marketing for construction companies. Modernize operations with LTOL.",
     headline: "Technology Solutions for Construction Companies",
     intro: "Construction companies juggle complex projects, multiple job sites, and a workforce that's often in the field. LTOL builds technology systems that connect your office, your crews, and your customers — so nothing falls through the cracks.",
     challenges: [
