@@ -17,7 +17,7 @@ export const blogPosts: BlogPostData[] = [
   {
     slug: "ai-for-small-businesses-2026",
     title: "AI for Small Businesses in 2026: What Actually Works",
-    metaTitle: "AI for Small Businesses in 2026 | Lake Tahoe Online",
+    metaTitle: "AI for Small Businesses in 2026 | LTOL",
     metaDescription: "Practical guide to AI adoption for small businesses in 2026. Learn which AI tools deliver real ROI and how to implement them without disrupting operations.",
     category: "AI for Small Business",
     date: "2026-03-01",
