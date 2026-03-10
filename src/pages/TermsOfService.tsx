@@ -35,7 +35,7 @@ const TermsOfService = () => {
           <p>We reserve the right to update these terms at any time. Continued use of the site after changes constitutes acceptance of the revised terms.</p>
 
           <h2 className="text-xl font-semibold text-foreground mt-8">7. Contact</h2>
-          <p>Questions about these terms can be directed to <a href="mailto:hello@laketahoeonline.com" className="text-primary underline">hello@laketahoeonline.com</a>.</p>
+          <p>Questions about these terms can be directed to <a href="mailto:hello@ltol.com" className="text-primary underline">hello@ltol.com</a>.</p>
         </div>
       </main>
       <Footer />

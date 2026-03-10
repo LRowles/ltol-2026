@@ -72,7 +72,7 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
 export function localBusinessSchema(city: string, region: string, description: string, slug: string) {
   return {
     "@type": "LocalBusiness",
-    name: "Lake Tahoe Online",
+    name: "LTOL",
     alternateName: "LTOL",
     url: `${BASE_URL}/locations/${slug}`,
     description,

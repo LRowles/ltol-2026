@@ -128,7 +128,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-background/15 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-background/50">© {new Date().getFullYear()} Lake Tahoe Online (LTOL). All rights reserved.</p>
+          <p className="text-xs text-background/50">© {new Date().getFullYear()} LTOL. All rights reserved.</p>
           <div className="flex space-x-6 text-xs text-background/50">
             <Link to="/privacy-policy" className="hover:text-background transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-background transition-colors">Terms of Service</Link>

@@ -22,7 +22,7 @@ const Solution = () => {
             LTOL Builds <span className="gradient-text">Connected Digital Systems</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Lake Tahoe Online integrates the tools that matter most — so technology becomes an advantage, not a burden.
+            LTOL integrates the tools that matter most — so technology becomes an advantage, not a burden.
           </p>
         </div>
 
