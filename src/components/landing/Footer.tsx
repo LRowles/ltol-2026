@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ltolLogo from "@/assets/ltol-logo.svg";
 
 const footerLinks = {
-  services: [
+  solutions: [
     { name: "AI Integration", href: "/ai-integration" },
     { name: "Digital Marketing", href: "/digital-marketing" },
     { name: "Managed IT Services", href: "/managed-it-services" },
@@ -12,6 +12,14 @@ const footerLinks = {
     { name: "CRM Automation", href: "/crm-automation" },
     { name: "Website Systems", href: "/website-systems" },
     { name: "Email Marketing", href: "/email-marketing-automation" },
+  ],
+  industries: [
+    { name: "Small Business", href: "/solutions/small-business" },
+    { name: "Construction", href: "/solutions/construction" },
+    { name: "Healthcare", href: "/solutions/healthcare" },
+    { name: "Legal", href: "/solutions/legal" },
+    { name: "Real Estate", href: "/solutions/real-estate" },
+    { name: "Hospitality", href: "/solutions/hospitality" },
   ],
   resources: [
     { name: "Blog", href: "/blog" },
@@ -27,11 +35,12 @@ const footerLinks = {
     { name: "Marketing Systems", href: "/assessments/marketing-systems-scorecard" },
   ],
   locations: [
-    { name: "Reno", href: "/locations/reno" },
-    { name: "Truckee", href: "/locations/truckee" },
-    { name: "Lake Tahoe", href: "/locations/lake-tahoe" },
-    { name: "Northern Nevada", href: "/locations/northern-nevada" },
-    { name: "Sparks", href: "/locations/sparks" },
+    { name: "Reno", href: "/reno-managed-it" },
+    { name: "Truckee", href: "/truckee-managed-it" },
+    { name: "Lake Tahoe", href: "/tahoe-managed-it" },
+    { name: "Northern Nevada", href: "/northern-nevada-ai-integration" },
+    { name: "California", href: "/california-small-business-it" },
+    { name: "Western US", href: "/western-us-digital-infrastructure" },
   ],
 };
 
@@ -45,15 +54,15 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+          <div className="col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
               <img src={ltolLogo} alt="Lake Tahoe Online" className="h-8 w-auto brightness-0 invert" />
               <span className="text-sm font-medium text-background/70">Lake Tahoe Online</span>
             </Link>
             <p className="text-background/70 mb-4 max-w-md text-sm">
-              Your trusted digital guardian. Local managed IT, web design, AI integration, and digital marketing for small businesses across the Western United States.
+              Digital Infrastructure for Small Businesses. AI, marketing, IT, and cybersecurity — connected into one powerful system.
             </p>
             <p className="text-background/50 text-xs mb-4">
               Serving Lake Tahoe • Reno • Northern Nevada • Western US
@@ -67,11 +76,21 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Solutions */}
           <div>
-            <h3 className="text-xs font-semibold text-background uppercase tracking-wider mb-3">Services</h3>
+            <h3 className="text-xs font-semibold text-background uppercase tracking-wider mb-3">Solutions</h3>
             <ul className="space-y-2">
-              {footerLinks.services.map((link, i) => (
+              {footerLinks.solutions.map((link, i) => (
+                <li key={i}><Link to={link.href} className="text-background/70 hover:text-background transition-colors text-xs">{link.name}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <h3 className="text-xs font-semibold text-background uppercase tracking-wider mb-3">Industries</h3>
+            <ul className="space-y-2">
+              {footerLinks.industries.map((link, i) => (
                 <li key={i}><Link to={link.href} className="text-background/70 hover:text-background transition-colors text-xs">{link.name}</Link></li>
               ))}
             </ul>

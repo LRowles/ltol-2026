@@ -27,6 +27,16 @@ const serviceRoutes = [
   "email-marketing-automation",
 ];
 
+// Programmatic SEO flat location routes
+const flatLocationRoutes = [
+  "reno-managed-it",
+  "truckee-managed-it",
+  "tahoe-managed-it",
+  "northern-nevada-ai-integration",
+  "california-small-business-it",
+  "western-us-digital-infrastructure",
+];
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -41,10 +51,18 @@ const App = () => (
             <Route key={slug} path={`/${slug}`} element={<ServicePage />} />
           ))}
 
+          {/* Flat programmatic SEO location routes */}
+          {flatLocationRoutes.map((slug) => (
+            <Route key={slug} path={`/${slug}`} element={<LocationPage />} />
+          ))}
+
           {/* Location pages */}
           <Route path="/locations/:slug" element={<LocationPage />} />
 
-          {/* Industry pages */}
+          {/* Industry pages - new /solutions/ routes */}
+          <Route path="/solutions/:slug" element={<IndustryPage />} />
+
+          {/* Industry pages - legacy /industries/ routes */}
           <Route path="/industries/:slug" element={<IndustryPage />} />
 
           {/* Blog */}

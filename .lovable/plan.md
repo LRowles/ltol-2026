@@ -1,81 +1,170 @@
 
 
-# Updated Site Architecture, Homepage, and Design System
+# LRJ Digital Media - Landing Page Plan
 
 ## Overview
+Create a modern, dark-themed landing page for LRJ Digital Media that showcases digital marketing, SEO, and AI integration services for small businesses. The page will feature smooth animations, professional design, and a strong call-to-action for free consultations.
 
-Restructure the navigation, homepage sections, design tokens, and routing to match the new specification. This builds on the existing content engine infrastructure.
+---
 
-## Design Token Changes (`src/index.css`)
+## Design System Updates
 
-Update CSS variables to match the new color system:
-- Primary: `#0A2540` (deep navy) → HSL ~210 73% 14%
-- Secondary: `#00A8E8` (bright cyan) → HSL ~196 100% 45%
-- Accent: `#7B61FF` (purple) → HSL ~252 100% 69%
-- Neutral dark: `#111111`, Neutral light: `#F5F7FA`
-- Keep gradient utilities but update to new primary→accent gradient
+### Color Palette
+- **Primary**: Electric blue/cyan accent (`hsl(200, 100%, 50%)`)
+- **Background**: Deep dark blue-gray (`hsl(222, 47%, 8%)`)
+- **Cards**: Slightly lighter dark (`hsl(222, 47%, 12%)`)
+- **Accent gradients**: Blue to purple gradients for visual interest
+- **Text**: White primary, muted gray for secondary
 
-## Navigation Restructure (`Navbar.tsx`)
+### Typography
+- Bold, modern headings
+- Clean, readable body text
+- Gradient text effects for emphasis
 
-New top nav structure:
-- **Home** (link)
-- **Solutions** (dropdown): AI Integration, Digital Marketing, IT & Network Solutions (grouped as 3 pillars)
-- **Industries** (dropdown): Small Business, Construction, Healthcare, Legal, Real Estate, Hospitality
-- **Resources** (dropdown): Blog + lead magnets + assessments
-- **About** (link to #about)
-- **Contact** (link to #contact)
-- CTA: "Book a Consultation"
+---
 
-## Homepage Restructure (`Hero.tsx`, new components, `Index.tsx`)
+## Page Sections
 
-Rewrite homepage sections in this order:
+### 1. Navigation Header
+- LRJ Digital Media logo/text
+- Navigation links: Services, About, Testimonials, Pricing, Contact
+- "Free Consultation" CTA button (highlighted)
+- Mobile-responsive hamburger menu
 
-1. **Hero** — New headline: "Enterprise-Level Technology for Small Businesses", subhead lists AI/Marketing/IT pillars, dual CTAs: "Start a Technology Assessment" + "Book a Consultation"
+### 2. Hero Section
+- Large headline: "Transform Your Business with AI-Powered Digital Marketing"
+- Subheadline emphasizing small business focus
+- Two CTAs: "Get Free Consultation" (primary) and "View Our Work" (secondary)
+- Animated gradient background or subtle particle effect
+- Statistics bar: clients served, ROI achieved, years experience
 
-2. **Problem Section** (new `src/components/landing/Problem.tsx`) — "Most small businesses operate with disconnected tools, cybersecurity risk, inconsistent marketing, lost leads, no AI adoption strategy"
+### 3. Services Section
+Three service cards with icons and descriptions:
 
-3. **Solution Section** (new `src/components/landing/Solution.tsx`) — "LTOL builds connected digital systems" showing integrated capabilities
+**Digital Marketing**
+- Social media management
+- Content marketing
+- PPC advertising
+- Brand strategy
 
-4. **Three Pillars** (replaces current `Services.tsx`) — AI Integration, Digital Marketing Systems, IT & Network Solutions — each with sub-features
+**SEO Services**
+- Technical SEO audits
+- Local SEO optimization
+- Keyword research
+- Link building
 
-5. **Industries We Serve** (new `src/components/landing/IndustriesServed.tsx`) — Grid of 6 industry cards linking to industry pages
+**AI Integrations**
+- AI chatbots for customer service
+- Automated marketing workflows
+- AI-powered analytics
+- Content generation tools
 
-6. **Why LTOL** (replaces current `Difference.tsx`) — Local team, human support, no outsourcing, enterprise-grade systems
+### 4. Why Choose Us / About Section
+- Brief company story
+- Key differentiators for small businesses
+- Feature highlights with icons:
+  - Affordable pricing
+  - Dedicated support
+  - Results-driven approach
+  - Cutting-edge technology
 
-7. **CTA Section** — "Book a Technology Strategy Session"
+### 5. Testimonials Section
+- Carousel or grid of client testimonials
+- Client name, business type, and photo placeholder
+- Star ratings
+- 3-4 sample testimonials (placeholder content)
 
-8. **Contact** — existing, keep as-is
+### 6. Pricing Section
+Three pricing tiers:
 
-## Routing Changes (`App.tsx`, data files)
+**Starter**
+- Best for new businesses
+- Basic SEO + Social media management
+- Monthly reporting
 
-New routes to add:
-- `/solutions/small-business`, `/solutions/construction`, `/solutions/healthcare`, `/solutions/legal`, `/solutions/real-estate`, `/solutions/hospitality` → industry pages (add `/solutions/:slug` route, update industry data slugs)
-- Geographic flat routes: `/reno-managed-it`, `/truckee-managed-it`, `/tahoe-managed-it`, `/northern-nevada-ai-integration`, `/california-small-business-it`, `/western-us-digital-infrastructure` → location pages (add these as defined routes mapping to LocationPage)
-- Keep existing `/locations/:slug` routes working too
+**Growth**
+- Most popular (highlighted)
+- Full SEO + Digital marketing
+- AI chatbot integration
+- Bi-weekly calls
 
-Update `src/data/locations.ts` to add new geographic entries (california, western-us).
-Update `src/data/industries.ts` to add slugs matching `/solutions/` paths (small-business, healthcare, legal).
+**Enterprise**
+- Custom solutions
+- Full AI integration suite
+- Dedicated account manager
+- Priority support
 
-## Footer Update (`Footer.tsx`)
+All with "Book Consultation" CTAs (actual prices left as "Contact Us" or placeholders)
 
-Add Industries column, update links to match new routing structure.
+### 7. Contact Section
+- Heading: "Ready to Grow Your Business?"
+- Contact form with fields: Name, Email, Business Name, Message
+- Alternative contact methods (email, phone placeholders)
+- "Book Free Consultation" submit button
 
-## Files to Create
-- `src/components/landing/Problem.tsx`
-- `src/components/landing/Solution.tsx`
-- `src/components/landing/IndustriesServed.tsx`
+### 8. Footer
+- LRJ Digital Media branding
+- Quick links
+- Social media icons (placeholder links)
+- Copyright notice
 
-## Files to Modify
-- `src/index.css` — new color tokens
-- `src/components/landing/Navbar.tsx` — new nav structure
-- `src/components/landing/Hero.tsx` — new headline, CTAs
-- `src/components/landing/Services.tsx` → rewrite as 3 Pillars
-- `src/components/landing/Difference.tsx` → rewrite as "Why LTOL"
-- `src/components/landing/Footer.tsx` — updated links
-- `src/pages/Index.tsx` — new section order
-- `src/App.tsx` — new routes
-- `src/data/locations.ts` — add geographic entries
-- `src/data/industries.ts` — add new industry entries with /solutions/ slugs
+---
 
-~13 files total.
+## Technical Implementation
+
+### New Files to Create
+```text
+src/
+  components/
+    landing/
+      Navbar.tsx
+      Hero.tsx
+      Services.tsx
+      About.tsx
+      Testimonials.tsx
+      Pricing.tsx
+      Contact.tsx
+      Footer.tsx
+  pages/
+    Index.tsx (updated)
+  index.css (updated with new colors)
+```
+
+### Animations & Interactions
+- Fade-in animations on scroll for sections
+- Hover effects on cards and buttons
+- Smooth scroll navigation
+- Gradient animations in hero section
+
+### Responsive Design
+- Mobile-first approach
+- Collapsible navigation on mobile
+- Stacked cards on smaller screens
+- Touch-friendly buttons and spacing
+
+---
+
+## Sample Content
+
+### Hero Tagline Options
+- "Transform Your Business with AI-Powered Digital Marketing"
+- "Smart Marketing Solutions for Growing Businesses"
+- "Where AI Meets Digital Marketing Excellence"
+
+### Service Descriptions
+Content will emphasize:
+- Small business affordability
+- Modern AI-powered tools
+- Measurable results and ROI
+- Personalized attention
+
+---
+
+## Deliverables Summary
+1. Updated color theme (dark mode by default)
+2. 8 component files for each section
+3. Fully responsive landing page
+4. Smooth animations and hover effects
+5. Contact form (frontend only)
+6. Professional, conversion-focused design
 
