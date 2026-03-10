@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { AlertTriangle, CheckCircle2, Lightbulb } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Lightbulb, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import PageHeader from "./PageHeader";
 import FAQSection from "./FAQSection";
 import CTABlock from "./CTABlock";
-import BrandImage from "@/components/ui/BrandImage";
 import { IndustryData } from "@/data/industries";
 import { services } from "@/data/services";
 import { useJsonLd, professionalServiceSchema, faqSchema } from "@/lib/structured-data";
@@ -58,70 +57,72 @@ const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
           { label: industry.industry },
         ]}
         badge={industry.industry}
+        backgroundImage={industryImageMap[industry.slug]}
       />
 
-      {/* Hero Image */}
-      {industryImageMap[industry.slug] && (
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-10">
-          <BrandImage
-            src={industryImageMap[industry.slug]}
-            alt={`${industry.industry} professionals in the Western US`}
-            aspectRatio="21/9"
-          />
-        </div>
-      )}
-
       {/* Challenges */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
+      <section className="py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-2">
             <AlertTriangle className="w-6 h-6 text-destructive" />
-            <h2 className="text-2xl font-bold text-foreground">Industry Challenges</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Industry Challenges</h2>
           </div>
-          <ul className="space-y-3">
+          <div className="gradient-line w-16 mb-8" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {industry.challenges.map((c, i) => (
-              <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                {c}
-              </li>
+              <div key={i} className="glass-card p-5">
+                <div className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center mb-3">
+                  <span className="text-sm font-bold text-destructive">{i + 1}</span>
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">{c}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
       {/* Solutions */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <Lightbulb className="w-6 h-6 text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">How LTOL Solves These Challenges</h2>
+      <section className="py-16 sm:py-20 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-2">
+            <Lightbulb className="w-6 h-6 text-secondary" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">How LTOL Solves These Challenges</h2>
           </div>
-          <ul className="space-y-3">
+          <div className="gradient-line w-16 mb-8" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {industry.solutions.map((s, i) => (
-              <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                {s}
-              </li>
+              <div key={i} className="flex items-start gap-4 glass-card p-5">
+                <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4 text-secondary" />
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">{s}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
       {/* Related Services */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground mb-8">Relevant Services for {industry.industry}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <section className="py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Relevant Services for {industry.industry}</h2>
+          <div className="gradient-line w-16 mb-8" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {industry.services.map((serviceName, i) => {
               const serviceData = services.find((s) => s.title === serviceName);
               return (
                 <Link
                   key={i}
                   to={serviceData ? `/${serviceData.slug}` : "#"}
-                  className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border hover:border-primary/30 hover:shadow-md transition-all group"
+                  className="glass-card-hover p-5 flex items-center justify-between group"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium group-hover:text-primary transition-colors">{serviceName}</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground font-medium group-hover:text-secondary transition-colors">{serviceName}</span>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-secondary transition-colors" />
                 </Link>
               );
             })}
