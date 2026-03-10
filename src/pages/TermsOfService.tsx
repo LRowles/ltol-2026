@@ -23,7 +23,7 @@ const TermsOfService = () => {
           <p>LTOL provides technology consulting, managed IT, digital marketing, AI integration, and related services to small and mid-sized businesses. Service specifics are defined in individual client agreements.</p>
 
           <h2 className="text-xl font-semibold text-foreground mt-8">3. Intellectual Property</h2>
-          <p>All content on this website — including text, graphics, logos, and software — is the property of Lake Tahoe Online and is protected by applicable intellectual property laws.</p>
+          <p>All content on this website — including text, graphics, logos, and software — is the property of LTOL and is protected by applicable intellectual property laws.</p>
 
           <h2 className="text-xl font-semibold text-foreground mt-8">4. User Conduct</h2>
           <p>You agree not to misuse our website or services, including attempting to gain unauthorized access, transmitting harmful code, or using content for unauthorized commercial purposes.</p>
