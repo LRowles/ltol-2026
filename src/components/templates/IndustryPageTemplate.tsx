@@ -22,6 +22,13 @@ const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
     window.scrollTo(0, 0);
   }, [industry]);
 
+  useJsonLd({
+    "@graph": [
+      professionalServiceSchema(industry.industry, industry.intro, industry.slug, industry.services),
+      faqSchema(industry.faqs),
+    ],
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

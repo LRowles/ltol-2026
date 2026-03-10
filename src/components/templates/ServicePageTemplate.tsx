@@ -24,6 +24,13 @@ const ServicePageTemplate = ({ service }: ServicePageTemplateProps) => {
     window.scrollTo(0, 0);
   }, [service]);
 
+  useJsonLd({
+    "@graph": [
+      serviceSchema(service.title, service.intro, service.slug),
+      faqSchema(service.faqs),
+    ],
+  });
+
   const relatedBlog = blogPosts.find((b) => b.slug === service.relatedBlog);
   const relatedResource = resources.find((r) => r.slug === service.relatedResource);
   const relatedAssessment = assessments.find((a) => a.slug === service.relatedAssessment);

@@ -22,6 +22,13 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
     window.scrollTo(0, 0);
   }, [location]);
 
+  useJsonLd({
+    "@graph": [
+      localBusinessSchema(location.city, location.region, location.intro, location.slug),
+      faqSchema(location.faqs),
+    ],
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

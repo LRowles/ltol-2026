@@ -37,6 +37,14 @@ const AssessmentTemplate = ({ assessment }: AssessmentTemplateProps) => {
     window.scrollTo(0, 0);
   }, [assessment]);
 
+  useJsonLd({
+    "@type": "WebPage",
+    name: assessment.title,
+    description: assessment.description,
+    url: `https://laketahoeonline.com/assessments/${assessment.slug}`,
+    provider: { "@type": "Organization", name: "Lake Tahoe Online" },
+  });
+
   const handleAnswer = (questionId: string, value: number) => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
   };

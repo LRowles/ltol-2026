@@ -30,6 +30,14 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
     window.scrollTo(0, 0);
   }, [resource]);
 
+  useJsonLd({
+    "@type": "WebPage",
+    name: resource.title,
+    description: resource.subheadline,
+    url: `https://laketahoeonline.com/resources/${resource.slug}`,
+    provider: { "@type": "Organization", name: "Lake Tahoe Online" },
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);

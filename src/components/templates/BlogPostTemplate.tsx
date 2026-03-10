@@ -21,6 +21,8 @@ const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
     window.scrollTo(0, 0);
   }, [post]);
 
+  useJsonLd(articleSchema(post.title, post.metaDescription, post.slug, post.date, post.category));
+
   const relatedService = services.find((s) => s.slug === post.relatedService);
   const relatedResource = resources.find((r) => r.slug === post.relatedResource);
 
