@@ -1,170 +1,53 @@
 
 
-# LRJ Digital Media - Landing Page Plan
+# Add Branded Photography Across the Site
 
-## Overview
-Create a modern, dark-themed landing page for LRJ Digital Media that showcases digital marketing, SEO, and AI integration services for small businesses. The page will feature smooth animations, professional design, and a strong call-to-action for free consultations.
+## Approach
 
----
+Use high-quality Unsplash stock photos depicting Western US small business scenes (mountain towns, storefronts, local professionals, tech teams), applied with a uniform CSS treatment (subtle brand-colored overlay/duotone filter) for visual consistency across all sections.
 
-## Design System Updates
+## Where Photos Will Be Placed
 
-### Color Palette
-- **Primary**: Electric blue/cyan accent (`hsl(200, 100%, 50%)`)
-- **Background**: Deep dark blue-gray (`hsl(222, 47%, 8%)`)
-- **Cards**: Slightly lighter dark (`hsl(222, 47%, 12%)`)
-- **Accent gradients**: Blue to purple gradients for visual interest
-- **Text**: White primary, muted gray for secondary
+| Section | Image Subject | Treatment |
+|---------|--------------|-----------|
+| **Hero** | Wide landscape of Western mountain town with small businesses | Full-width background with gradient overlay |
+| **About** | Local business owner shaking hands / in-person meeting | Side-by-side with text content |
+| **Team** | Generate AI headshot-style portraits for each team member | Rounded, consistent framing replacing initials |
+| **Services** | One photo per pillar (AI/tech, marketing dashboard, network rack) | Card header images |
+| **Industries** | Small photos per industry (construction site, medical office, hotel, etc.) | Behind icon overlay |
+| **Difference** | Western US landscape (Tahoe/Sierra region) | Section background |
+| **Contact** | Friendly office/support scene | Left column background |
 
-### Typography
-- Bold, modern headings
-- Clean, readable body text
-- Gradient text effects for emphasis
+## Uniform Visual Treatment
 
----
+A shared CSS class (`brand-photo`) will apply:
+- Slight navy-to-cyan gradient overlay for brand cohesion
+- Consistent border-radius and aspect ratios
+- `object-cover` sizing for uniform framing
+- Optional subtle desaturation + brand tint for a treated, editorial look
 
-## Page Sections
+## Team Headshots
 
-### 1. Navigation Header
-- LRJ Digital Media logo/text
-- Navigation links: Services, About, Testimonials, Pricing, Contact
-- "Free Consultation" CTA button (highlighted)
-- Mobile-responsive hamburger menu
+Use the AI image generation API (via an edge function) to create professional, stylized portrait illustrations for each team member. These get stored in a storage bucket and referenced by URL. This avoids stock photo inauthenticity for the team specifically.
 
-### 2. Hero Section
-- Large headline: "Transform Your Business with AI-Powered Digital Marketing"
-- Subheadline emphasizing small business focus
-- Two CTAs: "Get Free Consultation" (primary) and "View Our Work" (secondary)
-- Animated gradient background or subtle particle effect
-- Statistics bar: clients served, ROI achieved, years experience
+## Files to Create/Edit
 
-### 3. Services Section
-Three service cards with icons and descriptions:
+- **Create** `src/components/ui/BrandImage.tsx` — reusable image component with overlay treatment
+- **Create** edge function `supabase/functions/generate-team-photos/index.ts` — generates and stores AI portraits
+- **Create** storage bucket `team-photos` via migration
+- **Edit** `Hero.tsx` — add background photo
+- **Edit** `About.tsx` — add side photo
+- **Edit** `Services.tsx` — add card header images
+- **Edit** `IndustriesServed.tsx` — add industry thumbnails
+- **Edit** `Difference.tsx` — add background photo
+- **Edit** `Contact.tsx` — add photo element
+- **Edit** `Team.tsx` — replace initials with generated portraits
+- **Edit** `src/index.css` — add `brand-photo` utility class
 
-**Digital Marketing**
-- Social media management
-- Content marketing
-- PPC advertising
-- Brand strategy
+## Image Sources
 
-**SEO Services**
-- Technical SEO audits
-- Local SEO optimization
-- Keyword research
-- Link building
+- **Sections**: Unsplash direct URLs (free, no API key, immediate)
+- **Team portraits**: AI-generated via Lovable AI (`google/gemini-3.1-flash-image-preview`)
 
-**AI Integrations**
-- AI chatbots for customer service
-- Automated marketing workflows
-- AI-powered analytics
-- Content generation tools
-
-### 4. Why Choose Us / About Section
-- Brief company story
-- Key differentiators for small businesses
-- Feature highlights with icons:
-  - Affordable pricing
-  - Dedicated support
-  - Results-driven approach
-  - Cutting-edge technology
-
-### 5. Testimonials Section
-- Carousel or grid of client testimonials
-- Client name, business type, and photo placeholder
-- Star ratings
-- 3-4 sample testimonials (placeholder content)
-
-### 6. Pricing Section
-Three pricing tiers:
-
-**Starter**
-- Best for new businesses
-- Basic SEO + Social media management
-- Monthly reporting
-
-**Growth**
-- Most popular (highlighted)
-- Full SEO + Digital marketing
-- AI chatbot integration
-- Bi-weekly calls
-
-**Enterprise**
-- Custom solutions
-- Full AI integration suite
-- Dedicated account manager
-- Priority support
-
-All with "Book Consultation" CTAs (actual prices left as "Contact Us" or placeholders)
-
-### 7. Contact Section
-- Heading: "Ready to Grow Your Business?"
-- Contact form with fields: Name, Email, Business Name, Message
-- Alternative contact methods (email, phone placeholders)
-- "Book Free Consultation" submit button
-
-### 8. Footer
-- LRJ Digital Media branding
-- Quick links
-- Social media icons (placeholder links)
-- Copyright notice
-
----
-
-## Technical Implementation
-
-### New Files to Create
-```text
-src/
-  components/
-    landing/
-      Navbar.tsx
-      Hero.tsx
-      Services.tsx
-      About.tsx
-      Testimonials.tsx
-      Pricing.tsx
-      Contact.tsx
-      Footer.tsx
-  pages/
-    Index.tsx (updated)
-  index.css (updated with new colors)
-```
-
-### Animations & Interactions
-- Fade-in animations on scroll for sections
-- Hover effects on cards and buttons
-- Smooth scroll navigation
-- Gradient animations in hero section
-
-### Responsive Design
-- Mobile-first approach
-- Collapsible navigation on mobile
-- Stacked cards on smaller screens
-- Touch-friendly buttons and spacing
-
----
-
-## Sample Content
-
-### Hero Tagline Options
-- "Transform Your Business with AI-Powered Digital Marketing"
-- "Smart Marketing Solutions for Growing Businesses"
-- "Where AI Meets Digital Marketing Excellence"
-
-### Service Descriptions
-Content will emphasize:
-- Small business affordability
-- Modern AI-powered tools
-- Measurable results and ROI
-- Personalized attention
-
----
-
-## Deliverables Summary
-1. Updated color theme (dark mode by default)
-2. 8 component files for each section
-3. Fully responsive landing page
-4. Smooth animations and hover effects
-5. Contact form (frontend only)
-6. Professional, conversion-focused design
+All photos will evoke: mountain towns, local storefronts, professional settings, Nevada/California/Idaho/Montana/Arizona/Washington landscapes — warm, approachable, and distinctly Western US.
 
