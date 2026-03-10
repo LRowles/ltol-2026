@@ -7,6 +7,7 @@ import InternalLinks from "./InternalLinks";
 import { BlogPostData } from "@/data/blog-posts";
 import { services } from "@/data/services";
 import { resources } from "@/data/resources";
+import { useJsonLd, articleSchema } from "@/lib/structured-data";
 
 interface BlogPostTemplateProps {
   post: BlogPostData;
