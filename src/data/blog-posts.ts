@@ -402,7 +402,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "how-marketing-automation-increases-revenue",
     title: "How Marketing Automation Increases Revenue for Small Businesses",
     metaTitle: "How Marketing Automation Increases Revenue | LTOL",
-    metaDescription: "Learn how marketing automation helps small businesses generate more leads, improve follow-up, and increase revenue. Practical guide from Lake Tahoe Online.",
+    metaDescription: "Learn how marketing automation helps small businesses generate more leads, improve follow-up, and increase revenue. Practical guide from LTOL.",
     category: "Digital Marketing",
     date: "2026-02-01",
     readTime: "6 min read",
