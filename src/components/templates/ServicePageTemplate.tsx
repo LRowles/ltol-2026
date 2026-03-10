@@ -10,6 +10,7 @@ import { ServiceData } from "@/data/services";
 import { blogPosts } from "@/data/blog-posts";
 import { resources } from "@/data/resources";
 import { assessments } from "@/data/assessments";
+import { useJsonLd, serviceSchema, faqSchema } from "@/lib/structured-data";
 
 interface ServicePageTemplateProps {
   service: ServiceData;
@@ -22,6 +23,13 @@ const ServicePageTemplate = ({ service }: ServicePageTemplateProps) => {
     if (meta) meta.setAttribute("content", service.metaDescription);
     window.scrollTo(0, 0);
   }, [service]);
+
+  useJsonLd({
+    "@graph": [
+      serviceSchema(service.title, service.intro, service.slug),
+      faqSchema(service.faqs),
+    ],
+  });
 
   const relatedBlog = blogPosts.find((b) => b.slug === service.relatedBlog);
   const relatedResource = resources.find((r) => r.slug === service.relatedResource);

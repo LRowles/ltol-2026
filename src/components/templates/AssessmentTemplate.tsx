@@ -14,6 +14,7 @@ import InternalLinks from "./InternalLinks";
 import { AssessmentData } from "@/data/assessments";
 import { services } from "@/data/services";
 import { resources } from "@/data/resources";
+import { useJsonLd } from "@/lib/structured-data";
 
 interface AssessmentTemplateProps {
   assessment: AssessmentData;
@@ -35,6 +36,14 @@ const AssessmentTemplate = ({ assessment }: AssessmentTemplateProps) => {
     if (meta) meta.setAttribute("content", assessment.metaDescription);
     window.scrollTo(0, 0);
   }, [assessment]);
+
+  useJsonLd({
+    "@type": "WebPage",
+    name: assessment.title,
+    description: assessment.description,
+    url: `https://laketahoeonline.com/assessments/${assessment.slug}`,
+    provider: { "@type": "Organization", name: "Lake Tahoe Online" },
+  });
 
   const handleAnswer = (questionId: string, value: number) => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));

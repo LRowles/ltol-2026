@@ -7,6 +7,7 @@ import InternalLinks from "./InternalLinks";
 import { BlogPostData } from "@/data/blog-posts";
 import { services } from "@/data/services";
 import { resources } from "@/data/resources";
+import { useJsonLd, articleSchema } from "@/lib/structured-data";
 
 interface BlogPostTemplateProps {
   post: BlogPostData;
@@ -19,6 +20,8 @@ const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
     if (meta) meta.setAttribute("content", post.metaDescription);
     window.scrollTo(0, 0);
   }, [post]);
+
+  useJsonLd(articleSchema(post.title, post.metaDescription, post.slug, post.date, post.category));
 
   const relatedService = services.find((s) => s.slug === post.relatedService);
   const relatedResource = resources.find((r) => r.slug === post.relatedResource);

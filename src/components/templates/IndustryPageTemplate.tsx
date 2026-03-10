@@ -8,6 +8,7 @@ import FAQSection from "./FAQSection";
 import CTABlock from "./CTABlock";
 import { IndustryData } from "@/data/industries";
 import { services } from "@/data/services";
+import { useJsonLd, professionalServiceSchema, faqSchema } from "@/lib/structured-data";
 
 interface IndustryPageTemplateProps {
   industry: IndustryData;
@@ -20,6 +21,13 @@ const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
     if (meta) meta.setAttribute("content", industry.metaDescription);
     window.scrollTo(0, 0);
   }, [industry]);
+
+  useJsonLd({
+    "@graph": [
+      professionalServiceSchema(industry.industry, industry.intro, industry.slug, industry.services),
+      faqSchema(industry.faqs),
+    ],
+  });
 
   return (
     <div className="min-h-screen bg-background">

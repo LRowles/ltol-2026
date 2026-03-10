@@ -12,6 +12,7 @@ import InternalLinks from "./InternalLinks";
 import { ResourceData } from "@/data/resources";
 import { services } from "@/data/services";
 import { assessments } from "@/data/assessments";
+import { useJsonLd } from "@/lib/structured-data";
 
 interface ResourcePageTemplateProps {
   resource: ResourceData;
@@ -28,6 +29,14 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
     if (meta) meta.setAttribute("content", resource.metaDescription);
     window.scrollTo(0, 0);
   }, [resource]);
+
+  useJsonLd({
+    "@type": "WebPage",
+    name: resource.title,
+    description: resource.subheadline,
+    url: `https://laketahoeonline.com/resources/${resource.slug}`,
+    provider: { "@type": "Organization", name: "Lake Tahoe Online" },
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

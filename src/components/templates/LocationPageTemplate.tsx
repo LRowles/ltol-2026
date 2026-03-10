@@ -8,6 +8,7 @@ import FAQSection from "./FAQSection";
 import CTABlock from "./CTABlock";
 import { LocationData } from "@/data/locations";
 import { services } from "@/data/services";
+import { useJsonLd, localBusinessSchema, faqSchema } from "@/lib/structured-data";
 
 interface LocationPageTemplateProps {
   location: LocationData;
@@ -20,6 +21,13 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
     if (meta) meta.setAttribute("content", location.metaDescription);
     window.scrollTo(0, 0);
   }, [location]);
+
+  useJsonLd({
+    "@graph": [
+      localBusinessSchema(location.city, location.region, location.intro, location.slug),
+      faqSchema(location.faqs),
+    ],
+  });
 
   return (
     <div className="min-h-screen bg-background">
