@@ -9,6 +9,8 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import PageHeader from "./PageHeader";
 import InternalLinks from "./InternalLinks";
+import BrandImage from "@/components/ui/BrandImage";
+import resourceImg from "@/assets/photos/resource-guide.jpg";
 import { ResourceData } from "@/data/resources";
 import { services } from "@/data/services";
 import { assessments } from "@/data/assessments";
@@ -72,6 +74,15 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
         ]}
         badge="Free Resource"
       />
+
+      {/* Hero Image */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-10">
+        <BrandImage
+          src={resourceImg}
+          alt="Professional workspace with digital resources and guides"
+          aspectRatio="21/9"
+        />
+      </div>
 
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

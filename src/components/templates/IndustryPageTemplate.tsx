@@ -6,9 +6,26 @@ import Footer from "@/components/landing/Footer";
 import PageHeader from "./PageHeader";
 import FAQSection from "./FAQSection";
 import CTABlock from "./CTABlock";
+import BrandImage from "@/components/ui/BrandImage";
 import { IndustryData } from "@/data/industries";
 import { services } from "@/data/services";
 import { useJsonLd, professionalServiceSchema, faqSchema } from "@/lib/structured-data";
+
+import industryRetail from "@/assets/photos/industry-retail.jpg";
+import industryHealthcare from "@/assets/photos/industry-healthcare.jpg";
+import industryHospitality from "@/assets/photos/industry-hospitality.jpg";
+import industryConstruction from "@/assets/photos/industry-construction.jpg";
+import industryRealestate from "@/assets/photos/industry-realestate.jpg";
+import industryLegal from "@/assets/photos/industry-legal.jpg";
+
+const industryImageMap: Record<string, string> = {
+  "small-business": industryRetail,
+  healthcare: industryHealthcare,
+  hospitality: industryHospitality,
+  construction: industryConstruction,
+  "real-estate": industryRealestate,
+  legal: industryLegal,
+};
 
 interface IndustryPageTemplateProps {
   industry: IndustryData;
@@ -42,6 +59,17 @@ const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
         ]}
         badge={industry.industry}
       />
+
+      {/* Hero Image */}
+      {industryImageMap[industry.slug] && (
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-10">
+          <BrandImage
+            src={industryImageMap[industry.slug]}
+            alt={`${industry.industry} professionals in the Western US`}
+            aspectRatio="21/9"
+          />
+        </div>
+      )}
 
       {/* Challenges */}
       <section className="py-16">

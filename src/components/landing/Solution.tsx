@@ -1,4 +1,5 @@
 import { Bot, BarChart3, Shield, Globe, Mail, Database, CheckCircle2 } from "lucide-react";
+import solutionImg from "@/assets/photos/solution-workspace.jpg";
 
 const capabilities = [
   { icon: Bot, label: "AI Tools" },
@@ -11,8 +12,15 @@ const capabilities = [
 
 const Solution = () => {
   return (
-    <section className="section-padding">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative section-padding overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src={solutionImg} alt="" className="brand-photo" aria-hidden="true" />
+        <div className="brand-photo-overlay" />
+        <div className="absolute inset-0 bg-background/85" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
             <CheckCircle2 className="w-4 h-4 text-secondary" />
