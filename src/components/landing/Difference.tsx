@@ -1,39 +1,38 @@
-import { Phone, MapPin, Users, Layers } from "lucide-react";
+import { MapPin, Users, Phone, Layers } from "lucide-react";
 
 const differentiators = [
   {
-    icon: Phone,
-    title: "We Answer the Phone",
-    description: "Call us and a real person picks up. No phone trees, no ticket queues, no waiting days for a callback.",
+    icon: MapPin,
+    title: "Local Team",
+    description: "We're based in the Lake Tahoe region. We show up at your business, not from a call center halfway around the world.",
   },
   {
-    icon: MapPin,
-    title: "We Visit Your Business",
-    description: "We come to you. Onsite support, installations, and consultations — because your business deserves a partner who shows up.",
+    icon: Phone,
+    title: "Human Support",
+    description: "Call us and a real person answers. No ticket queues, no chatbot runaround, no waiting days for a callback.",
   },
   {
     icon: Users,
-    title: "We Never Outsource Support",
-    description: "Our team handles everything in-house. You'll work with people who know your systems and your business.",
+    title: "No Outsourcing",
+    description: "Our team handles everything in-house. You work with people who know your systems, your goals, and your business.",
   },
   {
     icon: Layers,
-    title: "Complete Digital Solutions",
-    description: "From network infrastructure to web design to AI — one partner for your entire digital ecosystem. No juggling vendors.",
+    title: "Enterprise-Grade Systems",
+    description: "The same technology platforms used by large companies — configured and managed at small business scale and pricing.",
   },
 ];
 
 const Difference = () => {
   return (
-    <section id="difference" className="section-padding gradient-bg text-primary-foreground relative">
+    <section id="difference" className="section-padding gradient-bg text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            The LTOL Difference
+            Why LTOL
           </h2>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            In a world of outsourced help desks and automated responses, LTOL stands apart. 
-            We're a boutique consultancy that believes technology should come with a human touch.
+            LTOL is not just a vendor. We are a long-term technology partner for small businesses that need secure systems, smarter operations, and a connected path to growth.
           </p>
         </div>
 
