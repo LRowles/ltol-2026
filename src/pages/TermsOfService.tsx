@@ -17,7 +17,7 @@ const TermsOfService = () => {
           <p><strong>Last Updated:</strong> March 10, 2026</p>
 
           <h2 className="text-xl font-semibold text-foreground mt-8">1. Acceptance of Terms</h2>
-          <p>By accessing or using the Lake Tahoe Online (LTOL) website, you agree to be bound by these Terms of Service and our Privacy Policy.</p>
+          <p>By accessing or using the LTOL website, you agree to be bound by these Terms of Service and our Privacy Policy.</p>
 
           <h2 className="text-xl font-semibold text-foreground mt-8">2. Services</h2>
           <p>LTOL provides technology consulting, managed IT, digital marketing, AI integration, and related services to small and mid-sized businesses. Service specifics are defined in individual client agreements.</p>
