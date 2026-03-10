@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import { CheckCircle2, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import PageHeader from "./PageHeader";
 import InternalLinks from "./InternalLinks";
-import BrandImage from "@/components/ui/BrandImage";
 import resourceImg from "@/assets/photos/resource-guide.jpg";
 import { ResourceData } from "@/data/resources";
 import { services } from "@/data/services";
@@ -73,57 +71,56 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
           { label: resource.title },
         ]}
         badge="Free Resource"
+        backgroundImage={resourceImg}
       />
 
-      {/* Hero Image */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-10">
-        <BrandImage
-          src={resourceImg}
-          alt="Professional workspace with digital resources and guides"
-          aspectRatio="21/9"
-        />
-      </div>
-
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <p className="text-muted-foreground leading-relaxed mb-8">{resource.description}</p>
-              <h3 className="text-xl font-bold text-foreground mb-4">What's Included</h3>
-              <ul className="space-y-3">
+      <section className="py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            {/* What's Included */}
+            <div className="lg:col-span-3">
+              <p className="text-muted-foreground leading-relaxed mb-8 text-lg">{resource.description}</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">What's Included</h3>
+              <div className="gradient-line w-12 mb-6" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {resource.includes.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                    {item}
-                  </li>
+                  <div key={i} className="glass-card p-4 flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                    </div>
+                    <span className="text-muted-foreground text-sm">{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
-            <Card className="bg-card border-border h-fit">
-              <CardContent className="p-8">
-                {submitted ? (
-                  <div className="text-center py-8">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <FileText className="w-8 h-8 text-primary" />
+            {/* Download Form */}
+            <div className="lg:col-span-2">
+              <div className="gradient-border-card sticky top-28">
+                <div className="p-8">
+                  {submitted ? (
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                        <FileText className="w-8 h-8 text-secondary" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground mb-2">You're In!</h3>
+                      <p className="text-muted-foreground text-sm">Check your email for the download link.</p>
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">You're In!</h3>
-                    <p className="text-muted-foreground">Check your email for the download link. We'll also send you helpful related content.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <h3 className="text-xl font-bold text-foreground mb-2">{resource.ctaText}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">Enter your details to get instant access.</p>
-                    <Input placeholder="Your Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="bg-muted border-border" />
-                    <Input placeholder="Email Address" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="bg-muted border-border" />
-                    <Input placeholder="Business Name (optional)" value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className="bg-muted border-border" />
-                    <Button type="submit" disabled={submitting} className="w-full gradient-bg text-primary-foreground font-semibold py-6">
-                      {submitting ? "Submitting..." : resource.ctaText}
-                    </Button>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <h3 className="text-xl font-bold text-foreground mb-1">{resource.ctaText}</h3>
+                      <p className="text-sm text-muted-foreground mb-4">Enter your details to get instant access.</p>
+                      <Input placeholder="Your Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="bg-muted/50 border-border" />
+                      <Input placeholder="Email Address" type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="bg-muted/50 border-border" />
+                      <Input placeholder="Business Name (optional)" value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className="bg-muted/50 border-border" />
+                      <Button type="submit" disabled={submitting} className="w-full gradient-bg text-primary-foreground font-semibold py-6">
+                        {submitting ? "Submitting..." : resource.ctaText}
+                      </Button>
+                    </form>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
