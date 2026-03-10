@@ -362,7 +362,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "endpoint-security-explained",
     title: "Endpoint Security Explained for Small Business Owners",
     metaTitle: "Endpoint Security for Small Businesses | LTOL",
-    metaDescription: "What is endpoint security and why does your small business need it? Plain-language guide from Lake Tahoe Online.",
+    metaDescription: "What is endpoint security and why does your small business need it? Plain-language guide from LTOL.",
     category: "Cybersecurity",
     date: "2025-12-28",
     readTime: "6 min read",
