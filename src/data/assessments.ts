@@ -80,7 +80,7 @@ export const assessments: AssessmentData[] = [
     slug: "cybersecurity-risk-check",
     title: "Cybersecurity Risk Check",
     metaTitle: "Cybersecurity Risk Assessment for Small Businesses | LTOL",
-    metaDescription: "Check your business's cybersecurity risk level. Identify vulnerabilities and get practical recommendations. Free assessment from Lake Tahoe Online.",
+    metaDescription: "Check your business's cybersecurity risk level. Identify vulnerabilities and get practical recommendations. Free assessment from LTOL.",
     headline: "How Secure Is Your Business?",
     description: "Answer these questions to identify your most critical cybersecurity vulnerabilities. Get a risk score and actionable recommendations to improve your security posture.",
     questions: [
