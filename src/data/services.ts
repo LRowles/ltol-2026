@@ -343,7 +343,7 @@ export const services: ServiceData[] = [
     slug: "email-marketing-automation",
     title: "Email Marketing Automation",
     metaTitle: "Email Marketing Automation for Small Businesses | LTOL",
-    metaDescription: "Automated email marketing that nurtures leads and drives revenue. Setup, strategy, and optimization from Lake Tahoe Online.",
+    metaDescription: "Automated email marketing that nurtures leads and drives revenue. Setup, strategy, and optimization from LTOL.",
     headline: "Email Marketing Automation for Small Businesses",
     intro: "Email remains the highest-ROI marketing channel for small businesses. LTOL builds automated email systems that nurture leads, re-engage customers, and drive repeat business — all while you focus on running your company.",
     problems: [
