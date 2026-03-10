@@ -77,6 +77,10 @@ const App = () => (
           {/* Assessments */}
           <Route path="/assessments/:slug" element={<AssessmentPage />} />
 
+          {/* Legal */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
