@@ -862,7 +862,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "it-support-hospitality",
     title: "IT Support for Hospitality Businesses",
     metaTitle: "IT Support for Hotels & Restaurants | LTOL",
-    metaDescription: "Reliable IT support for hospitality businesses. Guest WiFi, POS systems, booking integration, and cybersecurity from Lake Tahoe Online.",
+    metaDescription: "Reliable IT support for hospitality businesses. Guest WiFi, POS systems, booking integration, and cybersecurity from LTOL.",
     category: "Industry Solutions",
     date: "2026-02-12",
     readTime: "6 min read",
