@@ -90,6 +90,7 @@ const Navbar = () => {
             <Dropdown id="solutions" label="Solutions" links={solutionsLinks} />
             <Dropdown id="industries" label="Industries" links={industryLinks} />
             <Dropdown id="resources" label="Resources" links={resourceLinks} />
+            <Link to="/team" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Team</Link>
             <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">About</button>
             <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Contact</button>
             <Button onClick={() => scrollToSection("#contact")} className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold">
