@@ -114,7 +114,7 @@ export const locations: LocationData[] = [
     city: "Truckee",
     region: "Northern California",
     metaTitle: "Managed IT Services in Truckee for Small Businesses | LTOL",
-    metaDescription: "Reliable managed IT services for Truckee small businesses. On-site support, cybersecurity, and network solutions from Lake Tahoe Online.",
+    metaDescription: "Reliable managed IT services for Truckee small businesses. On-site support, cybersecurity, and network solutions from LTOL.",
     headline: "Managed IT Services in Truckee for Small Businesses",
     intro: "Truckee businesses need technology that works in every season. LTOL provides managed IT services with local, on-site support — from device management to cybersecurity to network infrastructure.",
     localContext: "Mountain communities face unique connectivity and infrastructure challenges. LTOL has deep experience supporting businesses in the Truckee-Tahoe corridor with reliable, responsive IT services.",
