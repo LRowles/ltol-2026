@@ -55,7 +55,7 @@ export const assessments: AssessmentData[] = [
     slug: "technology-stack",
     title: "Technology Stack Assessment",
     metaTitle: "Technology Stack Assessment for Small Businesses | LTOL",
-    metaDescription: "Evaluate your business technology stack. Identify gaps, redundancies, and opportunities for improvement. Free assessment from Lake Tahoe Online.",
+    metaDescription: "Evaluate your business technology stack. Identify gaps, redundancies, and opportunities for improvement. Free assessment from LTOL.",
     headline: "How Strong Is Your Technology Stack?",
     description: "Evaluate the key components of your business technology infrastructure. Get a clear picture of your strengths, gaps, and priorities for improvement.",
     questions: [
@@ -80,7 +80,7 @@ export const assessments: AssessmentData[] = [
     slug: "cybersecurity-risk-check",
     title: "Cybersecurity Risk Check",
     metaTitle: "Cybersecurity Risk Assessment for Small Businesses | LTOL",
-    metaDescription: "Check your business's cybersecurity risk level. Identify vulnerabilities and get practical recommendations. Free assessment from Lake Tahoe Online.",
+    metaDescription: "Check your business's cybersecurity risk level. Identify vulnerabilities and get practical recommendations. Free assessment from LTOL.",
     headline: "How Secure Is Your Business?",
     description: "Answer these questions to identify your most critical cybersecurity vulnerabilities. Get a risk score and actionable recommendations to improve your security posture.",
     questions: [
@@ -104,7 +104,7 @@ export const assessments: AssessmentData[] = [
     slug: "marketing-systems-scorecard",
     title: "Marketing Systems Scorecard",
     metaTitle: "Marketing Systems Scorecard for Small Businesses | LTOL",
-    metaDescription: "Score your marketing systems. Evaluate lead capture, CRM, email automation, and analytics. Free scorecard from Lake Tahoe Online.",
+    metaDescription: "Score your marketing systems. Evaluate lead capture, CRM, email automation, and analytics. Free scorecard from LTOL.",
     headline: "How Effective Are Your Marketing Systems?",
     description: "Evaluate the key components of your marketing infrastructure. Identify what's working, what's missing, and where automation could have the biggest impact.",
     questions: [

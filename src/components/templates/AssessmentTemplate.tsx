@@ -41,8 +41,8 @@ const AssessmentTemplate = ({ assessment }: AssessmentTemplateProps) => {
     "@type": "WebPage",
     name: assessment.title,
     description: assessment.description,
-    url: `https://laketahoeonline.com/assessments/${assessment.slug}`,
-    provider: { "@type": "Organization", name: "Lake Tahoe Online" },
+    url: `https://ltol.com/assessments/${assessment.slug}`,
+    provider: { "@type": "Organization", name: "LTOL" },
   });
 
   const handleAnswer = (questionId: string, value: number) => {

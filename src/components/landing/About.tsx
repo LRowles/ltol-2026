@@ -33,7 +33,7 @@ const About = () => {
               Why Businesses Trust <span className="gradient-text">LTOL</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Lake Tahoe Online is a boutique technology consultancy built on the Guardian principle: 
+              LTOL is a boutique technology consultancy built on the Guardian principle: 
               we protect and strengthen what others have built. Your business deserves reliable 
               systems and real support — not a faceless help desk.
             </p>

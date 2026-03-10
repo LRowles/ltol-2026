@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-const BASE_URL = "https://laketahoeonline.com";
+const BASE_URL = "https://ltol.com";
 
 const localBusinessBase = {
   "@type": "LocalBusiness",
-  name: "Lake Tahoe Online",
+  name: "LTOL",
   alternateName: "LTOL",
   url: BASE_URL,
   areaServed: {
@@ -52,8 +52,8 @@ export function articleSchema(title: string, description: string, slug: string, 
     description,
     url: `${BASE_URL}/blog/${slug}`,
     datePublished: date,
-    author: { "@type": "Organization", name: "Lake Tahoe Online" },
-    publisher: { "@type": "Organization", name: "Lake Tahoe Online", url: BASE_URL },
+    author: { "@type": "Organization", name: "LTOL" },
+    publisher: { "@type": "Organization", name: "LTOL", url: BASE_URL },
     articleSection: category,
   };
 }
@@ -72,7 +72,7 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
 export function localBusinessSchema(city: string, region: string, description: string, slug: string) {
   return {
     "@type": "LocalBusiness",
-    name: "Lake Tahoe Online",
+    name: "LTOL",
     alternateName: "LTOL",
     url: `${BASE_URL}/locations/${slug}`,
     description,

@@ -20,7 +20,7 @@ export const services: ServiceData[] = [
   {
     slug: "ai-integration",
     title: "AI Integration",
-    metaTitle: "AI Integration for Small Businesses | Lake Tahoe Online",
+    metaTitle: "AI Integration for Small Businesses | LTOL",
     metaDescription: "Practical AI integration services for small businesses. Automate workflows, improve customer service, and boost productivity with LTOL's expert guidance.",
     headline: "AI Integration for Small Businesses",
     intro: "AI isn't just for enterprise companies. LTOL helps small businesses adopt practical AI tools that automate repetitive tasks, improve customer interactions, and free up your team to focus on growth. We make AI accessible, strategic, and measurable.",
@@ -67,7 +67,7 @@ export const services: ServiceData[] = [
     slug: "digital-marketing",
     title: "Digital Marketing Systems",
     metaTitle: "Digital Marketing Systems for Small Businesses | LTOL",
-    metaDescription: "Build a marketing system that generates leads automatically. SEO, CRM automation, email marketing, and conversion-focused websites from Lake Tahoe Online.",
+    metaDescription: "Build a marketing system that generates leads automatically. SEO, CRM automation, email marketing, and conversion-focused websites from LTOL.",
     headline: "Digital Marketing Systems for Small Businesses",
     intro: "Your marketing shouldn't depend on remembering to post or manually following up with every lead. LTOL builds integrated marketing systems — websites, SEO, CRM, email automation — that work together to attract, nurture, and convert customers automatically.",
     problems: [
@@ -112,7 +112,7 @@ export const services: ServiceData[] = [
   {
     slug: "managed-it-services",
     title: "Managed IT Services",
-    metaTitle: "Managed IT Services for Small Businesses | Lake Tahoe Online",
+    metaTitle: "Managed IT Services for Small Businesses | LTOL",
     metaDescription: "Reliable managed IT services for small businesses in Reno, Lake Tahoe, and Northern Nevada. 24/7 monitoring, help desk, and proactive maintenance from LTOL.",
     headline: "Managed IT Services for Small Businesses",
     intro: "Stop waiting for things to break. LTOL provides proactive managed IT services that keep your systems running, your data protected, and your team productive. We're your full IT department — without the overhead.",
@@ -159,7 +159,7 @@ export const services: ServiceData[] = [
     slug: "cybersecurity",
     title: "Cybersecurity",
     metaTitle: "Cybersecurity Services for Small Businesses | LTOL",
-    metaDescription: "Protect your small business from cyber threats. Security assessments, endpoint protection, email security, and compliance from Lake Tahoe Online.",
+    metaDescription: "Protect your small business from cyber threats. Security assessments, endpoint protection, email security, and compliance from LTOL.",
     headline: "Cybersecurity Services for Small Businesses",
     intro: "Small businesses are the #1 target for cybercrime. LTOL provides layered security solutions that protect your data, your customers, and your reputation — without the complexity of enterprise security programs.",
     problems: [
@@ -205,7 +205,7 @@ export const services: ServiceData[] = [
     slug: "network-solutions",
     title: "Network Solutions",
     metaTitle: "WiFi & Network Installation for Small Businesses | LTOL",
-    metaDescription: "Professional WiFi and network installation for small businesses. Reliable connectivity, secure networks, and expert setup from Lake Tahoe Online.",
+    metaDescription: "Professional WiFi and network installation for small businesses. Reliable connectivity, secure networks, and expert setup from LTOL.",
     headline: "WiFi & Network Solutions for Small Businesses",
     intro: "A reliable network is the foundation of every modern business. LTOL designs, installs, and manages WiFi and network infrastructure that keeps your team connected, your customers happy, and your data secure.",
     problems: [
@@ -250,7 +250,7 @@ export const services: ServiceData[] = [
   {
     slug: "crm-automation",
     title: "CRM Automation",
-    metaTitle: "CRM Automation for Small Businesses | Lake Tahoe Online",
+    metaTitle: "CRM Automation for Small Businesses | LTOL",
     metaDescription: "Automate your customer relationships. CRM setup, lead tracking, follow-up automation, and sales pipeline management from LTOL.",
     headline: "CRM Automation for Small Businesses",
     intro: "Your customer relationships are your most valuable asset. LTOL sets up and automates your CRM so leads are tracked, follow-ups happen automatically, and no opportunity slips through the cracks.",
@@ -297,7 +297,7 @@ export const services: ServiceData[] = [
     slug: "website-systems",
     title: "Website Systems",
     metaTitle: "Conversion-Focused Website Design for Small Businesses | LTOL",
-    metaDescription: "Websites that generate leads, not just look good. Conversion-focused design, SEO, and CRM integration from Lake Tahoe Online.",
+    metaDescription: "Websites that generate leads, not just look good. Conversion-focused design, SEO, and CRM integration from LTOL.",
     headline: "Website Systems for Small Businesses",
     intro: "Your website should be your hardest-working employee. LTOL builds conversion-focused websites that attract visitors through SEO, capture leads with smart forms, and integrate with your CRM and marketing automation — so your website actually drives revenue.",
     problems: [
@@ -343,7 +343,7 @@ export const services: ServiceData[] = [
     slug: "email-marketing-automation",
     title: "Email Marketing Automation",
     metaTitle: "Email Marketing Automation for Small Businesses | LTOL",
-    metaDescription: "Automated email marketing that nurtures leads and drives revenue. Setup, strategy, and optimization from Lake Tahoe Online.",
+    metaDescription: "Automated email marketing that nurtures leads and drives revenue. Setup, strategy, and optimization from LTOL.",
     headline: "Email Marketing Automation for Small Businesses",
     intro: "Email remains the highest-ROI marketing channel for small businesses. LTOL builds automated email systems that nurture leads, re-engage customers, and drive repeat business — all while you focus on running your company.",
     problems: [

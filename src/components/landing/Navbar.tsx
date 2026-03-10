@@ -81,8 +81,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
-            <img src={ltolLogo} alt="Lake Tahoe Online" className="h-8 w-auto" />
-            <span className="text-sm font-medium text-muted-foreground hidden sm:block">Lake Tahoe Online</span>
+            <img src={ltolLogo} alt="LTOL" className="h-8 w-auto" />
+            <span className="text-sm font-medium text-muted-foreground hidden sm:block">LTOL</span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-6">
@@ -90,6 +90,7 @@ const Navbar = () => {
             <Dropdown id="solutions" label="Solutions" links={solutionsLinks} />
             <Dropdown id="industries" label="Industries" links={industryLinks} />
             <Dropdown id="resources" label="Resources" links={resourceLinks} />
+            <Link to="/team" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Team</Link>
             <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">About</button>
             <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Contact</button>
             <Button onClick={() => scrollToSection("#contact")} className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold">
@@ -128,6 +129,7 @@ const Navbar = () => {
                 </Link>
               ))}
 
+              <Link to="/team" onClick={() => setIsOpen(false)} className="text-foreground font-medium px-4 py-2 text-sm">Team</Link>
               <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">About</button>
               <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">Contact</button>
 

@@ -58,8 +58,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
-              <img src={ltolLogo} alt="Lake Tahoe Online" className="h-8 w-auto brightness-0 invert" />
-              <span className="text-sm font-medium text-background/70">Lake Tahoe Online</span>
+              <img src={ltolLogo} alt="LTOL" className="h-8 w-auto brightness-0 invert" />
+              <span className="text-sm font-medium text-background/70">LTOL</span>
             </Link>
             <p className="text-background/70 mb-4 max-w-md text-sm">
               Digital Infrastructure for Small Businesses. AI, marketing, IT, and cybersecurity — connected into one powerful system.
@@ -128,7 +128,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-background/15 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-background/50">© {new Date().getFullYear()} Lake Tahoe Online (LTOL). All rights reserved.</p>
+          <p className="text-xs text-background/50">© {new Date().getFullYear()} LTOL. All rights reserved.</p>
           <div className="flex space-x-6 text-xs text-background/50">
             <Link to="/privacy-policy" className="hover:text-background transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-background transition-colors">Terms of Service</Link>

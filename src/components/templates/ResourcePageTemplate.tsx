@@ -34,8 +34,8 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
     "@type": "WebPage",
     name: resource.title,
     description: resource.subheadline,
-    url: `https://laketahoeonline.com/resources/${resource.slug}`,
-    provider: { "@type": "Organization", name: "Lake Tahoe Online" },
+    url: `https://ltol.com/resources/${resource.slug}`,
+    provider: { "@type": "Organization", name: "LTOL" },
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
