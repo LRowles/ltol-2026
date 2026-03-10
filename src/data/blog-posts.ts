@@ -56,7 +56,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "7-workflows-automate-with-ai",
     title: "7 Small Business Workflows You Can Automate with AI",
     metaTitle: "7 Workflows to Automate with AI | Small Business Guide | LTOL",
-    metaDescription: "Discover 7 workflows every small business can automate with AI tools. Practical use cases with real results from Lake Tahoe Online.",
+    metaDescription: "Discover 7 workflows every small business can automate with AI tools. Practical use cases with real results from LTOL.",
     category: "AI for Small Business",
     date: "2026-02-20",
     readTime: "8 min read",
