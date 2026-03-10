@@ -786,7 +786,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "technology-systems-construction-companies",
     title: "Technology Systems for Construction Companies",
     metaTitle: "Technology Solutions for Construction Companies | LTOL",
-    metaDescription: "How construction companies can modernize with connected IT, CRM, and AI systems. Practical guide from Lake Tahoe Online.",
+    metaDescription: "How construction companies can modernize with connected IT, CRM, and AI systems. Practical guide from LTOL.",
     category: "Industry Solutions",
     date: "2026-03-05",
     readTime: "7 min read",
