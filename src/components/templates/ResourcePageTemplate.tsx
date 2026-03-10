@@ -12,6 +12,7 @@ import InternalLinks from "./InternalLinks";
 import { ResourceData } from "@/data/resources";
 import { services } from "@/data/services";
 import { assessments } from "@/data/assessments";
+import { useJsonLd } from "@/lib/structured-data";
 
 interface ResourcePageTemplateProps {
   resource: ResourceData;
