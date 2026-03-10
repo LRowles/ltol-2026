@@ -632,7 +632,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "when-upgrade-business-technology",
     title: "When to Upgrade Your Business Technology",
     metaTitle: "When to Upgrade Business Technology | LTOL",
-    metaDescription: "How to know when it's time to upgrade your business technology. Signs, timing, and planning advice from Lake Tahoe Online.",
+    metaDescription: "How to know when it's time to upgrade your business technology. Signs, timing, and planning advice from LTOL.",
     category: "Technology Strategy",
     date: "2026-01-02",
     readTime: "6 min read",
