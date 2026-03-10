@@ -55,7 +55,7 @@ export const assessments: AssessmentData[] = [
     slug: "technology-stack",
     title: "Technology Stack Assessment",
     metaTitle: "Technology Stack Assessment for Small Businesses | LTOL",
-    metaDescription: "Evaluate your business technology stack. Identify gaps, redundancies, and opportunities for improvement. Free assessment from Lake Tahoe Online.",
+    metaDescription: "Evaluate your business technology stack. Identify gaps, redundancies, and opportunities for improvement. Free assessment from LTOL.",
     headline: "How Strong Is Your Technology Stack?",
     description: "Evaluate the key components of your business technology infrastructure. Get a clear picture of your strengths, gaps, and priorities for improvement.",
     questions: [
