@@ -10,6 +10,7 @@ import { ServiceData } from "@/data/services";
 import { blogPosts } from "@/data/blog-posts";
 import { resources } from "@/data/resources";
 import { assessments } from "@/data/assessments";
+import { useJsonLd, serviceSchema, faqSchema } from "@/lib/structured-data";
 
 interface ServicePageTemplateProps {
   service: ServiceData;
