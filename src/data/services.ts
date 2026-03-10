@@ -20,7 +20,7 @@ export const services: ServiceData[] = [
   {
     slug: "ai-integration",
     title: "AI Integration",
-    metaTitle: "AI Integration for Small Businesses | Lake Tahoe Online",
+    metaTitle: "AI Integration for Small Businesses | LTOL",
     metaDescription: "Practical AI integration services for small businesses. Automate workflows, improve customer service, and boost productivity with LTOL's expert guidance.",
     headline: "AI Integration for Small Businesses",
     intro: "AI isn't just for enterprise companies. LTOL helps small businesses adopt practical AI tools that automate repetitive tasks, improve customer interactions, and free up your team to focus on growth. We make AI accessible, strategic, and measurable.",
