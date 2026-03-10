@@ -15,20 +15,61 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Team from "./pages/Team";
 import LocationsHub from "./pages/LocationsHub";
+import PillarPage from "./pages/PillarPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Pillar authority page slugs
+const pillarRoutes = [
+  "small-business-technology-stack",
+  "ai-integration-for-small-business",
+  "managed-it-services-for-small-business",
+  "cybersecurity-for-small-business",
+  "digital-marketing-systems-for-small-business",
+  "marketing-automation-for-small-business",
+  "crm-automation-for-small-business",
+  "business-process-automation",
+];
+
 // Service slugs for direct routes
 const serviceRoutes = [
   "ai-integration",
+  "ai-workflow-automation",
+  "ai-customer-support-systems",
+  "ai-document-processing",
   "digital-marketing",
+  "local-seo-services",
   "managed-it-services",
+  "network-management",
+  "help-desk-services",
+  "cloud-services",
   "cybersecurity",
+  "endpoint-security",
+  "email-security",
+  "data-backup-services",
   "network-solutions",
   "crm-automation",
   "website-systems",
   "email-marketing-automation",
+];
+
+// Flat industry routes (SEO-friendly aliases)
+const flatIndustryRoutes = [
+  "technology-solutions-for-construction-companies",
+  "technology-solutions-for-law-firms",
+  "technology-solutions-for-medical-offices",
+  "technology-solutions-for-real-estate",
+  "technology-solutions-for-hospitality",
+  "technology-solutions-for-retail-businesses",
+  "technology-solutions-for-professional-services",
+  "technology-solutions-for-accounting-firms",
+  "technology-solutions-for-dental-practices",
+  "technology-solutions-for-nonprofits",
+  "technology-solutions-for-restaurants",
+  "technology-solutions-for-property-management",
+  "technology-solutions-for-fitness-wellness",
+  "technology-solutions-for-auto-dealers",
 ];
 
 // Programmatic SEO flat location routes
@@ -64,6 +105,16 @@ const flatLocationRoutes = [
   // South Lake Tahoe
   "south-lake-tahoe-managed-it-services",
   "south-lake-tahoe-cybersecurity",
+  // Sacramento service+location
+  "sacramento-managed-it-services",
+  "sacramento-ai-integration",
+  "sacramento-cybersecurity",
+  "sacramento-digital-marketing",
+  // Roseville
+  "roseville-managed-it-services",
+  "roseville-ai-integration",
+  // Folsom
+  "folsom-managed-it-services",
   // Industry+location
   "reno-it-support-for-construction-companies",
   "truckee-it-support-for-law-firms",
@@ -73,6 +124,8 @@ const flatLocationRoutes = [
   "tahoe-marketing-for-hospitality",
   "reno-it-support-for-professional-services",
   "truckee-marketing-for-real-estate",
+  "sacramento-it-support-for-construction-companies",
+  "sacramento-marketing-for-real-estate",
 ];
 
 const App = () => (
@@ -84,9 +137,19 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
 
+          {/* Pillar authority pages */}
+          {pillarRoutes.map((slug) => (
+            <Route key={slug} path={`/${slug}`} element={<PillarPage />} />
+          ))}
+
           {/* Service pages - direct slug routes */}
           {serviceRoutes.map((slug) => (
             <Route key={slug} path={`/${slug}`} element={<ServicePage />} />
+          ))}
+
+          {/* Flat industry SEO routes */}
+          {flatIndustryRoutes.map((slug) => (
+            <Route key={slug} path={`/${slug}`} element={<IndustryPage />} />
           ))}
 
           {/* Flat programmatic SEO location routes */}
