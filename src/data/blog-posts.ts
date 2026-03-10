@@ -189,7 +189,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "ai-transforming-customer-support",
     title: "How AI Is Transforming Customer Support for Small Businesses",
     metaTitle: "AI Customer Support for Small Businesses | LTOL",
-    metaDescription: "How small businesses use AI to improve customer support response times, satisfaction, and efficiency. Practical guide from Lake Tahoe Online.",
+    metaDescription: "How small businesses use AI to improve customer support response times, satisfaction, and efficiency. Practical guide from LTOL.",
     category: "AI for Small Business",
     date: "2026-01-01",
     readTime: "6 min read",
