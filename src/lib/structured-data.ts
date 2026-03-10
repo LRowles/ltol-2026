@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-const BASE_URL = "https://laketahoeonline.com";
+const BASE_URL = "https://ltol.com";
 
 const localBusinessBase = {
   "@type": "LocalBusiness",
-  name: "Lake Tahoe Online",
+  name: "LTOL",
   alternateName: "LTOL",
   url: BASE_URL,
   areaServed: {
