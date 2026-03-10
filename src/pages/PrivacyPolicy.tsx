@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
-    document.title = "Privacy Policy | Lake Tahoe Online";
+    document.title = "Privacy Policy | LTOL";
     window.scrollTo(0, 0);
   }, []);
 
