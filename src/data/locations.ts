@@ -49,7 +49,7 @@ export const locations: LocationData[] = [
     city: "Lake Tahoe",
     region: "California / Nevada",
     metaTitle: "Technology Services for Small Businesses in Lake Tahoe | LTOL",
-    metaDescription: "Managed IT, cybersecurity, and digital marketing for Lake Tahoe businesses. Your local technology partner — Lake Tahoe Online.",
+    metaDescription: "Managed IT, cybersecurity, and digital marketing for Lake Tahoe businesses. Your local technology partner — LTOL.",
     headline: "Technology Services for Small Businesses in Lake Tahoe",
     intro: "Lake Tahoe is more than our name — it's our home. LTOL provides comprehensive technology services for the businesses that make this community special. From managed IT to AI integration, we're the local partner that understands Tahoe business.",
     localContext: "Lake Tahoe businesses face unique challenges: seasonal demand swings, remote location connectivity, tourism-driven operations, and the need to compete with larger players. LTOL builds technology solutions designed for these realities.",
