@@ -250,7 +250,7 @@ export const services: ServiceData[] = [
   {
     slug: "crm-automation",
     title: "CRM Automation",
-    metaTitle: "CRM Automation for Small Businesses | Lake Tahoe Online",
+    metaTitle: "CRM Automation for Small Businesses | LTOL",
     metaDescription: "Automate your customer relationships. CRM setup, lead tracking, follow-up automation, and sales pipeline management from LTOL.",
     headline: "CRM Automation for Small Businesses",
     intro: "Your customer relationships are your most valuable asset. LTOL sets up and automates your CRM so leads are tracked, follow-ups happen automatically, and no opportunity slips through the cracks.",
