@@ -824,7 +824,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "cybersecurity-medical-offices",
     title: "Cybersecurity for Medical Offices: What You Need to Know",
     metaTitle: "Cybersecurity for Medical Offices | HIPAA Guide | LTOL",
-    metaDescription: "HIPAA-compliant cybersecurity for medical offices. Protect patient data from ransomware and breaches. Guide from Lake Tahoe Online.",
+    metaDescription: "HIPAA-compliant cybersecurity for medical offices. Protect patient data from ransomware and breaches. Guide from LTOL.",
     category: "Industry Solutions",
     date: "2026-02-22",
     readTime: "7 min read",
