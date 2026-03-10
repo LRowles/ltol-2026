@@ -603,7 +603,7 @@ export const blogPosts: BlogPostData[] = [
       { heading: "Why Your Technology Stack Matters", content: "Your technology stack is the foundation of your daily operations. When systems are disconnected, your team spends more time managing tools than doing productive work." },
       { heading: "The Hidden Cost of Disconnected Systems", content: "Duplicate data entry, missed communications, manual reporting, inconsistent customer experiences, and security gaps all stem from a patchwork technology approach." },
       { heading: "The Essential Small Business Technology Stack", content: "A modern small business technology stack typically includes: managed IT foundation, communication platform, CRM, website integrated with CRM, marketing automation, financial tools, and cybersecurity protections. The key is that these components should be connected, not siloed." },
-      { heading: "How LTOL Builds Connected Stacks", content: "Lake Tahoe Online specializes in designing and implementing connected technology stacks for small businesses. We assess current tools, identify gaps, recommend solutions, handle implementation, and provide ongoing management." },
+      { heading: "How LTOL Builds Connected Stacks", content: "LTOL specializes in designing and implementing connected technology stacks for small businesses. We assess current tools, identify gaps, recommend solutions, handle implementation, and provide ongoing management." },
       { heading: "Evaluate Your Stack", content: "Download our Technology Stack Guide for a comprehensive framework. Take our Technology Stack Assessment to identify your gaps." },
     ],
     relatedService: "managed-it-services",
