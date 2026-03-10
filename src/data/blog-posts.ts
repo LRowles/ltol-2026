@@ -286,7 +286,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "cybersecurity-assessment-what-to-expect",
     title: "What a Cybersecurity Assessment Should Include",
     metaTitle: "Cybersecurity Assessment Guide | What to Expect | LTOL",
-    metaDescription: "What should a cybersecurity assessment cover? Learn what to expect and how to prepare. Guide from Lake Tahoe Online.",
+    metaDescription: "What should a cybersecurity assessment cover? Learn what to expect and how to prepare. Guide from LTOL.",
     category: "Cybersecurity",
     date: "2026-01-18",
     readTime: "7 min read",
