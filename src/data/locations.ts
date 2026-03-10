@@ -17,9 +17,9 @@ export const locations: LocationData[] = [
     city: "Reno",
     region: "Northern Nevada",
     metaTitle: "Small Business Technology Services in Reno | LTOL",
-    metaDescription: "Managed IT, AI integration, cybersecurity, and digital marketing for small businesses in Reno, Nevada. Local support from Lake Tahoe Online.",
+    metaDescription: "Managed IT, AI integration, cybersecurity, and digital marketing for small businesses in Reno, Nevada. Local support from LTOL.",
     headline: "Small Business Technology Services in Reno",
-    intro: "Reno's small business community is growing fast — and so is the need for reliable technology partners. Lake Tahoe Online provides managed IT, AI integration, cybersecurity, and digital marketing systems for Reno businesses that want to modernize without the complexity.",
+    intro: "Reno's small business community is growing fast — and so is the need for reliable technology partners. LTOL provides managed IT, AI integration, cybersecurity, and digital marketing systems for Reno businesses that want to modernize without the complexity.",
     localContext: "As Reno's economy diversifies beyond gaming and tourism, small businesses across construction, professional services, healthcare, and retail need technology that keeps pace. LTOL brings enterprise-grade solutions at small business prices — with local, on-site support you can count on.",
     services: ["Managed IT Services", "AI Integration", "Cybersecurity", "Digital Marketing Systems", "Network Solutions", "CRM Automation", "Website Systems", "Email Marketing Automation"],
     faqs: [
