@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 
 const TermsOfService = () => {
   useEffect(() => {
-    document.title = "Terms of Service | Lake Tahoe Online";
+    document.title = "Terms of Service | LTOL";
     window.scrollTo(0, 0);
   }, []);
 
