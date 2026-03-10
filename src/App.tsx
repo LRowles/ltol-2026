@@ -14,6 +14,7 @@ import AssessmentPage from "./pages/AssessmentPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Team from "./pages/Team";
+import LocationsHub from "./pages/LocationsHub";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,12 +33,46 @@ const serviceRoutes = [
 
 // Programmatic SEO flat location routes
 const flatLocationRoutes = [
-  "reno-managed-it",
-  "truckee-managed-it",
-  "tahoe-managed-it",
+  // Legacy
   "northern-nevada-ai-integration",
   "california-small-business-it",
   "western-us-digital-infrastructure",
+  // Reno service+location
+  "reno-managed-it-services",
+  "reno-ai-integration",
+  "reno-cybersecurity-services",
+  "reno-digital-marketing",
+  // Truckee service+location
+  "truckee-managed-it-services",
+  "truckee-ai-integration",
+  "truckee-cybersecurity",
+  "truckee-digital-marketing",
+  // Tahoe service+location
+  "tahoe-managed-it-services",
+  "tahoe-ai-integration",
+  "tahoe-cybersecurity",
+  // Carson City service+location
+  "carson-city-managed-it-services",
+  "carson-city-ai-integration",
+  "carson-city-cybersecurity",
+  "carson-city-digital-marketing",
+  // Sparks service+location
+  "sparks-managed-it-services",
+  "sparks-ai-integration",
+  // Incline Village
+  "incline-village-managed-it-services",
+  // South Lake Tahoe
+  "south-lake-tahoe-managed-it-services",
+  "south-lake-tahoe-cybersecurity",
+  // Industry+location
+  "reno-it-support-for-construction-companies",
+  "truckee-it-support-for-law-firms",
+  "tahoe-cybersecurity-for-hospitality",
+  "reno-marketing-for-real-estate",
+  "reno-it-support-for-medical-offices",
+  "tahoe-marketing-for-hospitality",
+  "reno-it-support-for-professional-services",
+  "truckee-marketing-for-real-estate",
 ];
 
 const App = () => (
@@ -58,6 +93,9 @@ const App = () => (
           {flatLocationRoutes.map((slug) => (
             <Route key={slug} path={`/${slug}`} element={<LocationPage />} />
           ))}
+
+          {/* Location hub */}
+          <Route path="/locations" element={<LocationsHub />} />
 
           {/* Location pages */}
           <Route path="/locations/:slug" element={<LocationPage />} />

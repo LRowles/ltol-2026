@@ -98,7 +98,7 @@ const LocationsHub = () => {
 
       <CTABlock
         headline="Build a Smarter Technology Infrastructure"
-        body="Lake Tahoe Online helps small businesses bring together AI, marketing systems, cybersecurity, and IT infrastructure into a single integrated strategy."
+        description="Lake Tahoe Online helps small businesses bring together AI, marketing systems, cybersecurity, and IT infrastructure into a single integrated strategy."
         buttonText="Schedule a Technology Strategy Session"
       />
       <Footer />
