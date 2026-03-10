@@ -58,8 +58,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
-              <img src={ltolLogo} alt="Lake Tahoe Online" className="h-8 w-auto brightness-0 invert" />
-              <span className="text-sm font-medium text-background/70">Lake Tahoe Online</span>
+              <img src={ltolLogo} alt="LTOL" className="h-8 w-auto brightness-0 invert" />
+              <span className="text-sm font-medium text-background/70">LTOL</span>
             </Link>
             <p className="text-background/70 mb-4 max-w-md text-sm">
               Digital Infrastructure for Small Businesses. AI, marketing, IT, and cybersecurity — connected into one powerful system.
