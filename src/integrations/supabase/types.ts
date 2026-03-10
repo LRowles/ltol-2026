@@ -14,7 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      assessment_submissions: {
+        Row: {
+          answers: Json
+          assessment_slug: string
+          band: string | null
+          business: string | null
+          created_at: string | null
+          email: string
+          id: string
+          name: string
+          score: number | null
+        }
+        Insert: {
+          answers?: Json
+          assessment_slug: string
+          band?: string | null
+          business?: string | null
+          created_at?: string | null
+          email: string
+          id?: string
+          name: string
+          score?: number | null
+        }
+        Update: {
+          answers?: Json
+          assessment_slug?: string
+          band?: string | null
+          business?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          name?: string
+          score?: number | null
+        }
+        Relationships: []
+      }
+      contact_submissions: {
+        Row: {
+          business: string | null
+          created_at: string | null
+          email: string
+          id: string
+          message: string | null
+          name: string
+          phone: string | null
+          source_page: string | null
+        }
+        Insert: {
+          business?: string | null
+          created_at?: string | null
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          phone?: string | null
+          source_page?: string | null
+        }
+        Update: {
+          business?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          phone?: string | null
+          source_page?: string | null
+        }
+        Relationships: []
+      }
+      lead_downloads: {
+        Row: {
+          business: string | null
+          created_at: string | null
+          email: string
+          id: string
+          name: string
+          resource_slug: string
+        }
+        Insert: {
+          business?: string | null
+          created_at?: string | null
+          email: string
+          id?: string
+          name: string
+          resource_slug: string
+        }
+        Update: {
+          business?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          name?: string
+          resource_slug?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
