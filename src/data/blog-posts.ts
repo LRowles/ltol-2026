@@ -94,7 +94,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "ai-tools-small-businesses-should-use",
     title: "AI Tools Small Businesses Should Actually Use",
     metaTitle: "Best AI Tools for Small Businesses in 2026 | LTOL",
-    metaDescription: "Cut through the noise. These are the AI tools that actually deliver results for small businesses. Expert recommendations from Lake Tahoe Online.",
+    metaDescription: "Cut through the noise. These are the AI tools that actually deliver results for small businesses. Expert recommendations from LTOL.",
     category: "AI for Small Business",
     date: "2026-02-10",
     readTime: "9 min read",
