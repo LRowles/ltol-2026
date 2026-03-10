@@ -14,6 +14,7 @@ import InternalLinks from "./InternalLinks";
 import { AssessmentData } from "@/data/assessments";
 import { services } from "@/data/services";
 import { resources } from "@/data/resources";
+import { useJsonLd } from "@/lib/structured-data";
 
 interface AssessmentTemplateProps {
   assessment: AssessmentData;
