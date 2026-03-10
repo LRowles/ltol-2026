@@ -210,7 +210,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "cybersecurity-risks-small-businesses",
     title: "Cybersecurity Risks Small Businesses Face in 2026",
     metaTitle: "Cybersecurity Risks for Small Businesses in 2026 | LTOL",
-    metaDescription: "The top cybersecurity threats targeting small businesses in 2026 and practical steps to protect your company. Expert guide from Lake Tahoe Online.",
+    metaDescription: "The top cybersecurity threats targeting small businesses in 2026 and practical steps to protect your company. Expert guide from LTOL.",
     category: "Cybersecurity",
     date: "2026-02-15",
     readTime: "7 min read",
