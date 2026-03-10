@@ -81,7 +81,7 @@ export const locations: LocationData[] = [
     city: "Sparks",
     region: "Northern Nevada",
     metaTitle: "IT Services & Technology Support in Sparks, NV | LTOL",
-    metaDescription: "Managed IT, cybersecurity, and digital marketing for small businesses in Sparks, Nevada. Local technology partner — Lake Tahoe Online.",
+    metaDescription: "Managed IT, cybersecurity, and digital marketing for small businesses in Sparks, Nevada. Local technology partner — LTOL.",
     headline: "Small Business Technology Services in Sparks",
     intro: "Sparks is home to a thriving small business community — from industrial and logistics companies to retail and service businesses. LTOL provides the IT infrastructure, cybersecurity, and marketing systems that Sparks businesses need to operate efficiently and grow.",
     localContext: "With its proximity to Reno and growing industrial base, Sparks businesses need technology that's reliable, secure, and scalable. LTOL delivers enterprise-grade solutions with the personal, local service that Sparks business owners expect.",
