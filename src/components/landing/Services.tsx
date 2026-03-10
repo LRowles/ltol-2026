@@ -2,6 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bot, BarChart3, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import serviceAi from "@/assets/photos/service-ai.jpg";
+import serviceMarketing from "@/assets/photos/service-marketing.jpg";
+import serviceIt from "@/assets/photos/service-it.jpg";
 
 const pillars = [
   {
@@ -10,6 +13,8 @@ const pillars = [
     description: "Implement AI systems that automate workflows, improve customer service, and drive smarter decisions.",
     features: ["Workflow Automation", "AI Agents", "Customer Service AI", "CRM Intelligence"],
     link: "/ai-integration",
+    image: serviceAi,
+    imageAlt: "AI technology visualization",
   },
   {
     icon: BarChart3,
@@ -17,6 +22,8 @@ const pillars = [
     description: "Integrated marketing that generates leads, nurtures prospects, and grows revenue on autopilot.",
     features: ["Website Systems", "SEO", "Email Automation", "Lead Funnels"],
     link: "/digital-marketing",
+    image: serviceMarketing,
+    imageAlt: "Marketing analytics dashboard",
   },
   {
     icon: Shield,
@@ -24,6 +31,8 @@ const pillars = [
     description: "Secure, reliable infrastructure that keeps your business running and your data protected.",
     features: ["Managed IT", "Cybersecurity", "Device Monitoring", "Network Infrastructure"],
     link: "/managed-it-services",
+    image: serviceIt,
+    imageAlt: "Server room infrastructure",
   },
 ];
 
@@ -42,8 +51,19 @@ const Services = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => (
-            <Card key={index} className="bg-card border-border card-hover flex flex-col">
-              <CardHeader>
+            <Card key={index} className="bg-card border-border card-hover flex flex-col overflow-hidden">
+              {/* Card header image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={pillar.image}
+                  alt={pillar.imageAlt}
+                  className="brand-photo"
+                  loading="lazy"
+                />
+                <div className="brand-photo-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+              </div>
+              <CardHeader className="pt-4">
                 <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
                   <pillar.icon className="w-7 h-7 text-secondary" />
                 </div>

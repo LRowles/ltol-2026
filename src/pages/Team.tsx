@@ -1,7 +1,12 @@
 import { useEffect } from "react";
-import { Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import teamRob from "@/assets/photos/team-rob.jpg";
+import teamLindsey from "@/assets/photos/team-lindsey.jpg";
+import teamMaria from "@/assets/photos/team-maria.jpg";
+import teamBailey from "@/assets/photos/team-bailey.jpg";
+import teamDawn from "@/assets/photos/team-dawn.jpg";
 
 const teamMembers = [
   {
@@ -9,7 +14,7 @@ const teamMembers = [
     title: "Founder & Director of Network Infrastructure",
     description:
       "Rob leads LTOL's network and IT operations with over a decade of experience designing resilient infrastructure for small businesses. From enterprise-grade firewalls to multi-site WiFi deployments, Rob ensures every client's technology foundation is rock-solid, secure, and built to scale.",
-    initials: "RP",
+    photo: teamRob,
     color: "from-primary to-primary/80",
   },
   {
@@ -17,7 +22,7 @@ const teamMembers = [
     title: "AI Implementation & SEO Strategist",
     description:
       "Lindsey bridges the gap between emerging AI tools and real business outcomes. She architects AI workflow automations, deploys intelligent customer support systems, and builds SEO strategies that drive measurable organic growth — all tailored to small business budgets and goals.",
-    initials: "LR",
+    photo: teamLindsey,
     color: "from-secondary to-secondary/80",
   },
   {
@@ -25,7 +30,7 @@ const teamMembers = [
     title: "Marketing Systems & Lead Automation Specialist",
     description:
       "Maria designs the connected marketing engines that turn website visitors into loyal customers. She builds CRM automation pipelines, email nurture sequences, and lead scoring systems that work around the clock — so your sales team focuses on closing, not chasing.",
-    initials: "MC",
+    photo: teamMaria,
     color: "from-accent to-accent/80",
   },
   {
@@ -33,7 +38,7 @@ const teamMembers = [
     title: "Creative Director — Web Design & Social Media",
     description:
       "Bailey crafts conversion-focused websites and manages social media strategies that build real brand authority. From visual identity to content calendars, she ensures every digital touchpoint reflects your brand's voice and drives engagement that converts.",
-    initials: "BA",
+    photo: teamBailey,
     color: "from-secondary to-primary",
   },
   {
@@ -41,7 +46,7 @@ const teamMembers = [
     title: "IT Support & Operations Manager",
     description:
       "Dawn is the backbone of LTOL's day-to-day client support. She manages help desk operations, coordinates on-site visits, and ensures every client receives fast, human, and reliable IT support — the kind where a real person actually answers the phone.",
-    initials: "DC",
+    photo: teamDawn,
     color: "from-primary to-accent",
   },
 ];
@@ -81,11 +86,15 @@ const Team = () => {
                 key={i}
                 className="group bg-card border border-border rounded-2xl overflow-hidden card-hover"
               >
-                {/* Avatar Header */}
-                <div className={`bg-gradient-to-br ${member.color} p-8 flex items-center justify-center`}>
-                  <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
-                    <span className="text-3xl font-bold text-white">{member.initials}</span>
-                  </div>
+                {/* Photo Header */}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={member.photo}
+                    alt={`${member.name} — ${member.title}`}
+                    className="brand-photo"
+                    loading="lazy"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${member.color} opacity-20`} />
                 </div>
 
                 {/* Content */}
@@ -113,7 +122,7 @@ const Team = () => {
             </p>
             <a
               href="/#contact"
-              className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-3 rounded-md transition-colors"
+              className="inline-flex items-center gap-2 bg-card text-primary hover:bg-card/90 font-semibold text-lg px-8 py-3 rounded-md transition-colors"
             >
               <Mail className="w-5 h-5" />
               Book a Consultation

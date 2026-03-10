@@ -1,4 +1,5 @@
 import { MapPin, Users, Phone, Layers } from "lucide-react";
+import differenceImg from "@/assets/photos/difference-landscape.jpg";
 
 const differentiators = [
   {
@@ -25,10 +26,20 @@ const differentiators = [
 
 const Difference = () => {
   return (
-    <section id="difference" className="section-padding gradient-bg text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="difference" className="section-padding relative overflow-hidden">
+      {/* Background photo */}
+      <div className="absolute inset-0">
+        <img
+          src={differenceImg}
+          alt="Western US mountain landscape"
+          className="brand-photo absolute inset-0 w-full h-full"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/70" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-primary-foreground">
             Why LTOL
           </h2>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
@@ -45,7 +56,7 @@ const Difference = () => {
               <div className="w-14 h-14 rounded-xl bg-primary-foreground/20 flex items-center justify-center mx-auto mb-4">
                 <item.icon className="w-7 h-7 text-primary-foreground" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-primary-foreground">{item.title}</h3>
               <p className="text-sm text-primary-foreground/75 leading-relaxed">{item.description}</p>
             </div>
           ))}

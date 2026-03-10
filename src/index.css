@@ -127,6 +127,21 @@
   .section-padding {
     @apply py-20 sm:py-28;
   }
+
+  .brand-photo {
+    @apply object-cover w-full h-full;
+    filter: saturate(0.85) contrast(1.05);
+  }
+
+  .brand-photo-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.15),
+      hsl(var(--secondary) / 0.1)
+    );
+    mix-blend-mode: multiply;
+  }
 }
 
 @layer utilities {

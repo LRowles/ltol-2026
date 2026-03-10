@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import contactImg from "@/assets/photos/contact-support.jpg";
 
 const contactInfo = [
   { icon: Phone, label: "Phone", value: "(775) 555-LTOL", href: "tel:+17755555865" },
@@ -99,6 +100,17 @@ const Contact = () => {
           </Card>
 
           <div className="flex flex-col justify-center">
+            {/* Contact photo */}
+            <div className="relative overflow-hidden rounded-2xl mb-8 h-48">
+              <img
+                src={contactImg}
+                alt="Friendly business handshake"
+                className="brand-photo"
+                loading="lazy"
+              />
+              <div className="brand-photo-overlay" />
+            </div>
+
             <h3 className="text-2xl font-bold text-foreground mb-6">Let's Talk</h3>
             <p className="text-muted-foreground mb-8">Have questions? We're here to help. Real people, real answers — that's the LTOL way.</p>
             <div className="space-y-6">
