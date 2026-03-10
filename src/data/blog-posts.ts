@@ -670,7 +670,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "scalable-business-infrastructure",
     title: "How to Build a More Scalable Business Infrastructure",
     metaTitle: "Build Scalable Business Infrastructure | LTOL",
-    metaDescription: "Build business infrastructure that scales with your growth. Technology planning advice for small businesses from Lake Tahoe Online.",
+    metaDescription: "Build business infrastructure that scales with your growth. Technology planning advice for small businesses from LTOL.",
     category: "Technology Strategy",
     date: "2025-12-20",
     readTime: "7 min read",
