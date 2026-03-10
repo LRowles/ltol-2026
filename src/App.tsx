@@ -97,24 +97,92 @@ const flatLocationRoutes = [
   "carson-city-ai-integration",
   "carson-city-cybersecurity",
   "carson-city-digital-marketing",
-  // Sparks service+location
+  // Sparks service+location (expanded)
   "sparks-managed-it-services",
   "sparks-ai-integration",
-  // Incline Village
+  "sparks-cybersecurity",
+  "sparks-digital-marketing",
+  // Incline Village (expanded)
   "incline-village-managed-it-services",
-  // South Lake Tahoe
+  "incline-village-ai-integration",
+  "incline-village-cybersecurity",
+  "incline-village-digital-marketing",
+  // South Lake Tahoe (expanded)
   "south-lake-tahoe-managed-it-services",
   "south-lake-tahoe-cybersecurity",
-  // Sacramento service+location
+  "south-lake-tahoe-ai-integration",
+  "south-lake-tahoe-digital-marketing",
+  // Sacramento service+location (expanded)
   "sacramento-managed-it-services",
   "sacramento-ai-integration",
   "sacramento-cybersecurity",
   "sacramento-digital-marketing",
-  // Roseville
+  // Roseville (expanded)
   "roseville-managed-it-services",
   "roseville-ai-integration",
-  // Folsom
+  "roseville-cybersecurity",
+  "roseville-digital-marketing",
+  // Folsom (expanded)
   "folsom-managed-it-services",
+  "folsom-ai-integration",
+  "folsom-cybersecurity",
+  "folsom-digital-marketing",
+  // Rocklin
+  "rocklin-managed-it-services",
+  "rocklin-ai-integration",
+  "rocklin-cybersecurity",
+  "rocklin-digital-marketing",
+  // Auburn
+  "auburn-managed-it-services",
+  "auburn-ai-integration",
+  "auburn-cybersecurity",
+  "auburn-digital-marketing",
+  // Grass Valley
+  "grass-valley-managed-it-services",
+  "grass-valley-ai-integration",
+  "grass-valley-cybersecurity",
+  "grass-valley-digital-marketing",
+  // Nevada City
+  "nevada-city-managed-it-services",
+  "nevada-city-ai-integration",
+  "nevada-city-cybersecurity",
+  "nevada-city-digital-marketing",
+  // Gardnerville
+  "gardnerville-managed-it-services",
+  "gardnerville-cybersecurity",
+  // Minden
+  "minden-managed-it-services",
+  "minden-cybersecurity",
+  // Dayton
+  "dayton-managed-it-services",
+  "dayton-ai-integration",
+  "dayton-cybersecurity",
+  "dayton-digital-marketing",
+  // Fernley
+  "fernley-managed-it-services",
+  "fernley-ai-integration",
+  "fernley-cybersecurity",
+  "fernley-digital-marketing",
+  // Fallon
+  "fallon-managed-it-services",
+  "fallon-cybersecurity",
+  // Lincoln
+  "lincoln-managed-it-services",
+  "lincoln-cybersecurity",
+  // Elk Grove
+  "elk-grove-managed-it-services",
+  "elk-grove-cybersecurity",
+  // Rancho Cordova
+  "rancho-cordova-managed-it-services",
+  "rancho-cordova-cybersecurity",
+  // Las Vegas
+  "las-vegas-managed-it-services",
+  "las-vegas-ai-integration",
+  "las-vegas-cybersecurity",
+  "las-vegas-digital-marketing",
+  // San Jose
+  "san-jose-managed-it-services",
+  "san-jose-cybersecurity",
   // Industry+location
   "reno-it-support-for-construction-companies",
   "truckee-it-support-for-law-firms",
@@ -126,6 +194,32 @@ const flatLocationRoutes = [
   "truckee-marketing-for-real-estate",
   "sacramento-it-support-for-construction-companies",
   "sacramento-marketing-for-real-estate",
+  // Phase 2 industry+location
+  "reno-it-support-for-law-firms",
+  "reno-cybersecurity-for-medical-offices",
+  "reno-marketing-for-restaurants",
+  "reno-ai-for-real-estate",
+  "reno-it-support-for-retail",
+  "truckee-cybersecurity-for-hospitality",
+  "truckee-it-support-for-real-estate",
+  "tahoe-it-support-for-hospitality",
+  "tahoe-marketing-for-real-estate",
+  "carson-city-it-support-for-law-firms",
+  "carson-city-it-support-for-medical-offices",
+  "sparks-it-support-for-construction",
+  "sacramento-it-support-for-medical-offices",
+  "sacramento-it-support-for-law-firms",
+  "sacramento-marketing-for-restaurants",
+  "sacramento-it-support-for-retail",
+  "sacramento-cybersecurity-for-healthcare",
+  "reno-it-support-for-hospitality",
+  "reno-it-support-for-accounting-firms",
+  "reno-it-support-for-dental-practices",
+  "sparks-marketing-for-retail",
+  "las-vegas-it-support-for-hospitality",
+  "las-vegas-marketing-for-real-estate",
+  "roseville-it-support-for-medical-offices",
+  "folsom-it-support-for-law-firms",
 ];
 
 const App = () => (

@@ -14,7 +14,7 @@ const regions = [
   {
     name: "Northern Nevada",
     description: "On-site and remote technology services for businesses across Northern Nevada.",
-    slugs: ["reno", "sparks", "carson-city", "gardnerville", "minden", "northern-nevada"],
+    slugs: ["reno", "sparks", "carson-city", "gardnerville", "minden", "dayton", "fernley", "fallon", "northern-nevada"],
   },
   {
     name: "Lake Tahoe Basin",
@@ -24,12 +24,12 @@ const regions = [
   {
     name: "Northern California",
     description: "Remote and hybrid technology services for businesses across Northern California.",
-    slugs: ["truckee", "sacramento", "roseville", "folsom", "rocklin", "auburn", "grass-valley", "nevada-city"],
+    slugs: ["truckee", "sacramento", "roseville", "folsom", "rocklin", "auburn", "grass-valley", "nevada-city", "lincoln", "elk-grove", "citrus-heights", "rancho-cordova", "woodland", "davis", "placerville"],
   },
   {
     name: "Western United States",
     description: "Remote digital infrastructure for growing businesses across the West.",
-    slugs: ["phoenix", "denver", "salt-lake-city", "boise", "portland", "seattle"],
+    slugs: ["phoenix", "denver", "salt-lake-city", "boise", "portland", "seattle", "las-vegas", "tucson", "albuquerque", "colorado-springs", "san-jose", "fresno", "bakersfield", "bend", "spokane", "medford", "ogden", "provo", "flagstaff", "santa-fe", "san-diego"],
   },
 ];
 
