@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
 import { HardHat, Scale, Stethoscope, Hotel, Home, ShoppingBag } from "lucide-react";
+import industryConstruction from "@/assets/photos/industry-construction.jpg";
+import industryLegal from "@/assets/photos/industry-legal.jpg";
+import industryHealthcare from "@/assets/photos/industry-healthcare.jpg";
+import industryHospitality from "@/assets/photos/industry-hospitality.jpg";
+import industryRealestate from "@/assets/photos/industry-realestate.jpg";
+import industryRetail from "@/assets/photos/industry-retail.jpg";
 
 const industryCards = [
-  { icon: HardHat, name: "Construction", slug: "construction" },
-  { icon: Scale, name: "Professional Services", slug: "legal" },
-  { icon: Stethoscope, name: "Medical", slug: "healthcare" },
-  { icon: Hotel, name: "Hospitality", slug: "hospitality" },
-  { icon: Home, name: "Real Estate", slug: "real-estate" },
-  { icon: ShoppingBag, name: "Local Retail", slug: "small-business" },
+  { icon: HardHat, name: "Construction", slug: "construction", image: industryConstruction },
+  { icon: Scale, name: "Professional Services", slug: "legal", image: industryLegal },
+  { icon: Stethoscope, name: "Medical", slug: "healthcare", image: industryHealthcare },
+  { icon: Hotel, name: "Hospitality", slug: "hospitality", image: industryHospitality },
+  { icon: Home, name: "Real Estate", slug: "real-estate", image: industryRealestate },
+  { icon: ShoppingBag, name: "Local Retail", slug: "small-business", image: industryRetail },
 ];
 
 const IndustriesServed = () => {
@@ -28,12 +34,25 @@ const IndustriesServed = () => {
             <Link
               key={i}
               to={`/solutions/${ind.slug}`}
-              className="flex flex-col items-center text-center p-6 rounded-2xl bg-card border border-border card-hover group"
+              className="relative flex flex-col items-center text-center rounded-2xl overflow-hidden card-hover group h-48"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-secondary/10 transition-colors">
-                <ind.icon className="w-7 h-7 text-primary group-hover:text-secondary transition-colors" />
+              {/* Background photo */}
+              <img
+                src={ind.image}
+                alt={ind.name}
+                className="brand-photo absolute inset-0"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/50 transition-colors" />
+              <div className="brand-photo-overlay" />
+
+              {/* Content */}
+              <div className="relative z-10 flex flex-col items-center justify-center h-full p-4">
+                <div className="w-14 h-14 rounded-xl bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center mb-3">
+                  <ind.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <span className="text-sm font-semibold text-primary-foreground">{ind.name}</span>
               </div>
-              <span className="text-sm font-semibold text-foreground">{ind.name}</span>
             </Link>
           ))}
         </div>

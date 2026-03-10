@@ -1,4 +1,6 @@
 import { CheckCircle2, Shield, Compass, Wrench, HeartHandshake } from "lucide-react";
+import BrandImage from "@/components/ui/BrandImage";
+import aboutImg from "@/assets/photos/about-meeting.jpg";
 
 const features = [
   {
@@ -27,7 +29,13 @@ const About = () => {
   return (
     <section id="about" className="section-padding relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        {/* Photo + intro row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
+          <BrandImage
+            src={aboutImg}
+            alt="LTOL team meeting with a local business owner"
+            aspectRatio="4/3"
+          />
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-foreground">
               Why Businesses Trust <span className="gradient-text">LTOL</span>
@@ -57,23 +65,24 @@ const About = () => {
               That's the LTOL promise — a true digital guardian for small businesses.
             </p>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-2xl bg-card border border-border card-hover"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+        {/* Feature cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="p-6 rounded-2xl bg-card border border-border card-hover"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <feature.icon className="w-6 h-6 text-primary" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-sm text-muted-foreground">{feature.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
