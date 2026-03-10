@@ -37,7 +37,7 @@ export const resources: ResourceData[] = [
     slug: "cybersecurity-checklist",
     title: "Cybersecurity Checklist for Small Businesses",
     metaTitle: "Cybersecurity Checklist for Small Businesses — Free Download | LTOL",
-    metaDescription: "See the most common cybersecurity vulnerabilities and the practical steps that reduce risk. Free checklist for small businesses from Lake Tahoe Online.",
+    metaDescription: "See the most common cybersecurity vulnerabilities and the practical steps that reduce risk. Free checklist for small businesses from LTOL.",
     headline: "Protect Your Business with a Simple Cybersecurity Checklist",
     subheadline: "See the most common vulnerabilities and the practical steps that reduce risk.",
     description: "This checklist helps you quickly assess your current cybersecurity posture and identify the most critical gaps. It's designed for small business owners who want to improve security without getting overwhelmed by technical jargon.",
