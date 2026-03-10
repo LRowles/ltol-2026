@@ -13,6 +13,7 @@ import ResourcePage from "./pages/ResourcePage";
 import AssessmentPage from "./pages/AssessmentPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import Team from "./pages/Team";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
