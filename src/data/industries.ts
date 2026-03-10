@@ -72,7 +72,7 @@ export const industries: IndustryData[] = [
     slug: "healthcare",
     industry: "Healthcare & Medical Offices",
     metaTitle: "Cybersecurity & IT for Medical Offices | LTOL",
-    metaDescription: "HIPAA-compliant IT services, cybersecurity, and digital marketing for medical offices. Protect patient data with Lake Tahoe Online.",
+    metaDescription: "HIPAA-compliant IT services, cybersecurity, and digital marketing for medical offices. Protect patient data with LTOL.",
     headline: "Technology Solutions for Healthcare & Medical Offices",
     intro: "Medical offices handle some of the most sensitive data in any industry. LTOL provides HIPAA-aware IT services, cybersecurity, and patient communication systems that protect your practice while improving operational efficiency.",
     challenges: [
