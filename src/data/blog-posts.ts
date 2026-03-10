@@ -594,7 +594,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "small-business-technology-stack",
     title: "The Small Business Technology Stack Explained",
     metaTitle: "Small Business Technology Stack Guide | LTOL",
-    metaDescription: "Understand the essential technology stack every growing small business needs. IT, security, marketing, and AI systems explained by Lake Tahoe Online.",
+    metaDescription: "Understand the essential technology stack every growing small business needs. IT, security, marketing, and AI systems explained by LTOL.",
     category: "Technology Strategy",
     date: "2026-01-15",
     readTime: "9 min read",
