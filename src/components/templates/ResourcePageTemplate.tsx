@@ -9,6 +9,8 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import PageHeader from "./PageHeader";
 import InternalLinks from "./InternalLinks";
+import BrandImage from "@/components/ui/BrandImage";
+import resourceImg from "@/assets/photos/resource-guide.jpg";
 import { ResourceData } from "@/data/resources";
 import { services } from "@/data/services";
 import { assessments } from "@/data/assessments";
