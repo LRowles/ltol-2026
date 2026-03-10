@@ -75,7 +75,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "ai-improve-customer-response-time",
     title: "How AI Can Improve Customer Response Time",
     metaTitle: "Improve Customer Response Time with AI | LTOL",
-    metaDescription: "Learn how AI tools help small businesses respond to customers faster, 24/7. Practical strategies from Lake Tahoe Online.",
+    metaDescription: "Learn how AI tools help small businesses respond to customers faster, 24/7. Practical strategies from LTOL.",
     category: "AI for Small Business",
     date: "2026-02-15",
     readTime: "6 min read",
