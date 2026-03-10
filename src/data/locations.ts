@@ -33,7 +33,7 @@ export const locations: LocationData[] = [
     city: "Truckee",
     region: "Northern California",
     metaTitle: "Technology Services for Small Businesses in Truckee | LTOL",
-    metaDescription: "IT support, cybersecurity, AI integration, and digital marketing for Truckee small businesses. Local technology partner — Lake Tahoe Online.",
+    metaDescription: "IT support, cybersecurity, AI integration, and digital marketing for Truckee small businesses. Local technology partner — LTOL.",
     headline: "Technology Services for Small Businesses in Truckee",
     intro: "Truckee's unique blend of tourism, outdoor recreation, and growing professional services creates distinct technology needs. LTOL provides the managed IT, cybersecurity, and digital marketing systems that Truckee businesses need to thrive year-round.",
     localContext: "From downtown shops to mountain-area hospitality businesses, Truckee companies need reliable technology that works in every season. LTOL understands the local landscape — connectivity challenges, seasonal traffic patterns, and the unique needs of mountain community businesses.",
