@@ -112,7 +112,7 @@ export const services: ServiceData[] = [
   {
     slug: "managed-it-services",
     title: "Managed IT Services",
-    metaTitle: "Managed IT Services for Small Businesses | Lake Tahoe Online",
+    metaTitle: "Managed IT Services for Small Businesses | LTOL",
     metaDescription: "Reliable managed IT services for small businesses in Reno, Lake Tahoe, and Northern Nevada. 24/7 monitoring, help desk, and proactive maintenance from LTOL.",
     headline: "Managed IT Services for Small Businesses",
     intro: "Stop waiting for things to break. LTOL provides proactive managed IT services that keep your systems running, your data protected, and your team productive. We're your full IT department — without the overhead.",
