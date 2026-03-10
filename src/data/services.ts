@@ -205,7 +205,7 @@ export const services: ServiceData[] = [
     slug: "network-solutions",
     title: "Network Solutions",
     metaTitle: "WiFi & Network Installation for Small Businesses | LTOL",
-    metaDescription: "Professional WiFi and network installation for small businesses. Reliable connectivity, secure networks, and expert setup from Lake Tahoe Online.",
+    metaDescription: "Professional WiFi and network installation for small businesses. Reliable connectivity, secure networks, and expert setup from LTOL.",
     headline: "WiFi & Network Solutions for Small Businesses",
     intro: "A reliable network is the foundation of every modern business. LTOL designs, installs, and manages WiFi and network infrastructure that keeps your team connected, your customers happy, and your data secure.",
     problems: [
