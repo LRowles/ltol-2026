@@ -132,7 +132,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "adopt-ai-without-confusing-team",
     title: "How to Adopt AI Without Confusing Your Team",
     metaTitle: "AI Adoption Tips for Small Business Teams | LTOL",
-    metaDescription: "Introduce AI to your team without confusion or resistance. Practical change management advice from Lake Tahoe Online.",
+    metaDescription: "Introduce AI to your team without confusion or resistance. Practical change management advice from LTOL.",
     category: "AI for Small Business",
     date: "2026-01-28",
     readTime: "7 min read",
