@@ -67,7 +67,7 @@ export const services: ServiceData[] = [
     slug: "digital-marketing",
     title: "Digital Marketing Systems",
     metaTitle: "Digital Marketing Systems for Small Businesses | LTOL",
-    metaDescription: "Build a marketing system that generates leads automatically. SEO, CRM automation, email marketing, and conversion-focused websites from Lake Tahoe Online.",
+    metaDescription: "Build a marketing system that generates leads automatically. SEO, CRM automation, email marketing, and conversion-focused websites from LTOL.",
     headline: "Digital Marketing Systems for Small Businesses",
     intro: "Your marketing shouldn't depend on remembering to post or manually following up with every lead. LTOL builds integrated marketing systems — websites, SEO, CRM, email automation — that work together to attract, nurture, and convert customers automatically.",
     problems: [
