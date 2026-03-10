@@ -174,7 +174,7 @@ export const locations: LocationData[] = [
     city: "Western United States",
     region: "Western US",
     metaTitle: "Digital Infrastructure for Small Businesses | Western US | LTOL",
-    metaDescription: "Enterprise-level digital infrastructure for small businesses across the Western United States. AI, IT, cybersecurity, and marketing from Lake Tahoe Online.",
+    metaDescription: "Enterprise-level digital infrastructure for small businesses across the Western United States. AI, IT, cybersecurity, and marketing from LTOL.",
     headline: "Digital Infrastructure for Small Businesses Across the Western US",
     intro: "LTOL serves as a digital infrastructure partner for small businesses across the Western United States. We build connected technology systems — AI, IT, cybersecurity, and marketing — that help businesses compete at enterprise scale.",
     localContext: "Small businesses across the Western US share common challenges: finding reliable technology partners, adopting AI, and building secure infrastructure. LTOL bridges that gap with enterprise-grade systems and human support.",

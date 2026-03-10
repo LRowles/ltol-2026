@@ -253,7 +253,7 @@ export const industries: IndustryData[] = [
     slug: "hospitality-technology-solutions",
     industry: "Hospitality Businesses",
     metaTitle: "Technology Solutions for Hospitality Businesses | LTOL",
-    metaDescription: "WiFi, IT support, marketing, and AI for hotels, restaurants, and hospitality businesses. Technology partner — Lake Tahoe Online.",
+    metaDescription: "WiFi, IT support, marketing, and AI for hotels, restaurants, and hospitality businesses. Technology partner — LTOL.",
     headline: "Technology Solutions for Hospitality Businesses",
     intro: "Hospitality businesses depend on seamless technology — from guest WiFi to point-of-sale systems to online bookings.",
     challenges: ["Unreliable guest WiFi", "Disconnected systems", "Limited online visibility", "Seasonal staffing", "Guest network security risks"],
