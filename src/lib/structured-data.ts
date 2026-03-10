@@ -52,8 +52,8 @@ export function articleSchema(title: string, description: string, slug: string, 
     description,
     url: `${BASE_URL}/blog/${slug}`,
     datePublished: date,
-    author: { "@type": "Organization", name: "Lake Tahoe Online" },
-    publisher: { "@type": "Organization", name: "Lake Tahoe Online", url: BASE_URL },
+    author: { "@type": "Organization", name: "LTOL" },
+    publisher: { "@type": "Organization", name: "LTOL", url: BASE_URL },
     articleSection: category,
   };
 }
