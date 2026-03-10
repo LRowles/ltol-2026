@@ -12,7 +12,9 @@ export interface BlogPostData {
   relatedResource: string;
 }
 
-export const blogPosts: BlogPostData[] = [
+import { extendedBlogPosts } from "./blog-posts-extended";
+
+const coreBlogPosts: BlogPostData[] = [
   // ─── AI FOR SMALL BUSINESS (10 posts) ───
   {
     slug: "ai-for-small-businesses-2026",
