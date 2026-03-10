@@ -159,7 +159,7 @@ export const locations: LocationData[] = [
     city: "California",
     region: "Western United States",
     metaTitle: "Small Business IT Services in California | LTOL",
-    metaDescription: "Managed IT, cybersecurity, and technology services for California small businesses. Remote and on-site support from Lake Tahoe Online.",
+    metaDescription: "Managed IT, cybersecurity, and technology services for California small businesses. Remote and on-site support from LTOL.",
     headline: "Small Business IT Services in California",
     intro: "California small businesses need technology partners who understand the state's unique business landscape. LTOL provides managed IT, cybersecurity, AI integration, and digital marketing systems for California businesses — with both remote and on-site support options.",
     localContext: "From the Sierra Nevada to the Central Valley, California businesses face diverse technology challenges. LTOL combines local presence in Northern California with remote service capabilities to support businesses across the state.",
