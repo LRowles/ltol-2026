@@ -159,7 +159,7 @@ export const services: ServiceData[] = [
     slug: "cybersecurity",
     title: "Cybersecurity",
     metaTitle: "Cybersecurity Services for Small Businesses | LTOL",
-    metaDescription: "Protect your small business from cyber threats. Security assessments, endpoint protection, email security, and compliance from Lake Tahoe Online.",
+    metaDescription: "Protect your small business from cyber threats. Security assessments, endpoint protection, email security, and compliance from LTOL.",
     headline: "Cybersecurity Services for Small Businesses",
     intro: "Small businesses are the #1 target for cybercrime. LTOL provides layered security solutions that protect your data, your customers, and your reputation — without the complexity of enterprise security programs.",
     problems: [
