@@ -77,7 +77,7 @@ export const resources: ResourceData[] = [
     slug: "technology-stack-guide",
     title: "Small Business Technology Stack Guide",
     metaTitle: "Small Business Technology Stack Guide — Free Download | LTOL",
-    metaDescription: "Understand the core systems needed for secure, scalable operations. Free technology stack guide for small businesses from Lake Tahoe Online.",
+    metaDescription: "Understand the core systems needed for secure, scalable operations. Free technology stack guide for small businesses from LTOL.",
     headline: "The Essential Technology Stack for Growth-Minded Small Businesses",
     subheadline: "Understand the core systems needed for secure, scalable operations.",
     description: "This guide walks you through the essential technology systems every growing small business needs — from IT infrastructure to marketing tools to security — and how they should connect to reduce friction and support growth.",

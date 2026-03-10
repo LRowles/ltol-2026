@@ -938,7 +938,7 @@ export const blogPosts: BlogPostData[] = [
     slug: "why-local-businesses-need-digital-infrastructure",
     title: "Why Local Businesses Need Better Digital Infrastructure",
     metaTitle: "Digital Infrastructure for Local Businesses | LTOL",
-    metaDescription: "Local businesses compete differently — and need digital infrastructure designed for local success. Guide from Lake Tahoe Online.",
+    metaDescription: "Local businesses compete differently — and need digital infrastructure designed for local success. Guide from LTOL.",
     category: "Industry Solutions",
     date: "2026-01-22",
     readTime: "6 min read",
