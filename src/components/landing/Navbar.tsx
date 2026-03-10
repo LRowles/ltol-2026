@@ -129,6 +129,7 @@ const Navbar = () => {
                 </Link>
               ))}
 
+              <Link to="/team" onClick={() => setIsOpen(false)} className="text-foreground font-medium px-4 py-2 text-sm">Team</Link>
               <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">About</button>
               <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">Contact</button>
 
