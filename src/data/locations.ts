@@ -98,7 +98,7 @@ export const locations: LocationData[] = [
     city: "Reno",
     region: "Northern Nevada",
     metaTitle: "Managed IT Services in Reno for Small Businesses | LTOL",
-    metaDescription: "Professional managed IT services for small businesses in Reno, NV. Device monitoring, help desk, cybersecurity, and network support from Lake Tahoe Online.",
+    metaDescription: "Professional managed IT services for small businesses in Reno, NV. Device monitoring, help desk, cybersecurity, and network support from LTOL.",
     headline: "Managed IT Services in Reno for Small Businesses",
     intro: "Reno small businesses need IT that just works. LTOL provides fully managed IT services — from device monitoring and help desk support to cybersecurity and network management — so you can focus on running your business.",
     localContext: "With Reno's fast-growing tech and business landscape, having a reliable local IT partner isn't optional — it's essential. LTOL delivers hands-on, on-site support with the responsiveness that Reno businesses expect.",
