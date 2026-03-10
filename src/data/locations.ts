@@ -144,7 +144,7 @@ export const locations: LocationData[] = [
     city: "Northern Nevada",
     region: "Nevada",
     metaTitle: "AI Integration Services in Northern Nevada | LTOL",
-    metaDescription: "AI integration and automation for Northern Nevada small businesses. Workflow automation, AI agents, and CRM intelligence from Lake Tahoe Online.",
+    metaDescription: "AI integration and automation for Northern Nevada small businesses. Workflow automation, AI agents, and CRM intelligence from LTOL.",
     headline: "AI Integration Services in Northern Nevada",
     intro: "Northern Nevada businesses are ready for AI — and LTOL is the partner to make it happen. We implement practical AI systems that automate workflows, improve customer service, and drive smarter business decisions.",
     localContext: "From Reno to Carson City, Northern Nevada's growing economy creates opportunities for businesses that adopt AI strategically. LTOL helps you identify the right AI use cases and implement them without disrupting your operations.",
