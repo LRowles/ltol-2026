@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { MapPin, CheckCircle2, ArrowRight } from "lucide-react";
+import { MapPin, CheckCircle2, ArrowRight, BookOpen, FileText, Brain, Shield, Monitor, Megaphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -15,6 +15,13 @@ import heroLandscape from "@/assets/photos/difference-landscape.jpg";
 interface LocationPageTemplateProps {
   location: LocationData;
 }
+
+const coreServiceLinks = [
+  { label: "AI Integration", href: "/ai-integration", icon: Brain },
+  { label: "Managed IT Services", href: "/managed-it-services", icon: Monitor },
+  { label: "Cybersecurity", href: "/cybersecurity", icon: Shield },
+  { label: "Digital Marketing", href: "/digital-marketing", icon: Megaphone },
+];
 
 const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
   useEffect(() => {
@@ -39,7 +46,7 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
         intro={location.intro}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Locations" },
+          { label: "Locations", href: "/locations" },
           { label: location.city },
         ]}
         badge={`Serving ${location.city}, ${location.region}`}
@@ -86,6 +93,41 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Links — Core Services */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Explore Our Core Services</h2>
+          <div className="gradient-line w-16 mb-8" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {coreServiceLinks.map((svc) => (
+              <Link key={svc.href} to={svc.href} className="glass-card-hover p-6 text-center group">
+                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mx-auto mb-3">
+                  <svc.icon className="w-6 h-6 text-secondary" />
+                </div>
+                <span className="text-foreground font-semibold group-hover:text-secondary transition-colors">{svc.label}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4 mt-8 justify-center">
+            <Link to="/blog" className="glass-card-hover px-5 py-3 flex items-center gap-2 group">
+              <BookOpen className="w-4 h-4 text-secondary" />
+              <span className="text-foreground font-medium group-hover:text-secondary transition-colors">Read Our Blog</span>
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-secondary transition-colors" />
+            </Link>
+            <Link to="/resources/technology-stack-guide" className="glass-card-hover px-5 py-3 flex items-center gap-2 group">
+              <FileText className="w-4 h-4 text-secondary" />
+              <span className="text-foreground font-medium group-hover:text-secondary transition-colors">Free Technology Guide</span>
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-secondary transition-colors" />
+            </Link>
+            <Link to="/assessments/ai-readiness" className="glass-card-hover px-5 py-3 flex items-center gap-2 group">
+              <Brain className="w-4 h-4 text-secondary" />
+              <span className="text-foreground font-medium group-hover:text-secondary transition-colors">AI Readiness Assessment</span>
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-secondary transition-colors" />
+            </Link>
           </div>
         </div>
       </section>
