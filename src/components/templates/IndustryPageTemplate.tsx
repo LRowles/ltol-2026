@@ -60,6 +60,17 @@ const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
         badge={industry.industry}
       />
 
+      {/* Hero Image */}
+      {industryImageMap[industry.slug] && (
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-10">
+          <BrandImage
+            src={industryImageMap[industry.slug]}
+            alt={`${industry.industry} professionals in the Western US`}
+            aspectRatio="21/9"
+          />
+        </div>
+      )}
+
       {/* Challenges */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

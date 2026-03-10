@@ -75,6 +75,15 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
         badge="Free Resource"
       />
 
+      {/* Hero Image */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-10">
+        <BrandImage
+          src={resourceImg}
+          alt="Professional workspace with digital resources and guides"
+          aspectRatio="21/9"
+        />
+      </div>
+
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
