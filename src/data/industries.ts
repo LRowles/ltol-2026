@@ -16,7 +16,7 @@ export const industries: IndustryData[] = [
     slug: "small-business",
     industry: "Small Businesses",
     metaTitle: "Technology Solutions for Small Businesses | LTOL",
-    metaDescription: "AI integration, managed IT, cybersecurity, and digital marketing for small businesses. Enterprise-level technology from Lake Tahoe Online.",
+    metaDescription: "AI integration, managed IT, cybersecurity, and digital marketing for small businesses. Enterprise-level technology from LTOL.",
     headline: "Technology Solutions for Small Businesses",
     intro: "Small businesses deserve enterprise-level technology without enterprise-level complexity. LTOL builds connected digital systems — AI, IT, marketing, and cybersecurity — designed specifically for small business budgets, teams, and growth goals.",
     challenges: [
