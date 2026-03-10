@@ -104,7 +104,7 @@ export const assessments: AssessmentData[] = [
     slug: "marketing-systems-scorecard",
     title: "Marketing Systems Scorecard",
     metaTitle: "Marketing Systems Scorecard for Small Businesses | LTOL",
-    metaDescription: "Score your marketing systems. Evaluate lead capture, CRM, email automation, and analytics. Free scorecard from Lake Tahoe Online.",
+    metaDescription: "Score your marketing systems. Evaluate lead capture, CRM, email automation, and analytics. Free scorecard from LTOL.",
     headline: "How Effective Are Your Marketing Systems?",
     description: "Evaluate the key components of your marketing infrastructure. Identify what's working, what's missing, and where automation could have the biggest impact.",
     questions: [
