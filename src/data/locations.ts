@@ -65,7 +65,7 @@ export const locations: LocationData[] = [
     city: "Northern Nevada",
     region: "Nevada",
     metaTitle: "AI Integration & IT Services in Northern Nevada | LTOL",
-    metaDescription: "AI integration, managed IT, cybersecurity, and digital marketing for Northern Nevada small businesses. Regional technology partner — Lake Tahoe Online.",
+    metaDescription: "AI integration, managed IT, cybersecurity, and digital marketing for Northern Nevada small businesses. Regional technology partner — LTOL.",
     headline: "Technology Services for Small Businesses in Northern Nevada",
     intro: "Northern Nevada's small business economy is booming, and LTOL is here to make sure your technology keeps up. From Reno to Carson City, Sparks to Incline Village, we provide the managed IT, AI, and marketing systems that growing businesses need.",
     localContext: "Northern Nevada's rapid growth means more competition and higher expectations. Businesses that invest in connected technology systems — IT, marketing, AI, and security — gain a significant competitive advantage. LTOL makes that investment accessible and practical.",
