@@ -297,7 +297,7 @@ export const services: ServiceData[] = [
     slug: "website-systems",
     title: "Website Systems",
     metaTitle: "Conversion-Focused Website Design for Small Businesses | LTOL",
-    metaDescription: "Websites that generate leads, not just look good. Conversion-focused design, SEO, and CRM integration from Lake Tahoe Online.",
+    metaDescription: "Websites that generate leads, not just look good. Conversion-focused design, SEO, and CRM integration from LTOL.",
     headline: "Website Systems for Small Businesses",
     intro: "Your website should be your hardest-working employee. LTOL builds conversion-focused websites that attract visitors through SEO, capture leads with smart forms, and integrate with your CRM and marketing automation — so your website actually drives revenue.",
     problems: [
