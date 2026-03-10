@@ -65,7 +65,7 @@ const Footer = () => {
               Digital Infrastructure for Small Businesses. AI, marketing, IT, and cybersecurity — connected into one powerful system.
             </p>
             <p className="text-background/50 text-xs mb-4">
-              Serving Lake Tahoe • Reno • Northern Nevada • Western US
+              Serving Tahoe • Reno • Northern Nevada • Western US
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social, i) => (
