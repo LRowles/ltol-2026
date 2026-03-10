@@ -1,18 +1,37 @@
 import { Facebook, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import ltolLogo from "@/assets/ltol-logo.svg";
 
 const footerLinks = {
   services: [
-    { name: "Web Design", href: "#services" },
-    { name: "Managed IT", href: "#services" },
-    { name: "AI Integration", href: "#ai-integration" },
-    { name: "Network Installation", href: "#services" },
-    { name: "Cloud Systems", href: "#services" },
+    { name: "AI Integration", href: "/ai-integration" },
+    { name: "Digital Marketing", href: "/digital-marketing" },
+    { name: "Managed IT Services", href: "/managed-it-services" },
+    { name: "Cybersecurity", href: "/cybersecurity" },
+    { name: "Network Solutions", href: "/network-solutions" },
+    { name: "CRM Automation", href: "/crm-automation" },
+    { name: "Website Systems", href: "/website-systems" },
+    { name: "Email Marketing", href: "/email-marketing-automation" },
   ],
-  company: [
-    { name: "About", href: "#about" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+  resources: [
+    { name: "Blog", href: "/blog" },
+    { name: "AI Playbook", href: "/resources/small-business-ai-playbook" },
+    { name: "Cybersecurity Checklist", href: "/resources/cybersecurity-checklist" },
+    { name: "Marketing Blueprint", href: "/resources/marketing-automation-blueprint" },
+    { name: "Tech Stack Guide", href: "/resources/technology-stack-guide" },
+  ],
+  assessments: [
+    { name: "AI Readiness", href: "/assessments/ai-readiness" },
+    { name: "Technology Stack", href: "/assessments/technology-stack" },
+    { name: "Cybersecurity Risk", href: "/assessments/cybersecurity-risk-check" },
+    { name: "Marketing Systems", href: "/assessments/marketing-systems-scorecard" },
+  ],
+  locations: [
+    { name: "Reno", href: "/locations/reno" },
+    { name: "Truckee", href: "/locations/truckee" },
+    { name: "Lake Tahoe", href: "/locations/lake-tahoe" },
+    { name: "Northern Nevada", href: "/locations/northern-nevada" },
+    { name: "Sparks", href: "/locations/sparks" },
   ],
 };
 
@@ -23,93 +42,77 @@ const socialLinks = [
 ];
 
 const Footer = () => {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          <div className="lg:col-span-2">
-            <a href="#" className="flex items-center space-x-3 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            <Link to="/" className="flex items-center space-x-3 mb-4">
               <img src={ltolLogo} alt="Lake Tahoe Online" className="h-8 w-auto brightness-0 invert" />
-              <span className="text-sm font-medium text-background/70">
-                Lake Tahoe Online
-              </span>
-            </a>
-            <p className="text-background/70 mb-4 max-w-md">
-              Your trusted digital guardian. Local managed IT services, web design, 
-              AI integration, and digital marketing for small businesses across the Western United States.
+              <span className="text-sm font-medium text-background/70">Lake Tahoe Online</span>
+            </Link>
+            <p className="text-background/70 mb-4 max-w-md text-sm">
+              Your trusted digital guardian. Local managed IT, web design, AI integration, and digital marketing for small businesses across the Western United States.
             </p>
-            <p className="text-background/50 text-sm mb-6">
+            <p className="text-background/50 text-xs mb-4">
               Serving Lake Tahoe • Reno • Northern Nevada • Western US
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center text-background/70 hover:text-background hover:bg-background/20 transition-colors"
-                >
-                  <social.icon className="w-5 h-5" />
+            <div className="flex space-x-3">
+              {socialLinks.map((social, i) => (
+                <a key={i} href={social.href} aria-label={social.label} className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center text-background/70 hover:text-background hover:bg-background/20 transition-colors">
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
 
+          {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-background uppercase tracking-wider mb-4">
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                  >
-                    {link.name}
-                  </button>
-                </li>
+            <h3 className="text-xs font-semibold text-background uppercase tracking-wider mb-3">Services</h3>
+            <ul className="space-y-2">
+              {footerLinks.services.map((link, i) => (
+                <li key={i}><Link to={link.href} className="text-background/70 hover:text-background transition-colors text-xs">{link.name}</Link></li>
               ))}
             </ul>
           </div>
 
+          {/* Resources */}
           <div>
-            <h3 className="text-sm font-semibold text-background uppercase tracking-wider mb-4">
-              Company
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-background/70 hover:text-background transition-colors text-sm"
-                  >
-                    {link.name}
-                  </button>
-                </li>
+            <h3 className="text-xs font-semibold text-background uppercase tracking-wider mb-3">Resources</h3>
+            <ul className="space-y-2">
+              {footerLinks.resources.map((link, i) => (
+                <li key={i}><Link to={link.href} className="text-background/70 hover:text-background transition-colors text-xs">{link.name}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Assessments */}
+          <div>
+            <h3 className="text-xs font-semibold text-background uppercase tracking-wider mb-3">Assessments</h3>
+            <ul className="space-y-2">
+              {footerLinks.assessments.map((link, i) => (
+                <li key={i}><Link to={link.href} className="text-background/70 hover:text-background transition-colors text-xs">{link.name}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <h3 className="text-xs font-semibold text-background uppercase tracking-wider mb-3">Locations</h3>
+            <ul className="space-y-2">
+              {footerLinks.locations.map((link, i) => (
+                <li key={i}><Link to={link.href} className="text-background/70 hover:text-background transition-colors text-xs">{link.name}</Link></li>
               ))}
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-background/15 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/50">
-            © {new Date().getFullYear()} Lake Tahoe Online (LTOL). All rights reserved.
-          </p>
-          <div className="flex space-x-6 text-sm text-background/50">
-            <a href="#" className="hover:text-background transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-background transition-colors">
-              Terms of Service
-            </a>
+          <p className="text-xs text-background/50">© {new Date().getFullYear()} Lake Tahoe Online (LTOL). All rights reserved.</p>
+          <div className="flex space-x-6 text-xs text-background/50">
+            <a href="#" className="hover:text-background transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-background transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
