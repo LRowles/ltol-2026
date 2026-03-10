@@ -8,6 +8,7 @@ import FAQSection from "./FAQSection";
 import CTABlock from "./CTABlock";
 import { IndustryData } from "@/data/industries";
 import { services } from "@/data/services";
+import { useJsonLd, professionalServiceSchema, faqSchema } from "@/lib/structured-data";
 
 interface IndustryPageTemplateProps {
   industry: IndustryData;
