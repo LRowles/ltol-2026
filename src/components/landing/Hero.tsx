@@ -42,7 +42,7 @@ const Hero = () => {
             ))}
           </div>
 
-          <p className="text-lg sm:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-10">
+          <p className="text-xl sm:text-2xl text-primary-foreground/80 max-w-3xl mx-auto mb-10">
             Built for small businesses across the Western United States.
             AI, marketing automation, cybersecurity, and managed IT — connected into one powerful system.
           </p>
