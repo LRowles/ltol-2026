@@ -60,9 +60,8 @@ const Hero = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
               onClick={scrollToContact}
-              className="border-primary-foreground/30 hover:bg-primary-foreground/10 text-primary-foreground font-semibold text-lg px-8 py-6"
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold text-lg px-8 py-6"
             >
               Book a Consultation
             </Button>
