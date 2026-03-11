@@ -28,7 +28,7 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-primary-foreground">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-primary-foreground">
             Enterprise-Level Technology{" "}
             <span className="gradient-text">for Small Businesses</span>
           </h1>
@@ -37,12 +37,12 @@ const Hero = () => {
             {pillars.map((pillar, i) => (
               <div key={i} className="flex items-center gap-2 text-primary-foreground/80">
                 <pillar.icon className="w-5 h-5 text-secondary" />
-                <span className="text-base sm:text-lg font-medium">{pillar.label}</span>
+                <span className="text-lg sm:text-xl font-medium">{pillar.label}</span>
               </div>
             ))}
           </div>
 
-          <p className="text-lg sm:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-10">
+          <p className="text-xl sm:text-2xl text-primary-foreground/80 max-w-3xl mx-auto mb-10">
             Built for small businesses across the Western United States.
             AI, marketing automation, cybersecurity, and managed IT — connected into one powerful system.
           </p>
@@ -60,9 +60,8 @@ const Hero = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
               onClick={scrollToContact}
-              className="border-primary-foreground/30 hover:bg-primary-foreground/10 text-primary-foreground font-semibold text-lg px-8 py-6"
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold text-lg px-8 py-6"
             >
               Book a Consultation
             </Button>
