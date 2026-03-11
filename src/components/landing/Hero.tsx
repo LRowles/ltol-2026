@@ -37,7 +37,7 @@ const Hero = () => {
             {pillars.map((pillar, i) => (
               <div key={i} className="flex items-center gap-2 text-primary-foreground/80">
                 <pillar.icon className="w-5 h-5 text-secondary" />
-                <span className="text-base sm:text-lg font-medium">{pillar.label}</span>
+                <span className="text-lg sm:text-xl font-medium">{pillar.label}</span>
               </div>
             ))}
           </div>
