@@ -1,24 +1,33 @@
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import ServicePage from "./pages/ServicePage";
-import LocationPage from "./pages/LocationPage";
-import IndustryPage from "./pages/IndustryPage";
-import BlogIndex from "./pages/BlogIndex";
-import BlogPost from "./pages/BlogPost";
-import ResourcePage from "./pages/ResourcePage";
-import AssessmentPage from "./pages/AssessmentPage";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
 
-import LocationsHub from "./pages/LocationsHub";
-import PillarPage from "./pages/PillarPage";
-import NotFound from "./pages/NotFound";
+// Lazy-loaded page components for code-splitting
+const Index = lazy(() => import("./pages/Index"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
+const LocationPage = lazy(() => import("./pages/LocationPage"));
+const IndustryPage = lazy(() => import("./pages/IndustryPage"));
+const BlogIndex = lazy(() => import("./pages/BlogIndex"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const ResourcePage = lazy(() => import("./pages/ResourcePage"));
+const AssessmentPage = lazy(() => import("./pages/AssessmentPage"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const LocationsHub = lazy(() => import("./pages/LocationsHub"));
+const PillarPage = lazy(() => import("./pages/PillarPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
+
+// Minimal loading fallback — keeps layout shift low
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="animate-pulse text-muted-foreground text-sm">Loading…</div>
+  </div>
+);
 
 // Pillar authority page slugs
 const pillarRoutes = [
@@ -228,59 +237,60 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
 
-          {/* Pillar authority pages */}
-          {pillarRoutes.map((slug) => (
-            <Route key={slug} path={`/${slug}`} element={<PillarPage />} />
-          ))}
+            {/* Pillar authority pages */}
+            {pillarRoutes.map((slug) => (
+              <Route key={slug} path={`/${slug}`} element={<PillarPage />} />
+            ))}
 
-          {/* Service pages - direct slug routes */}
-          {serviceRoutes.map((slug) => (
-            <Route key={slug} path={`/${slug}`} element={<ServicePage />} />
-          ))}
+            {/* Service pages - direct slug routes */}
+            {serviceRoutes.map((slug) => (
+              <Route key={slug} path={`/${slug}`} element={<ServicePage />} />
+            ))}
 
-          {/* Flat industry SEO routes */}
-          {flatIndustryRoutes.map((slug) => (
-            <Route key={slug} path={`/${slug}`} element={<IndustryPage />} />
-          ))}
+            {/* Flat industry SEO routes */}
+            {flatIndustryRoutes.map((slug) => (
+              <Route key={slug} path={`/${slug}`} element={<IndustryPage />} />
+            ))}
 
-          {/* Flat programmatic SEO location routes */}
-          {flatLocationRoutes.map((slug) => (
-            <Route key={slug} path={`/${slug}`} element={<LocationPage />} />
-          ))}
+            {/* Flat programmatic SEO location routes */}
+            {flatLocationRoutes.map((slug) => (
+              <Route key={slug} path={`/${slug}`} element={<LocationPage />} />
+            ))}
 
-          {/* Location hub */}
-          <Route path="/locations" element={<LocationsHub />} />
+            {/* Location hub */}
+            <Route path="/locations" element={<LocationsHub />} />
 
-          {/* Location pages */}
-          <Route path="/locations/:slug" element={<LocationPage />} />
+            {/* Location pages */}
+            <Route path="/locations/:slug" element={<LocationPage />} />
 
-          {/* Industry pages - new /solutions/ routes */}
-          <Route path="/solutions/:slug" element={<IndustryPage />} />
+            {/* Industry pages - new /solutions/ routes */}
+            <Route path="/solutions/:slug" element={<IndustryPage />} />
 
-          {/* Industry pages - legacy /industries/ routes */}
-          <Route path="/industries/:slug" element={<IndustryPage />} />
+            {/* Industry pages - legacy /industries/ routes */}
+            <Route path="/industries/:slug" element={<IndustryPage />} />
 
-          {/* Blog */}
-          <Route path="/blog" element={<BlogIndex />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+            {/* Blog */}
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
 
-          {/* Resources */}
-          <Route path="/resources/:slug" element={<ResourcePage />} />
+            {/* Resources */}
+            <Route path="/resources/:slug" element={<ResourcePage />} />
 
-          {/* Assessments */}
-          <Route path="/assessments/:slug" element={<AssessmentPage />} />
+            {/* Assessments */}
+            <Route path="/assessments/:slug" element={<AssessmentPage />} />
 
-          {/* Legal */}
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          
+            {/* Legal */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
 
-          {/* Catch-all */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            {/* Catch-all */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
