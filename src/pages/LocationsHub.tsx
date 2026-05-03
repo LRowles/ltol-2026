@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
@@ -7,6 +7,7 @@ import PageHeader from "@/components/templates/PageHeader";
 import CTABlock from "@/components/templates/CTABlock";
 import { locations, LocationData } from "@/data/locations";
 import { useJsonLd } from "@/lib/structured-data";
+import { useSEO } from "@/lib/seo";
 
 import heroLandscape from "@/assets/photos/difference-landscape.jpg";
 
@@ -34,12 +35,11 @@ const regions = [
 ];
 
 const LocationsHub = () => {
-  useEffect(() => {
-    document.title = "Technology Services for Small Businesses Across the Western United States | LTOL";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Lake Tahoe Online provides AI integration, digital marketing systems, managed IT services, and cybersecurity for small businesses across Northern Nevada, the Tahoe Basin, and the Western United States.");
-    window.scrollTo(0, 0);
-  }, []);
+  useSEO({
+    title: "Technology Services for Small Businesses Across the Western United States | LTOL",
+    description: "Lake Tahoe Online provides AI integration, digital marketing systems, managed IT services, and cybersecurity for small businesses across Northern Nevada, the Tahoe Basin, and the Western United States.",
+    path: "/locations",
+  });
 
   useJsonLd({
     "@type": "ProfessionalService",

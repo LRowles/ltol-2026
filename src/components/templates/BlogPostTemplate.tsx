@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -8,20 +8,35 @@ import { BlogPostData } from "@/data/blog-posts";
 import { services } from "@/data/services";
 import { resources } from "@/data/resources";
 import { useJsonLd, articleSchema } from "@/lib/structured-data";
+import { useSEO, breadcrumbSchema } from "@/lib/seo";
 
 interface BlogPostTemplateProps {
   post: BlogPostData;
 }
 
 const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
-  useEffect(() => {
-    document.title = post.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", post.metaDescription);
-    window.scrollTo(0, 0);
-  }, [post]);
+  useSEO({
+    title: post.metaTitle,
+    description: post.metaDescription,
+    path: `/blog/${post.slug}`,
+    ogType: "article",
+    article: {
+      publishedTime: post.date,
+      section: post.category,
+      author: "LTOL",
+    },
+  });
 
-  useJsonLd(articleSchema(post.title, post.metaDescription, post.slug, post.date, post.category));
+  useJsonLd({
+    "@graph": [
+      articleSchema(post.title, post.metaDescription, post.slug, post.date, post.category),
+      breadcrumbSchema([
+        { name: "Home", url: "https://ltol.com" },
+        { name: "Blog", url: "https://ltol.com/blog" },
+        { name: post.title, url: `https://ltol.com/blog/${post.slug}` },
+      ]),
+    ],
+  });
 
   const relatedService = services.find((s) => s.slug === post.relatedService);
   const relatedResource = resources.find((r) => r.slug === post.relatedResource);

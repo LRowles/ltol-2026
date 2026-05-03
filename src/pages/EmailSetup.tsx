@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Monitor, Apple, Smartphone, TabletSmartphone, ArrowLeft, Info, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO } from "@/lib/seo";
 
 const serverSettings = {
   incoming: {
@@ -24,10 +25,12 @@ const serverSettings = {
 const EmailSetup = () => {
   const [activeTab, setActiveTab] = useState("outlook");
 
-  useEffect(() => {
-    document.title = "Email Setup Instructions | LTOL Client Portal";
-    window.scrollTo(0, 0);
-  }, []);
+  useSEO({
+    title: "Email Setup Instructions | LTOL Client Portal",
+    description: "Step-by-step email setup instructions for Outlook, Mac Mail, iPhone, iPad, and Android. Configure IMAP settings for your LTOL-hosted email.",
+    path: "/portal/email-setup",
+    noindex: true,
+  });
 
   return (
     <div className="min-h-screen bg-background">

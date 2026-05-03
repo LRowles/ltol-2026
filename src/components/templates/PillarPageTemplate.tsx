@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { ArrowRight, BookOpen, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
@@ -12,6 +12,7 @@ import { blogPosts } from "@/data/blog-posts";
 import { resources } from "@/data/resources";
 import { assessments } from "@/data/assessments";
 import { useJsonLd, faqSchema } from "@/lib/structured-data";
+import { useSEO, breadcrumbSchema } from "@/lib/seo";
 import heroMountain from "@/assets/photos/hero-mountain-town.jpg";
 
 interface PillarPageTemplateProps {
@@ -19,12 +20,11 @@ interface PillarPageTemplateProps {
 }
 
 const PillarPageTemplate = ({ pillar }: PillarPageTemplateProps) => {
-  useEffect(() => {
-    document.title = pillar.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", pillar.metaDescription);
-    window.scrollTo(0, 0);
-  }, [pillar]);
+  useSEO({
+    title: pillar.metaTitle,
+    description: pillar.metaDescription,
+    path: `/${pillar.slug}`,
+  });
 
   useJsonLd({
     "@graph": [
@@ -36,6 +36,10 @@ const PillarPageTemplate = ({ pillar }: PillarPageTemplateProps) => {
         publisher: { "@type": "Organization", name: "LTOL" },
       },
       faqSchema(pillar.faqs),
+      breadcrumbSchema([
+        { name: "Home", url: "https://ltol.com" },
+        { name: pillar.title, url: `https://ltol.com/${pillar.slug}` },
+      ]),
     ],
   });
 

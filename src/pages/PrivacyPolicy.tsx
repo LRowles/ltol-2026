@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import { useSEO } from "@/lib/seo";
 
 const PrivacyPolicy = () => {
-  useEffect(() => {
-    document.title = "Privacy Policy | LTOL";
-    window.scrollTo(0, 0);
-  }, []);
+  useSEO({
+    title: "Privacy Policy | LTOL",
+    description: "LTOL privacy policy. Learn how we collect, use, and protect your personal information.",
+    path: "/privacy",
+    noindex: true,
+  });
 
   return (
     <div className="min-h-screen bg-background">

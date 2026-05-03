@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { AlertTriangle, CheckCircle2, Shield, Users, ArrowRight } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
@@ -11,6 +11,7 @@ import { blogPosts } from "@/data/blog-posts";
 import { resources } from "@/data/resources";
 import { assessments } from "@/data/assessments";
 import { useJsonLd, serviceSchema, faqSchema } from "@/lib/structured-data";
+import { useSEO, breadcrumbSchema } from "@/lib/seo";
 
 import serviceAi from "@/assets/photos/service-ai.jpg";
 import serviceIt from "@/assets/photos/service-it.jpg";
@@ -28,17 +29,21 @@ interface ServicePageTemplateProps {
 }
 
 const ServicePageTemplate = ({ service }: ServicePageTemplateProps) => {
-  useEffect(() => {
-    document.title = service.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", service.metaDescription);
-    window.scrollTo(0, 0);
-  }, [service]);
+  useSEO({
+    title: service.metaTitle,
+    description: service.metaDescription,
+    path: `/${service.slug}`,
+  });
 
   useJsonLd({
     "@graph": [
       serviceSchema(service.title, service.intro, service.slug),
       faqSchema(service.faqs),
+      breadcrumbSchema([
+        { name: "Home", url: "https://ltol.com" },
+        { name: "Services", url: "https://ltol.com/#services" },
+        { name: service.title, url: `https://ltol.com/${service.slug}` },
+      ]),
     ],
   });
 

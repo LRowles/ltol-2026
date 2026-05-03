@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { MapPin, CheckCircle2, ArrowRight, BookOpen, FileText, Brain, Shield, Monitor, Megaphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
@@ -9,6 +9,7 @@ import CTABlock from "./CTABlock";
 import { LocationData } from "@/data/locations";
 import { services } from "@/data/services";
 import { useJsonLd, localBusinessSchema, faqSchema } from "@/lib/structured-data";
+import { useSEO, breadcrumbSchema } from "@/lib/seo";
 
 import heroLandscape from "@/assets/photos/difference-landscape.jpg";
 
@@ -24,17 +25,21 @@ const coreServiceLinks = [
 ];
 
 const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
-  useEffect(() => {
-    document.title = location.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", location.metaDescription);
-    window.scrollTo(0, 0);
-  }, [location]);
+  useSEO({
+    title: location.metaTitle,
+    description: location.metaDescription,
+    path: `/${location.slug}`,
+  });
 
   useJsonLd({
     "@graph": [
       localBusinessSchema(location.city, location.region, location.intro, location.slug),
       faqSchema(location.faqs),
+      breadcrumbSchema([
+        { name: "Home", url: "https://ltol.com" },
+        { name: "Locations", url: "https://ltol.com/locations" },
+        { name: `${location.city}, ${location.region}`, url: `https://ltol.com/${location.slug}` },
+      ]),
     ],
   });
 

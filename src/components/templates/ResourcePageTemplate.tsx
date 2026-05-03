@@ -14,6 +14,7 @@ import { ResourceData } from "@/data/resources";
 import { services } from "@/data/services";
 import { assessments } from "@/data/assessments";
 import { useJsonLd } from "@/lib/structured-data";
+import { useSEO, breadcrumbSchema } from "@/lib/seo";
 
 interface ResourcePageTemplateProps {
   resource: ResourceData;
@@ -24,19 +25,27 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    document.title = resource.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", resource.metaDescription);
-    window.scrollTo(0, 0);
-  }, [resource]);
+  useSEO({
+    title: resource.metaTitle,
+    description: resource.metaDescription,
+    path: `/resources/${resource.slug}`,
+  });
 
   useJsonLd({
-    "@type": "WebPage",
-    name: resource.title,
-    description: resource.subheadline,
-    url: `https://ltol.com/resources/${resource.slug}`,
-    provider: { "@type": "Organization", name: "LTOL" },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: resource.title,
+        description: resource.subheadline,
+        url: `https://ltol.com/resources/${resource.slug}`,
+        provider: { "@type": "Organization", name: "LTOL" },
+      },
+      breadcrumbSchema([
+        { name: "Home", url: "https://ltol.com" },
+        { name: "Resources", url: "https://ltol.com/resources" },
+        { name: resource.title, url: `https://ltol.com/resources/${resource.slug}` },
+      ]),
+    ],
   });
 
   const handleSubmit = async (e: React.FormEvent) => {

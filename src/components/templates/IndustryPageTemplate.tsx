@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { AlertTriangle, CheckCircle2, Lightbulb, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
@@ -9,6 +9,7 @@ import CTABlock from "./CTABlock";
 import { IndustryData } from "@/data/industries";
 import { services } from "@/data/services";
 import { useJsonLd, professionalServiceSchema, faqSchema } from "@/lib/structured-data";
+import { useSEO, breadcrumbSchema } from "@/lib/seo";
 
 import industryRetail from "@/assets/photos/industry-retail.jpg";
 import industryHealthcare from "@/assets/photos/industry-healthcare.jpg";
@@ -31,17 +32,21 @@ interface IndustryPageTemplateProps {
 }
 
 const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
-  useEffect(() => {
-    document.title = industry.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", industry.metaDescription);
-    window.scrollTo(0, 0);
-  }, [industry]);
+  useSEO({
+    title: industry.metaTitle,
+    description: industry.metaDescription,
+    path: `/solutions/${industry.slug}`,
+  });
 
   useJsonLd({
     "@graph": [
       professionalServiceSchema(industry.industry, industry.intro, industry.slug, industry.services),
       faqSchema(industry.faqs),
+      breadcrumbSchema([
+        { name: "Home", url: "https://ltol.com" },
+        { name: "Industries", url: "https://ltol.com/solutions" },
+        { name: industry.industry, url: `https://ltol.com/solutions/${industry.slug}` },
+      ]),
     ],
   });
 

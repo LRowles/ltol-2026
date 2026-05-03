@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,12 +6,14 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import PageHeader from "@/components/templates/PageHeader";
 import { blogPosts } from "@/data/blog-posts";
+import { useSEO } from "@/lib/seo";
 
 const BlogIndex = () => {
-  useEffect(() => {
-    document.title = "Blog — Small Business Technology Insights | LTOL";
-    window.scrollTo(0, 0);
-  }, []);
+  useSEO({
+    title: "Blog — Small Business Technology Insights | LTOL",
+    description: "Expert insights on managed IT, cybersecurity, AI integration, and digital marketing for small businesses. Practical guides from the LTOL team.",
+    path: "/blog",
+  });
 
   const categories = [...new Set(blogPosts.map((p) => p.category))];
 

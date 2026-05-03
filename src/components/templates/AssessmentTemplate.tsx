@@ -14,6 +14,7 @@ import { AssessmentData } from "@/data/assessments";
 import { services } from "@/data/services";
 import { resources } from "@/data/resources";
 import { useJsonLd } from "@/lib/structured-data";
+import { useSEO, breadcrumbSchema } from "@/lib/seo";
 
 interface AssessmentTemplateProps {
   assessment: AssessmentData;
@@ -29,19 +30,27 @@ const AssessmentTemplate = ({ assessment }: AssessmentTemplateProps) => {
   const totalSteps = assessment.questions.length + 2;
   const progress = Math.min(((step) / totalSteps) * 100, 100);
 
-  useEffect(() => {
-    document.title = assessment.metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", assessment.metaDescription);
-    window.scrollTo(0, 0);
-  }, [assessment]);
+  useSEO({
+    title: assessment.metaTitle,
+    description: assessment.metaDescription,
+    path: `/assessments/${assessment.slug}`,
+  });
 
   useJsonLd({
-    "@type": "WebPage",
-    name: assessment.title,
-    description: assessment.description,
-    url: `https://ltol.com/assessments/${assessment.slug}`,
-    provider: { "@type": "Organization", name: "LTOL" },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: assessment.title,
+        description: assessment.description,
+        url: `https://ltol.com/assessments/${assessment.slug}`,
+        provider: { "@type": "Organization", name: "LTOL" },
+      },
+      breadcrumbSchema([
+        { name: "Home", url: "https://ltol.com" },
+        { name: "Assessments", url: "https://ltol.com/assessments" },
+        { name: assessment.title, url: `https://ltol.com/assessments/${assessment.slug}` },
+      ]),
+    ],
   });
 
   const handleAnswer = (questionId: string, value: number) => {

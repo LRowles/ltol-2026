@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import { useSEO } from "@/lib/seo";
 
 const TermsOfService = () => {
-  useEffect(() => {
-    document.title = "Terms of Service | LTOL";
-    window.scrollTo(0, 0);
-  }, []);
+  useSEO({
+    title: "Terms of Service | LTOL",
+    description: "LTOL terms of service. Review the terms and conditions governing your use of our services.",
+    path: "/terms",
+    noindex: true,
+  });
 
   return (
     <div className="min-h-screen bg-background">

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, Monitor, ExternalLink, Phone, MessageSquare, Shield, Headphones, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO } from "@/lib/seo";
 
 const emailPortals = [
   {
@@ -34,10 +35,12 @@ const emailPortals = [
 const CustomerPortal = () => {
   const [sessionId, setSessionId] = useState("");
 
-  useEffect(() => {
-    document.title = "Customer Portal | LTOL";
-    window.scrollTo(0, 0);
-  }, []);
+  useSEO({
+    title: "Customer Portal | LTOL",
+    description: "Access your LTOL customer portal for webmail, remote support sessions, and email setup instructions.",
+    path: "/portal",
+    noindex: true,
+  });
 
   const handleRemoteSession = () => {
     if (sessionId.trim()) {
