@@ -161,10 +161,6 @@ const CustomerPortal = () => {
               >
                 Open Billing Portal <ExternalLink className="w-4 h-4" />
               </a>
-              <p className="text-xs text-muted-foreground">
-                Powered by Zoho Books. Need help with your account?{" "}
-                <a href="mailto:billing@ltol.com" className="text-primary hover:underline">Email billing</a>.
-              </p>
             </CardContent>
           </Card>
         </div>
