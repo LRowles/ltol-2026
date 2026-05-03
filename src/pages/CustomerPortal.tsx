@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Monitor, ExternalLink, Phone, MessageSquare, Shield, Headphones, BookOpen } from "lucide-react";
+import { Mail, Monitor, ExternalLink, Phone, MessageSquare, Shield, Headphones, BookOpen, CreditCard } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSEO } from "@/lib/seo";
 
@@ -62,7 +62,7 @@ const CustomerPortal = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Remote Support Session */}
           <Card className="bg-card border-border lg:row-span-1">
             <CardHeader>
@@ -136,6 +136,35 @@ const CustomerPortal = () => {
                   </div>
                 </a>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Billing Portal */}
+          <Card className="bg-card border-border">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-foreground">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <CreditCard className="w-5 h-5 text-primary" />
+                </div>
+                Billing Portal
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground text-sm">
+                Access our billing portal to manage your contact info, view invoices, update your credit card, and more.
+              </p>
+              <a
+                href="https://accounts.ltol.com/portal/laketahoeonline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors"
+              >
+                Open Billing Portal <ExternalLink className="w-4 h-4" />
+              </a>
+              <p className="text-xs text-muted-foreground">
+                Powered by Zoho Books. Need help with your account?{" "}
+                <a href="mailto:billing@ltol.com" className="text-primary hover:underline">Email billing</a>.
+              </p>
             </CardContent>
           </Card>
         </div>
