@@ -144,7 +144,7 @@ const CustomerPortal = () => {
               <p className="text-muted-foreground text-sm">
                 Our support team is available Monday through Friday, 8:00 AM to 6:00 PM.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 <a
                   href="tel:+15305822080"
                   className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border hover:border-primary/50 transition-colors"
