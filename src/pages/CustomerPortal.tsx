@@ -4,7 +4,8 @@ import Footer from "@/components/landing/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Monitor, ExternalLink, Phone, MessageSquare, Shield, Headphones } from "lucide-react";
+import { Mail, Monitor, ExternalLink, Phone, MessageSquare, Shield, Headphones, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const emailPortals = [
   {
@@ -180,18 +181,26 @@ const CustomerPortal = () => {
 
         {/* Email Setup Help */}
         <Card className="bg-muted/30 border-border">
-          <CardContent className="p-6 text-center">
-            <p className="text-muted-foreground text-sm">
-              Need help setting up email on your phone or computer?{" "}
-              <a href="tel:+15305822080" className="text-primary hover:underline font-medium">
-                Call us at (530) 582-2080
-              </a>{" "}
-              or{" "}
-              <a href="mailto:support@ltol.com" className="text-primary hover:underline font-medium">
-                email support@ltol.com
-              </a>{" "}
-              and we'll walk you through it.
-            </p>
+          <CardContent className="p-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground">Email Setup Instructions</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Step-by-step guides for Outlook, Mac Mail, iPhone, iPad, and Android.
+                  </p>
+                </div>
+              </div>
+              <Link
+                to="/portal/email-setup"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                View Setup Guides
+              </Link>
+            </div>
           </CardContent>
         </Card>
       </main>

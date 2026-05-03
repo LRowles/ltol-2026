@@ -19,6 +19,7 @@ const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const LocationsHub = lazy(() => import("./pages/LocationsHub"));
 const PillarPage = lazy(() => import("./pages/PillarPage"));
 const CustomerPortal = lazy(() => import("./pages/CustomerPortal"));
+const EmailSetup = lazy(() => import("./pages/EmailSetup"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -288,6 +289,7 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/portal" element={<CustomerPortal />} />
+            <Route path="/portal/email-setup" element={<EmailSetup />} />
 
             {/* Catch-all */}
             <Route path="*" element={<NotFound />} />
