@@ -35,9 +35,9 @@ const footerLinks = {
     { name: "Marketing Systems", href: "/assessments/marketing-systems-scorecard" },
   ],
   locations: [
-    { name: "Reno", href: "/reno-managed-it" },
-    { name: "Truckee", href: "/truckee-managed-it" },
-    { name: "Lake Tahoe", href: "/tahoe-managed-it" },
+    { name: "Reno", href: "/reno-managed-it-services" },
+    { name: "Truckee", href: "/truckee-managed-it-services" },
+    { name: "Lake Tahoe", href: "/tahoe-managed-it-services" },
     { name: "Northern Nevada", href: "/northern-nevada-ai-integration" },
     { name: "California", href: "/california-small-business-it" },
     { name: "Western US", href: "/western-us-digital-infrastructure" },
