@@ -5,15 +5,21 @@ const BASE_URL = "https://ltol.com";
 const localBusinessBase = {
   "@type": "LocalBusiness",
   name: "LTOL",
-  alternateName: "LTOL",
+  alternateName: "Lake Tahoe Online",
   url: BASE_URL,
+  telephone: "+1-530-582-2080",
+  email: "support@ltol.com",
+  openingHours: "Mo-Fr 08:00-18:00",
   areaServed: {
     "@type": "Place",
     name: "Western United States",
   },
   address: {
     "@type": "PostalAddress",
-    addressRegion: "NV",
+    streetAddress: "10266 Truckee Airport Road, Suite C",
+    addressLocality: "Truckee",
+    addressRegion: "CA",
+    postalCode: "96161",
     addressCountry: "US",
   },
 };

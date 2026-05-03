@@ -32,7 +32,7 @@ const PrivacyPolicy = () => {
           <p>You may request access to, correction of, or deletion of your personal data at any time by contacting us at the information provided below.</p>
 
           <h2 className="text-xl font-semibold text-foreground mt-8">6. Contact</h2>
-          <p>For privacy-related inquiries, please contact us at <a href="mailto:hello@ltol.com" className="text-primary underline">hello@ltol.com</a>.</p>
+          <p>For privacy-related inquiries, please contact us at <a href="mailto:support@ltol.com" className="text-primary underline">support@ltol.com</a>.</p>
         </div>
       </main>
       <Footer />

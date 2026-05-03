@@ -91,6 +91,7 @@ const Navbar = () => {
             <Dropdown id="industries" label="Industries" links={industryLinks} />
             <Dropdown id="resources" label="Resources" links={resourceLinks} />
             
+            <Link to="/portal" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Client Portal</Link>
             <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">About</button>
             <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Contact</button>
             <Button onClick={() => scrollToSection("#contact")} className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold">
@@ -130,6 +131,7 @@ const Navbar = () => {
               ))}
 
               
+              <Link to="/portal" onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium">Client Portal</Link>
               <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">About</button>
               <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">Contact</button>
 

@@ -10,9 +10,9 @@ import { pushContactLead } from "@/lib/zoho-proxy";
 import contactImg from "@/assets/photos/contact-support.jpg";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "(775) 555-LTOL", href: "tel:+17755555865" },
-  { icon: Mail, label: "Email", value: "hello@ltol.com", href: "mailto:hello@ltol.com" },
-  { icon: MapPin, label: "Location", value: "Lake Tahoe • Reno • Western US", href: null },
+  { icon: Phone, label: "Phone", value: "(530) 582-2080", href: "tel:+15305822080" },
+  { icon: Mail, label: "Email", value: "support@ltol.com", href: "mailto:support@ltol.com" },
+  { icon: MapPin, label: "Office", value: "10266 Truckee Airport Rd, Suite C, Truckee, CA 96161", href: "https://maps.google.com/?q=10266+Truckee+Airport+Road+Suite+C+Truckee+CA+96161" },
 ];
 
 const serviceOptions = [
@@ -128,7 +128,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">Phone (optional)</label>
-                      <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(775) 555-1234" className="bg-muted border-border text-foreground placeholder:text-muted-foreground" />
+                      <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(530) 582-2080" className="bg-muted border-border text-foreground placeholder:text-muted-foreground" />
                     </div>
                   </div>
 
