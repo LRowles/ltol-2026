@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# GitHub Actions workflow - must be added manually (Lovable GitHub App lacks workflows permission)
+.github/workflows/
