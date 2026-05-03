@@ -94,7 +94,7 @@ const CustomerPortal = () => {
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                Powered by Zoho Assist. Don't have a Session ID?{" "}
+                Don't have a Session ID?{" "}
                 <a href="tel:+15305822080" className="text-primary hover:underline">Call us</a> to start a support request.
               </p>
             </CardContent>
