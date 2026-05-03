@@ -44,7 +44,7 @@ const CustomerPortal = () => {
 
   const handleRemoteSession = () => {
     if (sessionId.trim()) {
-      window.open(`https://join.zoho.com/join?key=${encodeURIComponent(sessionId.trim())}`, "_blank");
+      window.open(`https://join.zoho.com/${encodeURIComponent(sessionId.trim())}`, "_blank");
     }
   };
 
