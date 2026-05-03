@@ -6,7 +6,7 @@
  * write — if it fails, the Supabase record still exists as a fallback.
  */
 
-const PROXY_URL = import.meta.env.VITE_ZOHO_PROXY_URL || "";
+const PROXY_URL = "https://ltol-zoho-proxy.ltol.workers.dev";
 
 interface ContactLead {
   name: string;
