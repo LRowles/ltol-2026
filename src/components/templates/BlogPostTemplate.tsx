@@ -54,7 +54,7 @@ const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
         </div>
       </article>
 
-      <CTABlock buttonText="Book a Technology Strategy Session" />
+      <CTABlock />
       <InternalLinks
         relatedService={relatedService ? { slug: relatedService.slug, title: relatedService.title } : undefined}
         relatedResource={relatedResource ? { slug: relatedResource.slug, title: relatedResource.title } : undefined}

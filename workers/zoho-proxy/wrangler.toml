@@ -1,0 +1,13 @@
+name = "ltol-zoho-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+
+[vars]
+ZOHO_CLIENT_ID = "1000.VHJOBZ9TESW3GT3VIOJEYRFCCSQQWS"
+ZOHO_ACCOUNTS_URL = "https://accounts.zoho.com"
+ZOHO_API_URL = "https://www.zohoapis.com"
+ALLOWED_ORIGIN = "https://ltol.com"
+
+# Secrets (set via `wrangler secret put`):
+# ZOHO_CLIENT_SECRET
+# ZOHO_REFRESH_TOKEN

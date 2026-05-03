@@ -148,7 +148,7 @@ const ServicePageTemplate = ({ service }: ServicePageTemplateProps) => {
       </section>
 
       <FAQSection faqs={service.faqs} />
-      <CTABlock buttonText="Book a Technology Strategy Session" />
+      <CTABlock />
       <InternalLinks
         relatedBlog={relatedBlog ? { slug: relatedBlog.slug, title: relatedBlog.title } : undefined}
         relatedResource={relatedResource ? { slug: relatedResource.slug, title: relatedResource.title } : undefined}

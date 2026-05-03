@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { pushResourceLead } from "@/lib/zoho-proxy";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import PageHeader from "./PageHeader";
@@ -41,17 +42,30 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    const { error } = await supabase.from("lead_downloads").insert({
-      name: form.name.trim(),
-      email: form.email.trim(),
-      business: form.business.trim() || null,
-      resource_slug: resource.slug,
-    });
+
+    // Write to Supabase and Zoho CRM in parallel
+    const [supabaseResult] = await Promise.allSettled([
+      supabase.from("lead_downloads").insert({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        business: form.business.trim() || null,
+        resource_slug: resource.slug,
+      }),
+      pushResourceLead({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        business: form.business.trim() || undefined,
+        resource_slug: resource.slug,
+      }),
+    ]);
+
     setSubmitting(false);
-    if (error) {
+
+    if (supabaseResult.status === "rejected" || (supabaseResult.status === "fulfilled" && supabaseResult.value.error)) {
       toast.error("Something went wrong. Please try again.");
       return;
     }
+
     setSubmitted(true);
     toast.success("Check your email for the download link!");
   };

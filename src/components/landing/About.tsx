@@ -41,9 +41,9 @@ const About = () => {
               Why Businesses Trust <span className="gradient-text">LTOL</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              LTOL is a boutique technology consultancy built on the Guardian principle: 
-              we protect and strengthen what others have built. Your business deserves reliable 
-              systems and real support — not a faceless help desk.
+              LTOL is a boutique technology consultancy that protects and strengthens 
+              what you've built. Your business deserves reliable systems and real 
+              support — not a faceless help desk.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -62,7 +62,7 @@ const About = () => {
 
             <p className="text-muted-foreground">
               Your business deserves reliable systems and real support. 
-              That's the LTOL promise — a true digital guardian for small businesses.
+              That's the LTOL promise — technology that works as hard as you do.
             </p>
           </div>
         </div>

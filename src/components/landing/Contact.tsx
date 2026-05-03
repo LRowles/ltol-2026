@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { pushContactLead } from "@/lib/zoho-proxy";
 import contactImg from "@/assets/photos/contact-support.jpg";
 
 const contactInfo = [
@@ -14,8 +15,20 @@ const contactInfo = [
   { icon: MapPin, label: "Location", value: "Lake Tahoe • Reno • Western US", href: null },
 ];
 
+const serviceOptions = [
+  { value: "IT Services", label: "IT & Network Solutions" },
+  { value: "Digital Marketing Services", label: "Digital Marketing" },
+];
+
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", business: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    business: "",
+    message: "",
+    ltol_service: [] as string[],
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -23,27 +36,52 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handleServiceToggle = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      ltol_service: prev.ltol_service.includes(value)
+        ? prev.ltol_service.filter((s) => s !== value)
+        : [...prev.ltol_service, value],
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const { error } = await supabase.from("contact_submissions").insert({
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      business: formData.business.trim() || null,
-      message: formData.message.trim(),
-      source_page: window.location.pathname,
-    });
+    // Write to Supabase and Zoho CRM in parallel
+    const [supabaseResult] = await Promise.allSettled([
+      supabase.from("contact_submissions").insert({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        business: formData.business.trim() || null,
+        phone: formData.phone.trim() || null,
+        message: formData.message.trim(),
+        source_page: window.location.pathname,
+      }),
+      pushContactLead({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim() || undefined,
+        business: formData.business.trim() || undefined,
+        message: formData.message.trim(),
+        source_page: window.location.pathname,
+        ltol_service: formData.ltol_service.length > 0 ? formData.ltol_service : undefined,
+      }),
+    ]);
 
     setIsSubmitting(false);
-    if (error) {
+
+    // Only fail if Supabase write failed (Zoho is non-blocking)
+    if (supabaseResult.status === "rejected" || (supabaseResult.status === "fulfilled" && supabaseResult.value.error)) {
       toast.error("Something went wrong. Please try again.");
       return;
     }
+
     setIsSubmitted(true);
     toast.success("Thank you! We'll be in touch within 24 hours.");
     setTimeout(() => {
-      setFormData({ name: "", email: "", business: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", business: "", message: "", ltol_service: [] });
       setIsSubmitted(false);
     }, 3000);
   };
@@ -83,10 +121,38 @@ const Contact = () => {
                       <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className="bg-muted border-border text-foreground placeholder:text-muted-foreground" />
                     </div>
                   </div>
-                  <div>
-                    <label htmlFor="business" className="block text-sm font-medium text-foreground mb-2">Business Name</label>
-                    <Input id="business" name="business" type="text" value={formData.business} onChange={handleChange} placeholder="Your Company LLC" className="bg-muted border-border text-foreground placeholder:text-muted-foreground" />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="business" className="block text-sm font-medium text-foreground mb-2">Business Name</label>
+                      <Input id="business" name="business" type="text" value={formData.business} onChange={handleChange} placeholder="Your Company LLC" className="bg-muted border-border text-foreground placeholder:text-muted-foreground" />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">Phone (optional)</label>
+                      <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(775) 555-1234" className="bg-muted border-border text-foreground placeholder:text-muted-foreground" />
+                    </div>
                   </div>
+
+                  {/* Service Interest */}
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-3">What are you interested in?</label>
+                    <div className="flex flex-wrap gap-3">
+                      {serviceOptions.map((opt) => (
+                        <button
+                          key={opt.value}
+                          type="button"
+                          onClick={() => handleServiceToggle(opt.value)}
+                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all border ${
+                            formData.ltol_service.includes(opt.value)
+                              ? "border-secondary bg-secondary/10 text-secondary"
+                              : "border-border bg-muted/50 text-muted-foreground hover:border-secondary/50"
+                          }`}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">How Can We Help?</label>
                     <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Tell us about your business and technology needs..." rows={4} className="bg-muted border-border text-foreground placeholder:text-muted-foreground resize-none" />
@@ -131,7 +197,7 @@ const Contact = () => {
               ))}
             </div>
             <div className="mt-8 p-6 rounded-2xl bg-muted/50 border border-border">
-              <h4 className="font-semibold text-foreground mb-2">🛡️ The Guardian Promise</h4>
+              <h4 className="font-semibold text-foreground mb-2">The LTOL Promise</h4>
               <p className="text-sm text-muted-foreground">We respond to all inquiries within 24 hours. For urgent IT issues, call us directly — a real person will answer.</p>
             </div>
           </div>

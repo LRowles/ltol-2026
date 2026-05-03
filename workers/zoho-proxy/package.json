@@ -1,0 +1,16 @@
+{
+  "name": "ltol-zoho-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret:client-secret": "wrangler secret put ZOHO_CLIENT_SECRET",
+    "secret:refresh-token": "wrangler secret put ZOHO_REFRESH_TOKEN"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240909.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.78.0"
+  }
+}

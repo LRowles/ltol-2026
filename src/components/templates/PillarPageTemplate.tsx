@@ -162,7 +162,7 @@ const PillarPageTemplate = ({ pillar }: PillarPageTemplateProps) => {
       </section>
 
       <FAQSection faqs={pillar.faqs} />
-      <CTABlock buttonText="Schedule a Technology Strategy Session" />
+      <CTABlock />
       <Footer />
     </div>
   );

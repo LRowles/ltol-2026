@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { pushAssessmentLead } from "@/lib/zoho-proxy";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import PageHeader from "./PageHeader";
@@ -57,21 +58,34 @@ const AssessmentTemplate = ({ assessment }: AssessmentTemplateProps) => {
     const score = calculateScore();
     const band = assessment.bands.find((b) => score >= b.min && score <= b.max) || assessment.bands[0];
 
-    const { error } = await supabase.from("assessment_submissions").insert({
-      name: contact.name.trim(),
-      email: contact.email.trim(),
-      business: contact.business.trim() || null,
-      assessment_slug: assessment.slug,
-      answers,
-      score,
-      band: band.label,
-    });
+    // Write to Supabase and Zoho CRM in parallel
+    const [supabaseResult] = await Promise.allSettled([
+      supabase.from("assessment_submissions").insert({
+        name: contact.name.trim(),
+        email: contact.email.trim(),
+        business: contact.business.trim() || null,
+        assessment_slug: assessment.slug,
+        answers,
+        score,
+        band: band.label,
+      }),
+      pushAssessmentLead({
+        name: contact.name.trim(),
+        email: contact.email.trim(),
+        business: contact.business.trim() || undefined,
+        assessment_slug: assessment.slug,
+        score,
+        band: band.label,
+      }),
+    ]);
 
     setSubmitting(false);
-    if (error) {
+
+    if (supabaseResult.status === "rejected" || (supabaseResult.status === "fulfilled" && supabaseResult.value.error)) {
       toast.error("Something went wrong. Please try again.");
       return;
     }
+
     setResult({ score, band });
     setStep(totalSteps);
   };
