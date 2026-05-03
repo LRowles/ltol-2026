@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Monitor, Apple, Smartphone, TabletSmartphone, ArrowLeft, Info } from "lucide-react";
+import { Monitor, Apple, Smartphone, TabletSmartphone, ArrowLeft, Info, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const serverSettings = {
@@ -22,7 +22,7 @@ const serverSettings = {
 };
 
 const EmailSetup = () => {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("outlook");
 
   useEffect(() => {
     document.title = "Email Setup Instructions | LTOL Client Portal";
@@ -141,74 +141,108 @@ const EmailSetup = () => {
               <CardContent className="p-6 sm:p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-2">Microsoft Outlook Setup</h2>
                 <p className="text-muted-foreground mb-6 text-sm">
-                  For Outlook 365, 2021, 2019, or 2016. Older versions follow a similar process but screens may look different.
+                  For Microsoft 365 (Outlook 2024) and Outlook 2021/2019. Instructions for Outlook 2016 Classic are included below.
                 </p>
-                <ol className="space-y-4 text-foreground">
+
+                {/* Outlook Mockup Image */}
+                <div className="mb-8 rounded-lg overflow-hidden border border-border">
+                  <img
+                    src="/images/email-setup-outlook.png"
+                    alt="Microsoft Outlook Add Account dialog showing Advanced options with 'Let me set up my account manually' checkbox"
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Modern Outlook 365 */}
+                <h3 className="text-lg font-semibold text-foreground mb-4 border-b border-border pb-2">Outlook 365 / 2024 / 2021</h3>
+                <ol className="space-y-4 text-foreground mb-8">
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">1</span>
                     <span>Select <strong>File</strong> from the top menu bar.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">2</span>
-                    <span>Click the <strong>Add Account</strong> button.</span>
+                    <span>Click <strong>Add Account</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">3</span>
-                    <span>Select <strong>"Manual setup or additional server types"</strong>, then click <strong>Next</strong>.</span>
+                    <span>Enter your <strong>full email address</strong> in the field.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">4</span>
-                    <span>Select <strong>"POP or IMAP"</strong>, then click <strong>Next</strong>.</span>
+                    <span>Click <strong>Advanced options</strong>, then check the box for <strong>"Let me set up my account manually"</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">5</span>
-                    <span>Under "User Information", type in your <strong>name</strong> and <strong>email address</strong>.</span>
+                    <span>Click <strong>Connect</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">6</span>
-                    <span>Under "Server Information", select <strong>IMAP</strong> as the Account Type.</span>
+                    <span>Select <strong>IMAP</strong> as the account type.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">7</span>
-                    <span>For Incoming Mail Server, type: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code></span>
+                    <span>Enter the incoming server settings:<br />
+                      Server: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code><br />
+                      Port: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">993</code><br />
+                      Encryption: <strong>SSL/TLS</strong>
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">8</span>
-                    <span>For Outgoing Mail Server, type: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code></span>
+                    <span>Enter the outgoing server settings:<br />
+                      Server: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code><br />
+                      Port: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">587</code><br />
+                      Encryption: <strong>STARTTLS</strong>
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">9</span>
-                    <span>Under "Logon Information", type in your <strong>full email address</strong> and <strong>password</strong>.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">10</span>
-                    <span>Click the <strong>More Settings...</strong> button on the right.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">11</span>
-                    <span>Select the <strong>Outgoing Server</strong> tab.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">12</span>
-                    <span>Check <strong>"My outgoing server (SMTP) requires authentication"</strong>.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">13</span>
-                    <span>Select the <strong>Advanced</strong> tab.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">14</span>
-                    <span>Under "Server Port Numbers": Incoming server (IMAP) — enter <strong>993</strong> and select <strong>SSL/TLS</strong>.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">15</span>
-                    <span>Outgoing server (SMTP) — enter <strong>587</strong> and select <strong>STARTTLS</strong> or <strong>Auto</strong>.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">16</span>
-                    <span>Click <strong>OK</strong>, then click <strong>Next</strong> to complete setup.</span>
+                    <span>Enter your <strong>password</strong> and click <strong>Connect</strong>.</span>
                   </li>
                 </ol>
+
+                {/* Outlook 2016/2019 Classic */}
+                <details className="group">
+                  <summary className="cursor-pointer text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4" />
+                    Using Outlook 2016 or 2019 Classic? Click here for those instructions.
+                  </summary>
+                  <div className="mt-4 pl-6 border-l-2 border-border">
+                    <ol className="space-y-3 text-foreground text-sm">
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">1</span>
+                        <span>Select <strong>File</strong> &gt; <strong>Add Account</strong>.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">2</span>
+                        <span>Select <strong>"Manual setup or additional server types"</strong>, click <strong>Next</strong>.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">3</span>
+                        <span>Select <strong>"POP or IMAP"</strong>, click <strong>Next</strong>.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">4</span>
+                        <span>Fill in your name, email, select <strong>IMAP</strong>, enter <code className="bg-muted px-1 py-0.5 rounded font-mono">mail.cityemail.com</code> for both servers, and your login credentials.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">5</span>
+                        <span>Click <strong>More Settings</strong> &gt; <strong>Outgoing Server</strong> tab &gt; check "My outgoing server requires authentication".</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">6</span>
+                        <span>Go to <strong>Advanced</strong> tab: Incoming port <strong>993</strong> (SSL/TLS), Outgoing port <strong>587</strong> (STARTTLS or Auto).</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">7</span>
+                        <span>Click <strong>OK</strong>, then <strong>Next</strong> to complete.</span>
+                      </li>
+                    </ol>
+                  </div>
+                </details>
+
                 <div className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                   <p className="text-sm text-green-400 font-medium">Your email account setup is now complete.</p>
                 </div>
@@ -222,8 +256,18 @@ const EmailSetup = () => {
               <CardContent className="p-6 sm:p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-2">Apple Mail (macOS) Setup</h2>
                 <p className="text-muted-foreground mb-6 text-sm">
-                  For macOS Ventura, Sonoma, Sequoia, or later. Earlier versions follow a similar process.
+                  For macOS Sequoia, Sonoma, and Ventura. Earlier versions follow a similar process.
                 </p>
+
+                {/* Mac Mail Mockup Image */}
+                <div className="mb-8 rounded-lg overflow-hidden border border-border">
+                  <img
+                    src="/images/email-setup-mac.png"
+                    alt="Apple Mail Add Account dialog showing 'Other Mail Account' option selected"
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
                 <ol className="space-y-4 text-foreground">
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">1</span>
@@ -231,11 +275,11 @@ const EmailSetup = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">2</span>
-                    <span>In the menu bar, click <strong>Mail &gt; Add Account...</strong> (or go to <strong>System Settings &gt; Internet Accounts &gt; Add Account</strong>).</span>
+                    <span>In the menu bar, click <strong>Mail &gt; Add Account...</strong></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">3</span>
-                    <span>Select <strong>"Other Mail Account..."</strong> and click <strong>Continue</strong>.</span>
+                    <span>Select <strong>"Other Mail Account..."</strong> at the bottom of the list, then click <strong>Continue</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">4</span>
@@ -243,11 +287,11 @@ const EmailSetup = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">5</span>
-                    <span>If prompted that the account must be manually configured, click <strong>Next</strong> or <strong>Continue</strong>.</span>
+                    <span>Mail will attempt to auto-detect your settings. <strong>If it cannot connect automatically</strong>, it will display the manual configuration screen. Continue to the next step.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">6</span>
-                    <span>Select <strong>IMAP</strong> as the account type.</span>
+                    <span>Select <strong>IMAP</strong> as the account type (if prompted).</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">7</span>
@@ -259,18 +303,27 @@ const EmailSetup = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">9</span>
-                    <span>Enter your <strong>full email address</strong> as the User Name and your <strong>password</strong>.</span>
+                    <span>Verify your <strong>username</strong> (full email address) and <strong>password</strong> are correct.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">10</span>
-                    <span>Click <strong>Sign In</strong>. Mail will verify the settings and connect.</span>
+                    <span>Click <strong>Sign In</strong>. Mail will verify the connection.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">11</span>
-                    <span>If port settings are needed: Incoming port <strong>993</strong> with <strong>SSL/TLS</strong>; Outgoing port <strong>587</strong> with <strong>STARTTLS</strong>.</span>
+                    <span>If prompted for port settings: Incoming <strong>993</strong> with <strong>SSL/TLS</strong>; Outgoing <strong>587</strong> with <strong>STARTTLS</strong>.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">12</span>
+                    <span>Ensure <strong>Mail</strong> is checked in the apps list, then click <strong>Done</strong>.</span>
                   </li>
                 </ol>
-                <div className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                <div className="mt-6 p-4 bg-muted/50 border border-border rounded-lg">
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Tip:</strong> You can also add accounts via <strong>System Settings &gt; Internet Accounts &gt; Add Account &gt; Other Mail Account</strong>.
+                  </p>
+                </div>
+                <div className="mt-4 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                   <p className="text-sm text-green-400 font-medium">Your email account setup is now complete.</p>
                 </div>
               </CardContent>
@@ -283,8 +336,18 @@ const EmailSetup = () => {
               <CardContent className="p-6 sm:p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-2">iPhone &amp; iPad (iOS) Setup</h2>
                 <p className="text-muted-foreground mb-6 text-sm">
-                  For iOS 16 and later. Earlier versions follow a similar process.
+                  For iOS 18 and later. Instructions for iOS 16–17 are noted where different.
                 </p>
+
+                {/* iOS Mockup Image */}
+                <div className="mb-8 flex justify-center">
+                  <img
+                    src="/images/email-setup-ios.png"
+                    alt="iPhone showing the New Account IMAP setup screen with mail.cityemail.com as the incoming server"
+                    className="w-64 h-auto rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
                 <ol className="space-y-4 text-foreground">
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">1</span>
@@ -292,39 +355,53 @@ const EmailSetup = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">2</span>
-                    <span>Scroll down and tap <strong>Mail</strong>, then <strong>Accounts</strong>, then <strong>Add Account</strong>.</span>
+                    <span>
+                      Tap <strong>Apps</strong>, then tap <strong>Mail</strong>.<br />
+                      <span className="text-xs text-muted-foreground">(On iOS 16–17: Tap <strong>Mail</strong> directly from the main Settings list.)</span>
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">3</span>
-                    <span>Select <strong>"Other"</strong> at the bottom of the list, then tap <strong>"Add Mail Account"</strong>.</span>
+                    <span>
+                      Tap <strong>Mail Accounts</strong>, then tap <strong>Add Account</strong>.<br />
+                      <span className="text-xs text-muted-foreground">(On iOS 16–17: Tap <strong>Accounts</strong> &gt; <strong>Add Account</strong>.)</span>
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">4</span>
-                    <span>Fill in your <strong>Name</strong>, <strong>Email</strong> (full address), <strong>Password</strong>, and <strong>Description</strong>. Tap <strong>Next</strong>.</span>
+                    <span>Select <strong>"Other"</strong> at the bottom of the provider list, then tap <strong>"Add Mail Account"</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">5</span>
-                    <span>Make sure <strong>IMAP</strong> is selected (highlighted at the top).</span>
+                    <span>Fill in your <strong>Name</strong>, <strong>Email</strong> (full address), <strong>Password</strong>, and a <strong>Description</strong> (e.g., "Work Email"). Tap <strong>Next</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">6</span>
-                    <span>Under <strong>Incoming Mail Server</strong>: Host Name — <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code></span>
+                    <span>Make sure <strong>IMAP</strong> is selected (highlighted at the top of the screen).</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">7</span>
-                    <span>Username: your <strong>full email address</strong>. Password should be filled in already.</span>
+                    <span>Under <strong>Incoming Mail Server</strong>:<br />
+                      Host Name: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code><br />
+                      Username: <strong>your full email address</strong><br />
+                      Password: your email password
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">8</span>
-                    <span>Under <strong>Outgoing Mail Server</strong>: Host Name — <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code></span>
+                    <span>Under <strong>Outgoing Mail Server</strong>:<br />
+                      Host Name: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code><br />
+                      Username: <strong>your full email address</strong><br />
+                      Password: your email password
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">9</span>
-                    <span>Username: your <strong>full email address</strong>. Enter your <strong>password</strong>.</span>
+                    <span>Tap <strong>Next</strong>. iOS will verify the settings.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">10</span>
-                    <span>On the next screen, make sure <strong>Mail</strong> is toggled on (green). Tap <strong>Save</strong>.</span>
+                    <span>Make sure <strong>Mail</strong> is toggled on (green). Tap <strong>Save</strong>.</span>
                   </li>
                 </ol>
                 <div className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
@@ -340,66 +417,104 @@ const EmailSetup = () => {
               <CardContent className="p-6 sm:p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-2">Android Setup</h2>
                 <p className="text-muted-foreground mb-6 text-sm">
-                  For Samsung Galaxy, Google Pixel, and other Android devices. Screens may vary slightly between manufacturers and Android versions.
+                  For Samsung Galaxy, Google Pixel, and other Android devices. Most Android phones now use the <strong>Gmail app</strong> for all email accounts.
                 </p>
-                <ol className="space-y-4 text-foreground">
+
+                {/* Android Mockup Image */}
+                <div className="mb-8 flex justify-center">
+                  <img
+                    src="/images/email-setup-android.png"
+                    alt="Android phone showing Gmail app Add Account screen with 'Other' option highlighted"
+                    className="w-64 h-auto rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Gmail App (Primary) */}
+                <h3 className="text-lg font-semibold text-foreground mb-4 border-b border-border pb-2">Using the Gmail App (Recommended)</h3>
+                <ol className="space-y-4 text-foreground mb-8">
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">1</span>
-                    <span>Open <strong>Settings</strong>.</span>
+                    <span>Open the <strong>Gmail</strong> app.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">2</span>
-                    <span>Tap <strong>Accounts</strong> (or <strong>Accounts &amp; backup</strong>).</span>
+                    <span>Tap your <strong>profile icon</strong> (top right), then tap <strong>"Add another account"</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">3</span>
-                    <span>Tap <strong>Add Account</strong>, then select <strong>Email</strong> (or <strong>Personal (IMAP)</strong>).</span>
+                    <span>Select <strong>"Other"</strong> from the list of email providers.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">4</span>
-                    <span>Enter your <strong>full email address</strong> and <strong>password</strong>, then tap <strong>Manual Setup</strong>.</span>
+                    <span>Enter your <strong>full email address</strong> and tap <strong>Next</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">5</span>
-                    <span>Select <strong>"IMAP"</strong> as the account type.</span>
+                    <span>Select <strong>"Personal (IMAP)"</strong> as the account type.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">6</span>
-                    <span>Enter your full email address for both <strong>Email Address</strong> and <strong>Username</strong>.</span>
+                    <span>Enter your <strong>password</strong> and tap <strong>Next</strong>.</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">7</span>
-                    <span>For IMAP Server, enter: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code></span>
+                    <span>For Incoming Server settings:<br />
+                      Server: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code><br />
+                      Port: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">993</code><br />
+                      Security type: <strong>SSL/TLS</strong>
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">8</span>
-                    <span>Security type: <strong>SSL/TLS</strong> (or "SSL — accept all certificates").</span>
+                    <span>Tap <strong>Next</strong>. For Outgoing Server settings:<br />
+                      Server: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code><br />
+                      Port: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">587</code><br />
+                      Security type: <strong>STARTTLS</strong>
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">9</span>
-                    <span>Incoming port: <strong>993</strong>. Tap <strong>Next</strong>.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">10</span>
-                    <span>For SMTP Server, enter: <code className="bg-muted px-2 py-0.5 rounded text-sm font-mono">mail.cityemail.com</code></span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">11</span>
-                    <span>Security type: <strong>TLS</strong> (or "STARTTLS — accept all certificates").</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">12</span>
-                    <span>Outgoing port: <strong>587</strong>.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">13</span>
-                    <span>Enter your <strong>Username</strong> (full email address) and <strong>Password</strong>. Tap <strong>Next</strong>.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold flex items-center justify-center">14</span>
-                    <span>Select your sync/notification preferences, give the account a name, and tap <strong>Done</strong>.</span>
+                    <span>Tap <strong>Next</strong>, configure your sync preferences, and tap <strong>Next</strong> again to finish.</span>
                   </li>
                 </ol>
+
+                {/* Samsung Email App */}
+                <details className="group">
+                  <summary className="cursor-pointer text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4" />
+                    Using Samsung Email app instead? Click here for those instructions.
+                  </summary>
+                  <div className="mt-4 pl-6 border-l-2 border-border">
+                    <ol className="space-y-3 text-foreground text-sm">
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">1</span>
+                        <span>Open <strong>Settings</strong> &gt; <strong>Accounts &amp; backup</strong> &gt; <strong>Manage accounts</strong>.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">2</span>
+                        <span>Tap <strong>Add account</strong> &gt; <strong>Email</strong>.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">3</span>
+                        <span>Enter your email and password, tap <strong>Manual setup</strong>.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">4</span>
+                        <span>Select <strong>IMAP</strong>. Enter <code className="bg-muted px-1 py-0.5 rounded font-mono">mail.cityemail.com</code> for both servers.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">5</span>
+                        <span>Incoming: port <strong>993</strong>, security <strong>SSL/TLS</strong>. Outgoing: port <strong>587</strong>, security <strong>TLS</strong>.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold flex items-center justify-center">6</span>
+                        <span>Enter your full email as username for both. Tap <strong>Sign in</strong>.</span>
+                      </li>
+                    </ol>
+                  </div>
+                </details>
+
                 <div className="mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                   <p className="text-sm text-green-400 font-medium">Your email account setup is now complete.</p>
                 </div>
@@ -413,7 +528,7 @@ const EmailSetup = () => {
           <CardContent className="p-6 sm:p-8">
             <h2 className="text-2xl font-bold text-foreground mb-4">Exchange Email Accounts</h2>
             <p className="text-muted-foreground">
-              If you have an Exchange email account, it is configured for <strong>autodiscover</strong>. When adding an account to a computer or mobile device, select <strong>"Exchange"</strong> as the email account type, then enter your email address and password when prompted. The email server settings will be automatically detected.
+              If you have an Exchange email account, it is configured for <strong>autodiscover</strong>. When adding an account to a computer or mobile device, select <strong>"Exchange"</strong> or <strong>"Microsoft 365"</strong> as the email account type, then enter your email address and password when prompted. The email server settings will be automatically detected.
             </p>
             <p className="text-muted-foreground mt-3">
               If autodiscover doesn't work on your device, please{" "}
