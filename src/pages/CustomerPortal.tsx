@@ -55,7 +55,7 @@ const CustomerPortal = () => {
         {/* Service Alert Banner — toggle by changing the boolean below.
             To hide: set `showServiceAlert` to false. Update title/message as needed. */}
         {(() => {
-          const showServiceAlert = true;
+          const showServiceAlert = false;
           if (!showServiceAlert) return null;
           return (
             <div
