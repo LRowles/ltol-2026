@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Monitor, ExternalLink, Phone, MessageSquare, Shield, Headphones, BookOpen, CreditCard } from "lucide-react";
+import { Mail, Monitor, ExternalLink, Phone, MessageSquare, Shield, Headphones, BookOpen, CreditCard, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSEO } from "@/lib/seo";
 
@@ -52,6 +52,36 @@ const CustomerPortal = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+        {/* Service Alert Banner — toggle by changing the boolean below.
+            To hide: set `showServiceAlert` to false. Update title/message as needed. */}
+        {(() => {
+          const showServiceAlert = true;
+          if (!showServiceAlert) return null;
+          return (
+            <div
+              role="alert"
+              className="mb-10 rounded-xl border border-amber-400/60 bg-amber-50 dark:bg-amber-950/30 p-4 sm:p-5 flex items-start gap-3 shadow-sm"
+            >
+              <div className="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center flex-shrink-0">
+                <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+              </div>
+              <div className="flex-1">
+                <h2 className="font-semibold text-amber-900 dark:text-amber-100 mb-1">
+                  Service Advisory: Email Delivery Delays
+                </h2>
+                <p className="text-sm text-amber-800 dark:text-amber-200/90">
+                  We're currently investigating intermittent delays affecting some hosted email accounts.
+                  Our team is actively working on a resolution. For updates, call{" "}
+                  <a href="tel:+15305822080" className="font-medium underline underline-offset-2">
+                    (530) 582-2080
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          );
+        })()}
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
