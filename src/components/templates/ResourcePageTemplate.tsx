@@ -126,8 +126,16 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
                       <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                         <FileText className="w-8 h-8 text-secondary" />
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-2">You're In!</h3>
-                      <p className="text-muted-foreground text-sm">Check your email for the download link.</p>
+                      <h3 className="text-2xl font-bold text-foreground mb-2">Your Download Is Ready!</h3>
+                      <p className="text-muted-foreground text-sm mb-6">Click below to download your copy.</p>
+                      <a
+                        href={`/downloads/${resource.slug}.pdf`}
+                        download
+                        className="inline-flex items-center justify-center w-full gradient-bg text-primary-foreground font-semibold py-3 px-6 rounded-md hover:opacity-90 transition-opacity"
+                      >
+                        Download PDF
+                      </a>
+                      <p className="text-muted-foreground text-xs mt-4">A copy has also been sent to your email.</p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">

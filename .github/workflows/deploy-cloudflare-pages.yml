@@ -1,0 +1,61 @@
+name: Build, Prerender & Deploy to Cloudflare Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - preview
+
+# Uncomment the following to auto-deploy on push to main:
+# on:
+#   push:
+#     branches: [main]
+
+jobs:
+  build-prerender-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (includes sitemap generation)
+        run: npm run build
+
+      - name: Install Puppeteer browser
+        run: npx puppeteer browsers install chrome
+
+      - name: Prerender all routes to static HTML
+        run: npm run prerender
+
+      - name: Verify prerender output
+        run: |
+          echo "=== Prerender Results ==="
+          TOTAL_HTML=$(find dist -name "index.html" | wc -l)
+          echo "Total HTML files: $TOTAL_HTML"
+          echo ""
+          echo "=== Sample prerendered page (first 5 lines of body) ==="
+          head -20 dist/index.html | grep -A5 "<title>"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: "8a9603b1735f4f4a91f35b21fc26c462"
+          command: pages deploy dist --project-name=ltol-2026 --branch=${{ github.event.inputs.environment == 'production' && 'main' || 'preview' }}
