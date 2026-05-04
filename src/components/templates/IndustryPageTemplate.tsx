@@ -138,7 +138,7 @@ const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
       <FAQSection faqs={industry.faqs} />
       <CTABlock
         headline={`Technology Strategy for ${industry.industry}`}
-        buttonText="Book a Strategy Session"
+        buttonText="Contact Us"
       />
       <Footer />
     </div>

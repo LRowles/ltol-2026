@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import ltolLogo from "@/assets/ltol-logo.svg";
 
@@ -27,6 +27,7 @@ const footerLinks = {
     { name: "Cybersecurity Checklist", href: "/resources/cybersecurity-checklist" },
     { name: "Marketing Blueprint", href: "/resources/marketing-automation-blueprint" },
     { name: "Tech Stack Guide", href: "/resources/technology-stack-guide" },
+    { name: "Client Portal", href: "/portal" },
   ],
   assessments: [
     { name: "AI Readiness", href: "/assessments/ai-readiness" },
@@ -48,6 +49,7 @@ const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Twitter, href: "https://x.com/laketahoeonline", label: "X (Twitter)" },
 ];
 
 const Footer = () => {

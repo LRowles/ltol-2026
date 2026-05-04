@@ -36,8 +36,8 @@ const CustomerPortal = () => {
   const [sessionId, setSessionId] = useState("");
 
   useSEO({
-    title: "Customer Portal | LTOL",
-    description: "Access your LTOL customer portal for webmail, remote support sessions, and email setup instructions.",
+    title: "Client Portal | LTOL",
+    description: "Access your LTOL client portal for webmail, remote support sessions, and email setup instructions.",
     path: "/portal",
     noindex: true,
   });
@@ -85,7 +85,7 @@ const CustomerPortal = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Customer <span className="gradient-text">Portal</span>
+            Client <span className="gradient-text">Portal</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Access your email, start a remote support session, or get in touch with our team.

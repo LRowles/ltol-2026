@@ -63,7 +63,7 @@ const Hero = () => {
               onClick={scrollToContact}
               className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold text-lg px-8 py-6"
             >
-              Book a Consultation
+              Contact Us
             </Button>
           </div>
 

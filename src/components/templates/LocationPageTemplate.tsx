@@ -276,7 +276,7 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
       <FAQSection faqs={location.faqs} />
       <CTABlock
         headline={`Ready to Upgrade Your ${location.city} Business Technology?`}
-        buttonText="Book a Strategy Session"
+        buttonText="Contact Us"
       />
       <Footer />
     </div>

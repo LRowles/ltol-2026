@@ -12,8 +12,8 @@ interface CTABlockProps {
 
 const CTABlock = ({
   headline = "Ready to Get Started?",
-  description = "Book a free strategy session with our team. We'll review your current systems, identify opportunities, and map a clear path forward.",
-  buttonText = "Book a Strategy Session",
+  description = "Talk to our team. We'll review your current systems, identify opportunities, and map a clear path forward.",
+  buttonText = "Contact Us",
   buttonLink = "/#contact",
   variant = "gradient",
 }: CTABlockProps) => {

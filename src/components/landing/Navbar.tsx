@@ -95,7 +95,7 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">About</button>
             <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Contact</button>
             <Button onClick={() => scrollToSection("#contact")} className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold">
-              Book a Consultation
+              Contact Us
             </Button>
           </div>
 
@@ -137,7 +137,7 @@ const Navbar = () => {
 
               <div className="pt-4 px-2">
                 <Button onClick={() => scrollToSection("#contact")} className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold w-full">
-                  Book a Consultation
+                  Contact Us
                 </Button>
               </div>
             </div>
