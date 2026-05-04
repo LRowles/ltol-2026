@@ -6,6 +6,9 @@
  * to automatically redirect users who arrive via old bookmarks, cached
  * search results, or external backlinks.
  *
+ * Also includes convenience email shortcuts (e.g., ltol.com/webmail) that
+ * redirect to external email login portals.
+ *
  * Old site structure (from sitemap.xml):
  *   - Static .html pages at root level
  *   - /phone/ directory with mobile-specific duplicates
@@ -17,6 +20,9 @@
  *   - /portal/email-setup for email configuration
  *   - Service pages at /{service-slug}
  *   - Location pages at /{city}-{service}
+ *
+ * External redirects (prefixed with https://) open in the same tab via
+ * window.location.href assignment.
  */
 
 export const legacyRedirectMap: Record<string, string> = {
@@ -43,6 +49,14 @@ export const legacyRedirectMap: Record<string, string> = {
   "/web-portal": "/portal",
   "/email-portal.html": "/portal",
   "/email-portal": "/portal",
+
+  // === Email convenience shortcuts ===
+  // These give customers easy-to-remember URLs like ltol.com/webmail
+  "/webmail": "https://ltol.cityemail.com/tuxedo/",
+  "/mail": "/portal",
+  "/email": "/portal",
+  "/owa": "https://controlpanel.msoutlookonline.net/Portal/ADUser/Login",
+  "/popmail": "https://cp.serverdata.net/Portal/ADUser/Login",
 
   // === Info pages ===
   "/about-us.html": "/#about",

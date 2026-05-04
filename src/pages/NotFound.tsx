@@ -13,7 +13,14 @@ const NotFound = () => {
     if (redirect) {
       // Legacy URL detected — redirect seamlessly
       console.log(`Legacy redirect: ${location.pathname} → ${redirect}`);
-      navigate(redirect, { replace: true });
+
+      if (redirect.startsWith("https://") || redirect.startsWith("http://")) {
+        // External redirect (e.g., email login portals)
+        window.location.href = redirect;
+      } else {
+        // Internal redirect within the SPA
+        navigate(redirect, { replace: true });
+      }
     } else {
       // No redirect found — show the 404 page
       console.error(
