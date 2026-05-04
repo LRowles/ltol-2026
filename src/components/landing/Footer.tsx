@@ -46,9 +46,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/laketahoeonline/", label: "Facebook" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/laketahoeonline/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/laketahoeonline/", label: "Instagram" },
   { icon: Twitter, href: "https://x.com/laketahoeonline", label: "X (Twitter)" },
 ];
 
