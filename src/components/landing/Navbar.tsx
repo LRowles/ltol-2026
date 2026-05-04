@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, User } from "lucide-react";
 import ltolLogo from "@/assets/ltol-logo.svg";
 
 const solutionsLinks = [
@@ -38,6 +38,7 @@ type DropdownKey = "solutions" | "industries" | "resources";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownKey | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<DropdownKey | null>(null);
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
@@ -48,6 +49,10 @@ const Navbar = () => {
       navigate("/");
       setTimeout(() => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" }), 150);
     }
+  };
+
+  const toggleMobileSection = (key: DropdownKey) => {
+    setMobileExpanded(mobileExpanded === key ? null : key);
   };
 
   const Dropdown = ({ id, label, links }: { id: DropdownKey; label: string; links: { name: string; href: string }[] }) => (
@@ -85,15 +90,20 @@ const Navbar = () => {
             <span className="text-sm font-medium text-muted-foreground hidden sm:block">LTOL</span>
           </Link>
 
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
             <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Home</Link>
             <Dropdown id="solutions" label="Solutions" links={solutionsLinks} />
             <Dropdown id="industries" label="Industries" links={industryLinks} />
             <Dropdown id="resources" label="Resources" links={resourceLinks} />
-            
-            <Link to="/portal" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Client Portal</Link>
             <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">About</button>
             <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">Contact</button>
+            <Link to="/portal">
+              <Button variant="outline" size="sm" className="font-semibold">
+                <User className="w-4 h-4 mr-1" />
+                Client Portal
+              </Button>
+            </Link>
             <Button onClick={() => scrollToSection("#contact")} className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold">
               Contact Us
             </Button>
@@ -104,38 +114,77 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border max-h-[80vh] overflow-y-auto">
             <div className="flex flex-col space-y-1">
               <Link to="/" onClick={() => setIsOpen(false)} className="text-foreground font-medium px-4 py-2 text-sm">Home</Link>
 
-              <div className="px-2 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Solutions</div>
-              {solutionsLinks.map((link) => (
-                <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium">
-                  {link.name}
+              {/* Collapsible Solutions */}
+              <button
+                onClick={() => toggleMobileSection("solutions")}
+                className="flex items-center justify-between px-4 py-2 text-sm font-semibold text-foreground"
+              >
+                Solutions
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "solutions" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileExpanded === "solutions" && (
+                <div className="pl-4">
+                  {solutionsLinks.map((link) => (
+                    <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground block px-4 py-1.5 text-sm">
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {/* Collapsible Industries */}
+              <button
+                onClick={() => toggleMobileSection("industries")}
+                className="flex items-center justify-between px-4 py-2 text-sm font-semibold text-foreground"
+              >
+                Industries
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "industries" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileExpanded === "industries" && (
+                <div className="pl-4">
+                  {industryLinks.map((link) => (
+                    <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground block px-4 py-1.5 text-sm">
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {/* Collapsible Resources */}
+              <button
+                onClick={() => toggleMobileSection("resources")}
+                className="flex items-center justify-between px-4 py-2 text-sm font-semibold text-foreground"
+              >
+                Resources
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "resources" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileExpanded === "resources" && (
+                <div className="pl-4">
+                  {resourceLinks.map((link) => (
+                    <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground block px-4 py-1.5 text-sm">
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              <button onClick={() => scrollToSection("#about")} className="text-foreground font-medium px-4 py-2 text-sm text-left">About</button>
+              <button onClick={() => scrollToSection("#contact")} className="text-foreground font-medium px-4 py-2 text-sm text-left">Contact</button>
+
+              {/* Mobile CTA Buttons */}
+              <div className="pt-4 px-2 flex flex-col gap-2">
+                <Link to="/portal" onClick={() => setIsOpen(false)}>
+                  <Button variant="outline" className="w-full font-semibold">
+                    <User className="w-4 h-4 mr-2" />
+                    Client Portal
+                  </Button>
                 </Link>
-              ))}
-
-              <div className="px-2 py-2 mt-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Industries</div>
-              {industryLinks.map((link) => (
-                <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium">
-                  {link.name}
-                </Link>
-              ))}
-
-              <div className="px-2 py-2 mt-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Resources</div>
-              {resourceLinks.map((link) => (
-                <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium">
-                  {link.name}
-                </Link>
-              ))}
-
-              
-              <Link to="/portal" onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium">Client Portal</Link>
-              <button onClick={() => scrollToSection("#about")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">About</button>
-              <button onClick={() => scrollToSection("#contact")} className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium text-left">Contact</button>
-
-              <div className="pt-4 px-2">
                 <Button onClick={() => scrollToSection("#contact")} className="gradient-bg hover:opacity-90 text-primary-foreground font-semibold w-full">
                   Contact Us
                 </Button>
