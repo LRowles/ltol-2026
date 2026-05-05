@@ -87,7 +87,6 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
             <img src={ltolLogo} alt="LTOL" className="h-8 w-auto" />
-            <span className="text-sm font-medium text-muted-foreground hidden sm:block">LTOL</span>
           </Link>
 
           {/* Desktop Navigation */}
