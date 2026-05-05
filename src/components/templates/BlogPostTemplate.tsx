@@ -31,9 +31,9 @@ const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
     "@graph": [
       articleSchema(post.title, post.metaDescription, post.slug, post.date, post.category),
       breadcrumbSchema([
-        { name: "Home", url: "https://ltol.com" },
-        { name: "Blog", url: "https://ltol.com/blog" },
-        { name: post.title, url: `https://ltol.com/blog/${post.slug}` },
+        { name: "Home", url: "https://www.ltol.com" },
+        { name: "Blog", url: "https://www.ltol.com/blog" },
+        { name: post.title, url: `https://www.ltol.com/blog/${post.slug}` },
       ]),
     ],
   });

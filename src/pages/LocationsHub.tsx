@@ -44,7 +44,7 @@ const LocationsHub = () => {
   useJsonLd({
     "@type": "ProfessionalService",
     name: "Lake Tahoe Online",
-    url: "https://ltol.com",
+    url: "https://www.ltol.com",
     areaServed: ["Reno", "Truckee", "Lake Tahoe", "Northern Nevada", "Northern California", "Western United States"],
     serviceType: ["Managed IT Services", "AI Integration", "Cybersecurity", "Digital Marketing"],
   });

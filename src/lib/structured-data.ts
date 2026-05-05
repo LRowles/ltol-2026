@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BASE_URL = "https://ltol.com";
+const BASE_URL = "https://www.ltol.com";
 
 const localBusinessBase = {
   "@type": "LocalBusiness",

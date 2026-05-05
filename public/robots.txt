@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://ltol.com/sitemap.xml
+Sitemap: https://www.ltol.com/sitemap.xml

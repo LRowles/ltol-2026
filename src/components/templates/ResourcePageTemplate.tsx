@@ -37,13 +37,13 @@ const ResourcePageTemplate = ({ resource }: ResourcePageTemplateProps) => {
         "@type": "WebPage",
         name: resource.title,
         description: resource.subheadline,
-        url: `https://ltol.com/resources/${resource.slug}`,
+        url: `https://www.ltol.com/resources/${resource.slug}`,
         provider: { "@type": "Organization", name: "LTOL" },
       },
       breadcrumbSchema([
-        { name: "Home", url: "https://ltol.com" },
-        { name: "Resources", url: "https://ltol.com/resources" },
-        { name: resource.title, url: `https://ltol.com/resources/${resource.slug}` },
+        { name: "Home", url: "https://www.ltol.com" },
+        { name: "Resources", url: "https://www.ltol.com/resources" },
+        { name: resource.title, url: `https://www.ltol.com/resources/${resource.slug}` },
       ]),
     ],
   });

@@ -43,9 +43,9 @@ const IndustryPageTemplate = ({ industry }: IndustryPageTemplateProps) => {
       professionalServiceSchema(industry.industry, industry.intro, industry.slug, industry.services),
       faqSchema(industry.faqs),
       breadcrumbSchema([
-        { name: "Home", url: "https://ltol.com" },
-        { name: "Industries", url: "https://ltol.com/solutions" },
-        { name: industry.industry, url: `https://ltol.com/solutions/${industry.slug}` },
+        { name: "Home", url: "https://www.ltol.com" },
+        { name: "Industries", url: "https://www.ltol.com/solutions" },
+        { name: industry.industry, url: `https://www.ltol.com/solutions/${industry.slug}` },
       ]),
     ],
   });

@@ -42,13 +42,13 @@ const AssessmentTemplate = ({ assessment }: AssessmentTemplateProps) => {
         "@type": "WebPage",
         name: assessment.title,
         description: assessment.description,
-        url: `https://ltol.com/assessments/${assessment.slug}`,
+        url: `https://www.ltol.com/assessments/${assessment.slug}`,
         provider: { "@type": "Organization", name: "LTOL" },
       },
       breadcrumbSchema([
-        { name: "Home", url: "https://ltol.com" },
-        { name: "Assessments", url: "https://ltol.com/assessments" },
-        { name: assessment.title, url: `https://ltol.com/assessments/${assessment.slug}` },
+        { name: "Home", url: "https://www.ltol.com" },
+        { name: "Assessments", url: "https://www.ltol.com/assessments" },
+        { name: assessment.title, url: `https://www.ltol.com/assessments/${assessment.slug}` },
       ]),
     ],
   });

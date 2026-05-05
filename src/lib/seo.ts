@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BASE_URL = "https://ltol.com";
+const BASE_URL = "https://www.ltol.com";
 const DEFAULT_OG_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/CXSUym8aEXfAmljn39TKhvCaft33/social-images/social-1777785928831-LTOL_Gradient_ScreenSnip.webp";
 
 interface SEOProps {

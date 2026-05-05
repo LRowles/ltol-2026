@@ -40,9 +40,9 @@ const ServicePageTemplate = ({ service }: ServicePageTemplateProps) => {
       serviceSchema(service.title, service.intro, service.slug),
       faqSchema(service.faqs),
       breadcrumbSchema([
-        { name: "Home", url: "https://ltol.com" },
-        { name: "Services", url: "https://ltol.com/#services" },
-        { name: service.title, url: `https://ltol.com/${service.slug}` },
+        { name: "Home", url: "https://www.ltol.com" },
+        { name: "Services", url: "https://www.ltol.com/#services" },
+        { name: service.title, url: `https://www.ltol.com/${service.slug}` },
       ]),
     ],
   });

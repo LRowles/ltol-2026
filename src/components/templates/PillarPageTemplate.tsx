@@ -32,13 +32,13 @@ const PillarPageTemplate = ({ pillar }: PillarPageTemplateProps) => {
         "@type": "WebPage",
         name: pillar.title,
         description: pillar.intro,
-        url: `https://ltol.com/${pillar.slug}`,
+        url: `https://www.ltol.com/${pillar.slug}`,
         publisher: { "@type": "Organization", name: "LTOL" },
       },
       faqSchema(pillar.faqs),
       breadcrumbSchema([
-        { name: "Home", url: "https://ltol.com" },
-        { name: pillar.title, url: `https://ltol.com/${pillar.slug}` },
+        { name: "Home", url: "https://www.ltol.com" },
+        { name: pillar.title, url: `https://www.ltol.com/${pillar.slug}` },
       ]),
     ],
   });

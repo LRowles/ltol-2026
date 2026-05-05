@@ -39,9 +39,9 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
       localBusinessSchema(location.city, location.region, location.intro, location.slug),
       faqSchema(location.faqs),
       breadcrumbSchema([
-        { name: "Home", url: "https://ltol.com" },
-        { name: "Locations", url: "https://ltol.com/locations" },
-        { name: `${location.city}, ${location.region}`, url: `https://ltol.com/${location.slug}` },
+        { name: "Home", url: "https://www.ltol.com" },
+        { name: "Locations", url: "https://www.ltol.com/locations" },
+        { name: `${location.city}, ${location.region}`, url: `https://www.ltol.com/${location.slug}` },
       ]),
     ],
   });
