@@ -37,15 +37,16 @@ const Solution = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
           {capabilities.map((cap, i) => (
-            <div
+            <Link
               key={i}
-              className="flex flex-col items-center text-center p-5 rounded-2xl bg-card border border-border card-hover"
+              to={cap.href}
+              className="flex flex-col items-center text-center p-5 rounded-2xl bg-card border border-border card-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
             >
               <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-3">
                 <cap.icon className="w-6 h-6 text-secondary" />
               </div>
               <p className="text-sm font-medium text-foreground">{cap.label}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
