@@ -1,0 +1,35 @@
+# LTOL — Lake Tahoe Online
+
+> LTOL is a boutique technology consultancy providing managed IT services, web design, AI integration, and digital marketing for small businesses across Lake Tahoe, Reno, Sacramento, and the Western United States.
+
+LTOL operates as a "digital guardian" for small businesses — combining local human support with enterprise-grade systems across three pillars: AI Integration, Digital Marketing, and IT & Network Solutions. Headquartered in Truckee, CA, serving Northern Nevada and Northern California.
+
+## Pages
+
+- [Home](/): Overview of LTOL's three service pillars and service areas.
+- [Locations](/locations): Regional hub listing every city and metro LTOL serves.
+- [Blog](/blog): Articles on small-business IT, AI, cybersecurity, and marketing automation.
+
+## Core Services
+
+- [Managed IT Services](/managed-it-services-for-small-business): Help desk, monitoring, and infrastructure management.
+- [AI Integration](/ai-integration-for-small-business): Workflow automation, customer support AI, document processing.
+- [Cybersecurity](/cybersecurity-for-small-business): Endpoint, email, and network security for SMBs.
+- [Digital Marketing](/digital-marketing-systems-for-small-business): SEO, marketing automation, and website systems.
+- [Small Business Technology Stack](/small-business-technology-stack): Integrated stack pillar overview.
+
+## Key Locations
+
+- [Reno Managed IT](/reno-managed-it-services): IT services for Reno, NV businesses.
+- [Truckee Managed IT](/truckee-managed-it-services): IT services for Truckee, CA.
+- [Lake Tahoe Managed IT](/tahoe-managed-it-services): IT services across the Tahoe basin.
+- [Sacramento Managed IT](/sacramento-managed-it-services): IT services for the Sacramento region.
+
+## Assessments
+
+- [Technology Stack Assessment](/assessments/technology-stack): Free assessment to evaluate your current tech stack.
+
+## Optional
+
+- [Privacy Policy](/privacy-policy)
+- [Terms of Service](/terms-of-service)
