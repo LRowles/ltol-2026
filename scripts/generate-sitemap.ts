@@ -14,7 +14,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SITE_URL = "https://ltol.com";
+const SITE_URL = "https://www.ltol.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
 interface SitemapEntry {
@@ -222,6 +222,10 @@ function buildEntries(): SitemapEntry[] {
   // Legal pages
   entries.push({ loc: "/privacy-policy", lastmod: TODAY, changefreq: "yearly", priority: "0.2" });
   entries.push({ loc: "/terms-of-service", lastmod: TODAY, changefreq: "yearly", priority: "0.2" });
+
+  // Customer portal
+  entries.push({ loc: "/portal", lastmod: TODAY, changefreq: "monthly", priority: "0.3" });
+  entries.push({ loc: "/portal/email-setup", lastmod: TODAY, changefreq: "monthly", priority: "0.3" });
 
   return entries;
 }

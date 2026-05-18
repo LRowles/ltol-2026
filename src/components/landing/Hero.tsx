@@ -21,6 +21,10 @@ const Hero = () => {
         <img
           src={heroImg}
           alt="Western US mountain landscape"
+          width={1920}
+          height={1280}
+          fetchPriority="high"
+          decoding="async"
           className="brand-photo absolute inset-0 w-full h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-background" />
@@ -75,7 +79,7 @@ const Hero = () => {
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-                <div className="text-sm text-primary-foreground/70">{stat.label}</div>
+                <div className="text-sm text-primary-foreground/90">{stat.label}</div>
               </div>
             ))}
           </div>
