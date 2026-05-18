@@ -87,6 +87,81 @@ export function localBusinessSchema(city: string, region: string, description: s
   };
 }
 
+export function homepageLocalBusinessSchema() {
+  return {
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": `${BASE_URL}/#business`,
+    name: "LTOL",
+    alternateName: "Lake Tahoe Online",
+    description:
+      "Local managed IT services, web design, AI integration, and digital marketing for small businesses in Lake Tahoe, Reno, and the Western United States.",
+    url: BASE_URL,
+    telephone: "+1-530-582-2080",
+    email: "support@ltol.com",
+    image:
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/CXSUym8aEXfAmljn39TKhvCaft33/social-images/social-1777785928831-LTOL_Gradient_ScreenSnip.webp",
+    logo: `${BASE_URL}/ltol-logo.svg`,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "10266 Truckee Airport Road, Suite C",
+      addressLocality: "Truckee",
+      addressRegion: "CA",
+      postalCode: "96161",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 39.3201,
+      longitude: -120.1395,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
+    areaServed: [
+      { "@type": "Place", name: "Lake Tahoe" },
+      { "@type": "Place", name: "Truckee, California" },
+      { "@type": "Place", name: "Reno, Nevada" },
+      { "@type": "Place", name: "Carson City, Nevada" },
+      { "@type": "Place", name: "Sacramento, California" },
+      { "@type": "Place", name: "Northern Nevada" },
+      { "@type": "Place", name: "Western United States" },
+    ],
+    serviceType: [
+      "Managed IT Services",
+      "Web Design",
+      "AI Integration",
+      "Digital Marketing",
+      "Network Infrastructure",
+      "Cybersecurity",
+      "Cloud Services",
+    ],
+    knowsAbout: [
+      "IT Support",
+      "Cybersecurity",
+      "AI Workflow Automation",
+      "SEO",
+      "Google Workspace",
+      "Microsoft 365",
+    ],
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@type": "WebSite",
+    "@id": `${BASE_URL}/#website`,
+    url: BASE_URL,
+    name: "LTOL",
+    publisher: { "@id": `${BASE_URL}/#business` },
+  };
+}
+
 export function professionalServiceSchema(industryName: string, description: string, slug: string, serviceTypes: string[]) {
   return {
     "@type": "ProfessionalService",
