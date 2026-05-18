@@ -1,4 +1,10 @@
-import { Facebook, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Instagram } from "lucide-react";
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 import { Link } from "react-router-dom";
 import ltolLogo from "@/assets/ltol-logo.svg";
 
@@ -49,7 +55,7 @@ const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/laketahoeonline/", label: "Facebook" },
   { icon: Linkedin, href: "https://www.linkedin.com/company/laketahoeonline/", label: "LinkedIn" },
   { icon: Instagram, href: "https://www.instagram.com/laketahoeonline/", label: "Instagram" },
-  { icon: Twitter, href: "https://x.com/laketahoeonline", label: "X (Twitter)" },
+  { icon: XIcon, href: "https://x.com/laketahoeonline", label: "X" },
 ];
 
 const Footer = () => {
@@ -66,7 +72,7 @@ const Footer = () => {
               Digital Infrastructure for Small Businesses. AI, marketing, IT, and cybersecurity — connected into one powerful system.
             </p>
             <p className="text-background/50 text-xs mb-4">
-              Serving Tahoe • Reno • Northern Nevada • Western US
+              Your local IT, AI & marketing team — Truckee, Tahoe to Reno, and everywhere west.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social, i) => (
