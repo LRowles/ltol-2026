@@ -1,13 +1,14 @@
 import { Bot, BarChart3, Shield, Globe, Mail, Database, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import solutionImg from "@/assets/photos/solution-workspace.jpg";
 
 const capabilities = [
-  { icon: Bot, label: "AI Tools" },
-  { icon: BarChart3, label: "Marketing Automation" },
-  { icon: Shield, label: "Secure IT Infrastructure" },
-  { icon: Database, label: "CRM Systems" },
-  { icon: Globe, label: "Lead Generation" },
-  { icon: Mail, label: "Cybersecurity" },
+  { icon: Bot, label: "AI Tools", href: "/ai-integration" },
+  { icon: BarChart3, label: "Marketing Automation", href: "/digital-marketing" },
+  { icon: Shield, label: "Secure IT Infrastructure", href: "/managed-it-services" },
+  { icon: Database, label: "CRM Systems", href: "/crm-automation" },
+  { icon: Globe, label: "Lead Generation", href: "/email-marketing-automation" },
+  { icon: Mail, label: "Cybersecurity", href: "/cybersecurity" },
 ];
 
 const Solution = () => {
