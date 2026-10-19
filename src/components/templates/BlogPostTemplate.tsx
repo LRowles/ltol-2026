@@ -59,11 +59,11 @@ const BlogPostTemplate = ({ post }: BlogPostTemplateProps) => {
         </header>
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <p className="text-lg text-muted-foreground mb-12 leading-relaxed">{post.intro}</p>
+          <p className="text-lg text-muted-foreground mb-12 leading-relaxed whitespace-pre-line">{post.intro}</p>
           {post.sections.map((section, i) => (
             <div key={i} className="mb-10">
               <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4">{section.heading}</h2>
-              <p className="text-muted-foreground leading-relaxed">{section.content}</p>
+              <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{section.content}</p>
             </div>
           ))}
         </div>
